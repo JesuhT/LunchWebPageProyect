@@ -949,10 +949,7 @@ progress {
     flex: 0 0 auto;
     width: 41.66666667%;
   }
-  .col-sm-6 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
+
   .col-sm-7 {
     flex: 0 0 auto;
     width: 58.33333333%;
@@ -1106,10 +1103,7 @@ progress {
     flex: 0 0 auto;
     width: 16.66666667%;
   }
-  .col-md-3 {
-    flex: 0 0 auto;
-    width: 25%;
-  }
+
   .col-md-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
@@ -7569,11 +7563,6 @@ textarea.form-control-lg {
 .my-2 {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
-}
-
-.my-3 {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
 }
 
 .my-4 {
