@@ -1,0 +1,100 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "LatoLatin Regular";
+}
+
+body{
+  background-color: #f6f7f8;
+}
+
+.Título{
+  font-size: 60px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.Elecciones{
+  display: flex;
+  width: 100%;
+  margin-left: 348px;
+  margin-top: 40px;
+}
+.Dropdown{
+  margin-right: 30px;
+}
+
+.Container_Turnos{
+  display: flex;
+  margin-top: 40px;
+  margin-left: 310px;
+}
+.Seguimiento_Turnos, .Mi_Turno{
+  background-color: #fff;
+  width: 26%;
+  height: 250px;
+  border-radius: 3%;
+  text-align: center;
+  margin-left: 40px;
+  box-shadow: 0 0 12px #a8a8a8;
+}
+.Turno_Actual{
+  margin-top: 40px;
+}
+.Turno_Actual p{
+  font-size: 30px;
+}
+.Turno_Actual h1{
+  font-size: 110px;
+  margin-top: 7px;
+}
+
+.Turno{
+  margin-top: 40px;
+}
+.Turno p{
+  font-size: 30px;
+}
+.Turno h1{
+  font-size: 90px;
+}
+
+.Tiempo_Espera{
+  display: flex;
+  margin-top: 10px;
+}
+.Tiempo{
+  margin-left: 48px;
+  margin-right: 40px;
+  width: 70px;
+}
+
+/*BOTONES*/
+.Ingresar_Fila, .Cancelar button{
+  padding: 7px;
+  margin-top: 40px;
+  margin-left: 580px;
+  padding: 7px 27px;
+  border-radius: 5px; 
+  border: none;
+  font-size: 20px;
+}
+
+.Cancelar button{
+  background-color: rgb(248, 17, 17);
+  color: white;
+  margin-bottom: 30px;
+}
+.Cancelar button:hover{
+  cursor: pointer;
+  background-color: rgb(245, 42, 42);
+}
+.Ingresar_Fila{
+  background-color: #1a72ba;
+  color: white;
+}
+.Ingresar_Fila:hover{
+  background-color: #1f7ac5;
+  cursor: pointer;
+}

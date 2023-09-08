@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fila virtual</title>
+    <link rel="stylesheet" href="css/Fila.css">
+</head>
+<body>
+  <div class="Container">
+    <h1 class="Título">Fila Virtual</h1>
+      <div class="Elecciones">
+        <div class="Dropdown">
+          <select id="myDropdown">
+            <option disabled selected>Elegir convocatoria</option>
+            <option value="opcion1">Talento Magdalena</option>
+            <option value="opcion2">Ayudantías Bienestar Universitario</option>
+          </select>
+        </div>
+        <div class="fecha">
+          <form>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
+          </form>
+        </div>
+      </div>
+      <div>
+        <button class="Ingresar_Fila">Ingresar a la fila</button>
+      </div>
+      <div class="Container_Turnos">
+        <div class="Seguimiento_Turnos">
+          <div class="Turno_Actual">
+            <p>Turno actual</p>
+            <h1>3</h1>
+          </div>
+        </div>
+        <div class="Mi_Turno">
+          <div class="Turno">
+            <p>Su turno</p>
+            <h1>5</h1>
+          </div>
+          <div class="Tiempo_Espera">
+            <div class="Tiempo"><p>Tiempo de espera</p></div>
+            <p>5 minutos</p>
+          </div>
+        </div>
+      </div>
+      <div class="Cancelar">
+        <button>Cancelar turno</button>
+      </div>
+  </div>
+</body>
+</html>
