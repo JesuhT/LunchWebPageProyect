@@ -10,15 +10,22 @@
   text-decoration: none;
   color: black;
 }
+:root {
+  --main-color: #ffb444;
+  --color-nav: rgb(0, 74, 135);
+  --color-content:  rgb(0, 74, 135);
+  --pag-bm-color: #fff;
+  --pag-bs-color: #f3f4f4;
+}
 html {
   scroll-behavior: smooth; /* Activa el scroll suave */
 }
 body {
-  background-color: rgb(236, 239, 241);
+  background-color: var(--pag-bm-color);
 }
 
 .header-area {
-  background-color: rgb(0, 74, 135);
+  background-color: var(--color-nav);
   width: 100%;
   z-index: 999;
   padding: 12px 50px;
@@ -51,13 +58,13 @@ body {
 .logo-area span {
   font-size: 24px;
   font-weight: 900px;
-  color: #ffb444;
+  color:var(--main-color);
 }
 
 .mobile-nav {
   display: none;
 }
-
+/* BARRA DE NAVEGACIÓN */
 .nav {
   float: right;
 }
@@ -82,16 +89,17 @@ body {
   margin-right: 30px;
   transition: all 0.1s ease;
 }
-
+/* COLOR ACTIVO */
 .nav-list a:hover {
-  border-bottom: 2px solid #ffb444;
-  color: #ffb444;
-}
-.nav-list #active {
-  color: #ffb444;
-  border-bottom: 2px solid #ffb444;
+  border-bottom: 2px solid var(--main-color);
+  color:var(--main-color);
 }
 
+.nav-list #active {
+  color:var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+/* NAV MOBILE RESPONSIVE */
 .mobile-nav {
   float: right;
   margin: 10px;
@@ -105,67 +113,102 @@ body {
   color: #fff;
 }
 
-.img-back {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* ----------HOME CONTENT------------- */
+
+.home {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.img-back img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  opacity: 0.4;
-}
-.img-info {
-  position: relative;
+  height: 100VH;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f0f0f0;
+  padding: 50px 8% 0;
 }
 
 .information {
-  padding:0px 80px;
-  
-}
-.text-side {
-  width: 40%;
-  text-align: left;
-}
-h1 {
-  font-size: 60px;
-  color: black;
+  max-width: 630px;
 }
 
-p {
-  font-size: 30px;
+.information h1 {
+  font-size: 58px;
+  line-height: 1.2;
 }
-#servicios {
+
+.information h3 {
+  font-size: 40px;
+  color:var(--main-color);
+}
+
+.information p {
+  font-size: 16px;
+  margin: 15px 0 30px;
+}
+
+/* Boton de menu en home */
+#menu-button {
+  display: inline-block;
+  padding: 10px 28px;
+  background-color: var(--color-content);
+  border: 2PX solid var(--color-content);
+  border-top-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  font-size: 16px;
+  color: var(--pag-bm-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all ease .3s;
+}
+
+#menu-button:hover {
+  background-color: var(--pag-bm-color);
+  color: var(--color-nav);
+}
+
+/* IMAGE STYLE */
+#img-back {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+#img-b {
+  position: relative;
+}
+
+/* -----SERVICIOS SECTION------- */
+#content-servicios {
   display: block;
-  margin: 20px;
-  padding: 20px;
+  padding: 50px 4%;
   height: 100vh;
-  background-color: rgb(236, 239, 241);
+  background-color: var(--pag-bs-color);
   align-items: center;
   justify-content: center;
 }
 .servicios {
+  margin: 20px;
   display: flex;
   justify-content: space-between;
 }
 
+/* Tarjetas */
 .card {
   flex: 0 0 calc(33.33% - 20px); /* Ancho del 33.33% y márgenes entre las cartas */
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+  background-color: transparent;
+  border: 4px solid var(--pag-bm-color);
+  border-top-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
   padding: 20px;
   height: 60vh;
   margin-bottom: 20px;
+  transition: all ease-in .15s;
+}
+
+.card:hover {
+  background-color: var(--pag-bm-color);
 }
 
 .content-card {
@@ -180,7 +223,7 @@ p {
   .nav {
     float: none;
     position: absolute;
-    background: rgb(0, 74, 135);
+    background: var(--color-nav);
     width: 100%;
     left: 0;
     top: 74px;
