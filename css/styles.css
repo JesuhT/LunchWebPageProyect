@@ -11,11 +11,13 @@
   color: black;
 }
 :root {
-  --main-color: #ffb444;
-  --color-nav: rgb(0, 74, 135);
+  --main-color:  rgb(0, 74, 135);
+  --color-nav: transparent;
   --color-content:  rgb(0, 74, 135);
   --pag-bm-color: #fff;
   --pag-bs-color: #f3f4f4;
+  --font-color: #000;
+  --font-white: #fff;
 }
 html {
   scroll-behavior: smooth; /* Activa el scroll suave */
@@ -46,10 +48,12 @@ body {
 .logo-area {
   float: left;
   padding: 17px 0px;
+  align-items: center;
+  
 }
 
 .logo-area .logo {
-  color: #fff;
+  color: var(--font-color);
   padding: 15px;
   font-size: 20px;
   font-weight: 400px;
@@ -59,17 +63,22 @@ body {
   font-size: 24px;
   font-weight: 900px;
   color:var(--main-color);
+
 }
 
 .mobile-nav {
   display: none;
 }
 /* BARRA DE NAVEGACIÓN */
+#Layer_1 {
+  width: 40px;
+  line-height: 20px;
+}
 .nav {
   float: right;
 }
 
-.nav li {
+.nav .items {
   display: inline-block;
   margin: 21px 5px;
 }
@@ -83,11 +92,47 @@ body {
 .nav-list a {
   position: relative;
   width: 100%;
-  color: white;
+  color: var(--font-color);
   font-size: 100%;
   border-bottom: 2px solid transparent;
   margin-right: 30px;
   transition: all 0.1s ease;
+}
+
+/* Donar button */
+.nav-list #back-donar {
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  transition: all ease .3s;
+}
+
+#donar-text {
+  color: var(--font-white);
+  margin: 0;
+  background-color: var(--color-content);
+  line-height: 40px;
+padding: 10px 28px;
+  background-color: var(--color-content);
+  border: 2PX solid var(--color-content);
+  border-top-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  font-size: 16px;
+  color: var(--pag-bm-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all ease .3s;
+}
+
+#donar-text:hover, #back-donar:HOVER {
+  background-color: var(--pag-bm-color);
+  color: var(--color-content);
+  transform: translateY(-5px);
 }
 /* COLOR ACTIVO */
 .nav-list a:hover {
@@ -105,7 +150,7 @@ body {
   margin: 10px;
   padding: 10px;
   font-size: 24px;
-  color: #fff;
+  color: var(--font-color);
   outline: none;
   cursor: pointer;
 }
@@ -163,7 +208,8 @@ body {
 
 #menu-button:hover {
   background-color: var(--pag-bm-color);
-  color: var(--color-nav);
+  color: var(--color-content);
+  transform: translateY(-5px);
 }
 
 /* IMAGE STYLE */
