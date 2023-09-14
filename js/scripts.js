@@ -1,4 +1,8 @@
-
+$(document).ready(function(){
+    $(".mobile-nav i").click(function(){
+        $(".nav").toggleClass("mobile-menu");
+    });
+});
 
 
 //Script normal
@@ -34,3 +38,4 @@ function reloadSlider() {
 
 
 }
+
