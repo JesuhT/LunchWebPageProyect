@@ -163,7 +163,22 @@ body {
 .mobile-nav i {
   color: #fff;
 }
-  
+/* IMAGE TOP*/
+.img-side {
+  width: 100%;
+  height: 30vw;
+  overflow: hidden;
+}
+
+.back-static {
+  position: static;
+  height: 30vw;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  background: url(../assets/img/cafetería_unimag.jpg) no-repeat center/cover;
+}
 /* BACKGROUND SVG'S*/
 #elipse1 {
     position: absolute;
@@ -206,6 +221,7 @@ body {
     left: 68%;
 }
 
+
 /* ------- CONTAINER CARDS ------- */
 .titulo p{
   font-size: 30px;
@@ -214,18 +230,19 @@ body {
   font-weight: 600;
 }
 .container{
-  position: absolute;
+  position: relative;
   background-color: rgba(241, 241, 241, 0.582);
-  max-width: 740px;
-  margin-left: 100px;
+  width: 100%;
   border-radius: 15px;
-  margin-top: 50px;
+  margin: 0 20px;
+  line-height: 1.3rem;
 }
 .container-cards{
+  position: relative;
   max-width: 740px;
   align-items: center;
   margin: 20px;
-  margin-top: 50px;
+  padding: 5%;
 }
 
 /*------------ CARDS ---------- */
@@ -234,19 +251,26 @@ body {
     max-width: 100%;
     height: 100px;
     margin: 10px;
+    padding: 10px 25px;
     box-shadow: 0 0 12px #00000052;
     align-items: center;
     border-radius: 15px;
     background-color: #fff;
 }
 .card img{
-  width: 9%;
+  width: 50px;
   border-radius: 50%;  
   box-shadow: 0 0 12px #a1a1a1; 
-  margin-left: 25px;
 }
 .card .información{
-  margin-left: 30px;
+  position: relative;
+  width: 330px;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.información p {
+  width: 100%;
 }
 .text-a{
   font-size: 18px; 
@@ -262,10 +286,6 @@ body {
 .text-c{
  font-size: 15px;
  color: gray;
-}
-
-.card .interesado{
-  margin-left: 50px;
 }
 
 .card button{
@@ -289,24 +309,61 @@ body {
 /*------ VERIICACIÓN ------ */
 
 .container-total{
+  position: relative;
+  width: 100%;
+  height: fit-content;
   display: flex;
-}
-.container_confirmacion img{
-  width: 200px;
-  border-radius: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 110px;
+  justify-content: space-between;
+  padding: 50px;
 }
 .container_confirmacion{
   background-color: rgba(241, 241, 241, 0.582);
   border-radius: 15px;
-  margin-left: 980px;
-  margin-top: 50px;
+  padding: 30px 40px;
+  height: fit-content;
+  text-align: center;
+  align-items: center;
+  margin: 0 20px;
 }
-.container_confirmacion .titulo{
-  width: 180px;
+.container_confirmacion img{
+  width: 130px;
+  border-radius: 15px;
+  margin: 30px 0;
+  object-fit: cover;
+  aspect-ratio: 1;
 }
+
 .container_confirmacion .titulo h1{
+  text-align: left;
   font-size: 40px;
+}
+
+.verificar-identidad {
+  text-align: center;
+  line-height: 2rem;
+}
+
+.verificar-identidad input{
+  background-color: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--font-color);
+  padding: 0 8px;
+  border-radius: 8px;
+  line-height: 2rem;
+}
+
+.verificar-identidad button {
+  background: var(--main-color);
+  color: var(--font-white);
+  border-radius: 7px;
+  border: 2px solid var(--main-color);
+  line-height: 2rem;
+  padding: 0 10px;
+  margin: 10px 0;
+  transition: all ease-in 0.1s;
+}
+
+.verificar-identidad button:hover {
+  background: var(--color-nav);
+  color: var(--font-color);
 }
