@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+:root {
+  --main-color: rgba(19, 42, 103,0.8);
+  --color-nav: transparent;
+  --color-content: rgb(0, 74, 135);
+  --pag-bm-color: #fff;
+  --pag-bs-color: rgb(246, 247, 251);
+  --font-color: #000;
+  --font-white: #fff;
+  --font-size-nav: 16px;
+  --font-size-paragraph: 18px;
+  --font-size-title-medium: 30px;
+  --font-size-title-large: 41px;
+  --font-size-mobile: 24px;
+}
+
+body {
+  background-color: var(--pag-bm-color);
+  user-select: none;
+}
+
+.header-area {
+  background-color: var(--color-nav);
+  width: 100%;
+  z-index: 999;
+  padding: 12px 50px;
+}
+
+.navigation-s {
+  width: 100%;
+  margin: auto;
+  display: table;
+  z-index: 999;
+  border-bottom: rgba(233, 233, 233, 0.479);
+}
+
+.navigation-d {
+  line-height: 19px;
+  width: 100%;
+  position: relative;
+}
+
+.logo-area {
+  float: left;
+  padding: 17px 0px;
+  align-items: center;
+}
+
+.logo-area .logo {
+  color: var(--font-color);
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 400px;
+}
+
+.logo-area span {
+  font-size: var(--font-size-mobile);
+  font-weight: 900px;
+  color: var(--main-color);
+}
+
+.mobile-nav {
+  display: none;
+}
+/* BARRA DE NAVEGACIÓN */
+#Layer_1 {
+  width: 40px;
+  line-height: 20px;
+}
+.nav {
+  float: right;
+}
+
+.nav .items {
+  display: inline-block;
+  margin: 21px 5px;
+}
+
+.nav-list {
+  justify-content: space-between;
+  height: 60px;
+  text-align: center;
+}
+
+.nav-list a {
+  position: relative;
+  width: 100%;
+  color: var(--font-color);
+  border-bottom: 2px solid transparent;
+  margin-right: 30px;
+  transition: all 0.1s ease;
+  font-size: var(--font-size-nav);
+}
+
+/* Donar button */
+.nav-list #back-donar {
+  padding: 0;
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  transition: all ease 0.3s;
+}
+
+#donar-text {
+  color: var(--font-white);
+  margin: 0;
+  background-color: var(--color-content);
+  line-height: 40px;
+  padding: 10px 28px;
+  background-color: var(--color-content);
+  border: 2px solid var(--color-content);
+  border-top-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: var(--font-size-nav);
+  color: var(--pag-bm-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all ease 0.3s;
+}
+
+#donar-text:hover,
+#back-donar:hover {
+  background-color: var(--pag-bm-color);
+  color: var(--color-content);
+  transform: translateY(-5px);
+}
+/* COLOR ACTIVO */
+.nav-list a:hover {
+  border-bottom: 2px solid var(--main-color);
+  color: var(--main-color);
+}
+
+.nav-list #active {
+  color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+/* NAV MOBILE RESPONSIVE */
+.mobile-nav {
+  float: right;
+  margin: 10px;
+  padding: 10px;
+  font-size: 24px;
+  color: var(--font-color);
+  outline: none;
+  cursor: pointer;
+}
+.mobile-nav i {
+  color: #fff;
+}
+
+/* BACKGROUND SVG'S*/
+#elipse1 {
+  position: absolute;
+  z-index: -1;
+  top: -65%;
+  left: -35%;
+  width: 700px;
+  height: 700px;
+}
+
+#elipse2 {
+  position: absolute;
+  z-index: -1;
+  top: -70%;
+  left: -30%;
+  width: 700px;
+  height: 700px;
+}
+
+#elipse3 {
+  position: absolute;
+  z-index: -1;
+  top: -58%;
+  left: -23%;
+  width: 700px;
+  height: 700px;
+}
+
+#flowers-1 {
+  position: absolute;
+  z-index: -1;
+  top: -20%;
+  right: 67%;
+}
+
+#flowers-2 {
+  position: absolute;
+  z-index: -1;
+  top: -15%;
+  left: 68%;
+}
+
+/* ----------HOME CONTENT------------- */
+
+.top-side {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-between;
+  padding: 20px 8% 0;
+  margin-bottom: 50px;
+}
+
+.weekdays h1 {
+  font-size: var(--font-size-title-large);
+  font-weight: 600;
+  color: var(--main-color);
+  line-height: 1.2;
+}
+
+.weekdays h3 {
+  font-size: var(--font-size-title-medium);
+  color: var(--font-color);
+  font-weight: 300;
+}
+
+.weekdays p {
+  font-size: var(--font-size-paragraph);
+  margin: 15px 10px 30px;
+  padding-right: 10rem;
+  color: var(--font-color);
+}
+
+/* Menu de hoy*/
+.today-menu {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.days-container-today {
+  width: 100%;
+  height: 55vh;
+  border-radius: 40px;
+  display: grid;
+  padding: 20px 1px;
+  grid-template-columns: repeat(8, 1fr);
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+}
+
+.days-container-today .food {
+  position: relative;
+  width: 230px;
+  height: 270px;
+  border: 1px solid rgba(19, 42, 103,0.1);
+  border-radius: 20px;
+  background-color: var(--pag-bs-color);
+  font-size: var(--font-size-paragraph);
+  margin: 10px 15px;
+  box-shadow: 0 10px 30px rgba(19, 42, 103,0.5);
+  padding-bottom: 40px;
+}
+
+#start {
+  margin-left: 0;
+}
+
+.food img {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.food .brur {
+  position: inherit;
+  background-color: #000;
+  width: 100%;
+  height: 40px;
+  filter: blur(4px);
+}
+.stars i {
+    color: none;
+}
+.stars i:hover ~ i {
+  color: rgb(247, 237, 96);
+}
+.star i:hover {
+  color: rgb(247, 237, 96);
+}
+
+
+/* Boton de menu en home */
+#menu-button {
+  display: inline-block;
+  padding: 5px 18px;
+  background-color: var(--color-content);
+  border: 2px solid var(--color-content);
+  border-top-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  border-bottom-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: calc(var(--font-size-nav));
+  color: var(--pag-bm-color);
+  letter-spacing: 1px;
+  line-height: 1.6rem;
+  height: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all ease 0.3s;
+}
+
+#menu-button:hover {
+  background-color: var(--pag-bm-color);
+  color: var(--color-content);
+  transform: translateY(-5px);
+}
+
+#vector {
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  width: 110%;
+  z-index: -100;
+}
+#vector-s {
+    stroke: var(--main-color);
+    
+}
+

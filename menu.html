@@ -15,12 +15,8 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
+   <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/menu.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -79,7 +75,7 @@
       </div>
     </nav>
   </header>
-  <section class="home">
+  <div class="top-side">
     <div class="svg-section circle">
       <svg id="elipse1" width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="480" cy="480" r="479.5" stroke="#101A24" stroke-opacity="0.2" />
@@ -90,12 +86,96 @@
       <svg id="elipse3" width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="480" cy="480" r="479.5" stroke="#101A24" stroke-opacity="0.2" />
       </svg>
+      <!--Vector del fondo-->
+      <svg id="vector" width="1825" height="164" viewBox="0 0 1825 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="vector-s" d="M0.947609 110.983C90.8994 39.2656 364.445 -70.3429 739.011 64.9628C1113.58 200.268 1640.11 166.708 1856.55 133.015" stroke="#EA6A12" stroke-opacity="0.3"/>
+        </svg>
     </div>
-    <div class="information">
-      <h1>Bienvenido</h1>
-      <h3>Texto debajo</h3>
-      <p>Create your digital menus quickly and easily with QR code, allergens and multiple languages, letting your
-        customers view the menu on their own device</p>
+    <div class="weekdays">
+      <h1>Menú de almuerzos</h1>
+      <h3>Menú de hoy</h3>
+      <div class="today-menu">
+        <ul class="days-container-today">
+          <li class="food" id="start">
+            <img src="assets/img/menu/comida-2.jpg" alt="">
+            <div class="blur"></div>
+            <h4>Pollo</h3>
+              <div class="stars">
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+              </div>
+          </li>
+          <li class="food">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <h4>Pollo</h3>
+              <div class="stars">
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+              </div>
+          </li>
+          <li class="food">
+            <img src="assets/img/menu/comida-2.jpg" alt="">
+            <h4>Pollo</h3>
+              <div class="stars">
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+              </div>
+          </li>
+          <li class="food">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <h4>Pollo</h3>
+              <div class="stars">
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+              </div>
+          </li>
+          <li class="food">
+            <img src="assets/img/menu/comida-2.jpg" alt="">
+            <h4>Pollo</h3>
+              <div class="stars">
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+              </div>
+          </li>
+          <li class="food">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <h4>Pollo</h3>
+              <div class="stars">
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+                <i class='bx bx-star' ></i>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <h3>En la semana</h3>
+      <div class="week-menu">
+        <ul class="days-container">
+          <li class="days"></li>
+          <li class="days"></li>
+          <li class="days"></li>
+          <li class="days"></li>
+          <li class="days"></li>
+        </ul>
+      </div>
+      
       <a href="#" id="menu-button">Ver menú</a>
     </div>
     <div id="img-back">
@@ -121,130 +201,8 @@
               fill="#101A24" />
           </g>
         </svg>
-        <img id="dish" src="/assets/img/services/dish.png" alt="" srcset="">
       </div>
-      <div id="img-b">
-        <img src="assets/img/bienestar2.jpg" alt="bienestar universitario" class="image">
       </div>
     </div>
-  </section>
-  <section id="content-servicios">
-    <div class="information-services">
-      <h1>Nuestros Servicios</h1>
-      <p>Nuestros servicios están diseñados pensando en ti, para que puedas disfrutar de una comida deliciosa y participar activamente en nuestra misión de ayudar a quienes más lo necesitan.</p>
-    </div>
-    <section id="servicios">
-      <article class="card">
-        <div class="content-card">
-          <img src="/assets/img/services/menu.svg" alt="" srcset="">
-          <h2>Menú del día</h2>
-          <p>Nuestro menú de almuerzos está diseñado para brindar a nuestros beneficiarios una variedad de opciones deliciosas..</p>
-          
-        </div>
-        <a id="b-1" href="Fila_Virtual.html" target="_blank">Ver menú</a>
-          
-      </article>
-      <article class="card">
-        <div class="content-card">
-          <img src="/assets/img/services/fila.svg" alt="" srcset="">
-          <h2>Fila online</h2>
-          <p>Estamos comprometidos en proporcionar una experiencia de recepción de almuerzos sin complicaciones.</p>
-          
-        </div>
-        <a id="b-2" href="Fila_Virtual.html" target="_blank">Ingresar a la fila</a>
-      </article>
-      <article class="card">
-        <div class="content-card">
-          <img src="/assets/img/services/rate.svg" alt="" srcset="">
-          <h2>Califica lo que comes</h2>
-          <p>Queremos conocer tu opinión y saber qué piensas sobre nuestros deliciosos platos.</p>
-          
-        </div>
-        <a href="Fila_Virtual.html" target="_blank">Calificar</a>
-      </article>
-    </section>
-  </section>
-  <section id="ratings">
-    <div class="slider">
-      <div class="slider-items">
-        <div class="itegitm">
-          <img src="" alt="">
-          <div class="stars">
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
-          </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
-        </div>
-        <div class="item">
-          <img src="" alt="">
-          <div class="stars">
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
-          </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
-        </div>
-        <div class="item">
-          <img src="" alt="">
-          <div class="stars">
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
-          </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
-        </div>
-        <div class="item">
-          <img src="" alt="">
-          <div class="stars">
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
-          </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
-        </div>
-      </div>
-      <!--button slider-->
-      <div class="buttons-slider">
-        <button id="prev"><</button>
-        <button id="next">></button>
-      </div>
-      <!--dot slider-->
-      <ul class="dots">
-        <li id="active"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-  </section>
-  <section class="about">
-
-  </section>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
-
-
-</body>
-
-</html>
+  </div>
+</div>
