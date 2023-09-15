@@ -25,13 +25,13 @@ body{
   --color-nav: transparent;
   --color-content: rgb(0, 74, 135);
   --pag-bm-color: #fff;
-  --pag-bs-color: #acacac28;
+  --pag-bs-color: rgb(246, 247, 251);
   --font-color: #000;
   --font-white: #fff;
   --font-size-nav: 16px;
-  --font-size-paragraph:18px;
-  --font-size-title-medium: 40px;
-  --font-size-title-large: 60px;
+  --font-size-paragraph: 18px;
+  --font-size-title-medium: 30px;
+  --font-size-title-large: 41px;
   --font-size-mobile: 24px;
 }
 
@@ -232,15 +232,6 @@ body{
   background: url(../assets/img/foto_comida_unimag.jpg) no-repeat center/cover;
 }
 
-.move {
-  position: relative;
-  top: 0;
-  bottom: 30px;
-  right: 15px;
-  background: url(../assets/img/services/menu.svg) no-repeat center/cover;
-  width: 100%;
-  background-size: 100px;
-}
 
 /*FIN IMAGE TOP*/
 

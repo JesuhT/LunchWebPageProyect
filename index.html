@@ -16,10 +16,8 @@
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-  <!-- Core theme CSS (includes Bootstrap)-->
+  <!-- Core theme CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link href="css/styles.css" rel="stylesheet" />
 </head>
 
@@ -165,78 +163,85 @@
     </section>
   </section>
   <section id="ratings">
-    <div class="slider">
-      <div class="slider-items">
-        <div class="item">
+    <div class="swiper mySwiper slider">
+      <div class="swiper-wrapper slider-items">
+        <div class="swiper-slide item">
           <img src="assets/img/people/pic-1.jpg" alt="">
           <div class="stars">
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
+            <i class='bx bxs-star-half' ></i>
           </div>
           <div class="text-rate">
             <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
           </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
+          <div class="user">
+            <h3>Nombre</h3>
+            <h3>dependencia</h3>
+          </div>
           </div>
         </div>
-        <div class="item">
+        <div class="swiper-slide item">
           <img src="assets/img/people/pic-1.jpg" alt="">
           <div class="stars">
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
+            <i class='bx bx-star' ></i>
           </div>
           <div class="text-rate">
             <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
           </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
+          <div class="user">
+            <h3>Nombre</h3>
+            <h3>dependencia</h3>
+          </div>
           </div>
         </div>
-        <div class="item">
+        <div class="swiper-slide item">
           <img src="assets/img/people/pic-1.jpg" alt="">
           <div class="stars">
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
+            <i class='bx bx-star' ></i>
           </div>
           <div class="text-rate">
             <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
           </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
+          <div class="user">
+            <h3>Nombre</h3>
+            <h3>dependencia</h3>
+          </div>
           </div>
         </div>
-        <div class="item">
+        <div class="swiper-slide item">
           <img src="assets/img/people/pic-1.jpg" alt="">
           <div class="stars">
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
-            <i class='bx bxs-star' ></i>
+            <i class='bx bxs-star-half'></i>
+            <i class='bx bx-star' ></i>
           </div>
           <div class="text-rate">
             <p>Lorem ipsum dolor sit amet consectetur. Tortor massa nisl quam sit. Vitae congue ultrices neque penatibus mi in quisque. Leo in cursus enim magnis ante. Proin iaculis platea ipsum sagittis ac eu aliquam quis. Ornare tincidunt tempus semper 
           </p>
-          <h3>Nombre</h3>
-          <h3>dependencia</h3>
+          <div class="user">
+            <h3>Nombre</h3>
+            <h3>dependencia</h3>
+          </div>
           </div>
         </div>
       </div>
       <!--button slider-->
-      <div class="buttons-slider">
-        <button id="prev"><</button>
-        <button id="next">></button>
-      </div>
+      <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
       <!--dot slider-->
       <ul class="dots">
         <li id="active"></li>
@@ -249,6 +254,7 @@
   <section class="about">
 
   </section>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/scripts.js"></script>
 
