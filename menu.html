@@ -15,8 +15,9 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-   <!-- Core theme CSS (includes Bootstrap)-->
+  <!-- Core theme CSS (includes Bootstrap)-->
   <link href="css/menu.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -64,8 +65,8 @@
         </div>
         <div class="nav">
           <ul class="nav-list">
-            <li class="items"><a href="#" id="active">Home</a></li>
-            <li class="items"><a href="#content-servicios">Servicios</a></li>
+            <li class="items"><a href="index.html" id="">Home</a></li>
+            <li class="items"><a href="index.html#content-servicios">Servicios</a></li>
             <li class="items"><a href="#">Contact us</a></li>
             <li class="items"><a href="Login.html">Iniciar sesion</a></li>
             <li class="items" id="back-donar"><a href="#" id="donar-text">Donar</a></li>
@@ -75,6 +76,13 @@
       </div>
     </nav>
   </header>
+  <section class="img-side">
+    <div class="back-static">
+      <div class="move">
+
+      </div>
+    </div>
+  </section>
   <div class="top-side">
     <div class="svg-section circle">
       <svg id="elipse1" width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,9 +96,12 @@
       </svg>
       <!--Vector del fondo-->
       <svg id="vector" width="1825" height="164" viewBox="0 0 1825 164" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path id="vector-s" d="M0.947609 110.983C90.8994 39.2656 364.445 -70.3429 739.011 64.9628C1113.58 200.268 1640.11 166.708 1856.55 133.015" stroke="#EA6A12" stroke-opacity="0.3"/>
-        </svg>
+        <path id="vector-s"
+          d="M0.947609 110.983C90.8994 39.2656 364.445 -70.3429 739.011 64.9628C1113.58 200.268 1640.11 166.708 1856.55 133.015"
+          stroke="#EA6A12" stroke-opacity="0.3" />
+      </svg>
     </div>
+
     <div class="weekdays">
       <h1>Menú de almuerzos</h1>
       <h3>Menú de hoy</h3>
@@ -98,84 +109,172 @@
         <ul class="days-container-today">
           <li class="food" id="start">
             <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="blur"></div>
-            <h4>Pollo</h3>
+            <div class="text-side">
+              <p class="text-name">Embutido <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 14</p>
               <div class="stars">
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
               </div>
+            </div>
           </li>
           <li class="food">
             <img src="assets/img/menu/comida.jpg" alt="">
-            <h4>Pollo</h3>
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 30</p>
               <div class="stars">
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bx-star'></i>
               </div>
+            </div>
           </li>
           <li class="food">
             <img src="assets/img/menu/comida-2.jpg" alt="">
-            <h4>Pollo</h3>
+            <div class="text-side">
+              <p class="text-name">Embutido <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 37</p>
               <div class="stars">
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
               </div>
+            </div>
           </li>
           <li class="food">
             <img src="assets/img/menu/comida.jpg" alt="">
-            <h4>Pollo</h3>
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 23</p>
               <div class="stars">
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
               </div>
+            </div>
           </li>
           <li class="food">
             <img src="assets/img/menu/comida-2.jpg" alt="">
-            <h4>Pollo</h3>
+            <div class="text-side">
+              <p class="text-name">Embutido <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 33</p>
               <div class="stars">
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bx-star'></i>
               </div>
+            </div>
           </li>
           <li class="food">
             <img src="assets/img/menu/comida.jpg" alt="">
-            <h4>Pollo</h3>
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 13</p>
               <div class="stars">
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
-                <i class='bx bx-star' ></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
               </div>
+            </div>
           </li>
         </ul>
       </div>
       <h3>En la semana</h3>
       <div class="week-menu">
         <ul class="days-container">
-          <li class="days"></li>
-          <li class="days"></li>
-          <li class="days"></li>
-          <li class="days"></li>
-          <li class="days"></li>
+          <li class="days">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 13</p>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
+              </div>
+          </li>
+          <li class="days">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 13</p>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
+              </div>
+          </li>
+          <li class="days">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 13</p>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
+              </div>
+          </li>
+          <li class="days">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 13</p>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
+              </div>
+          </li>
+          <li class="days">
+            <img src="assets/img/menu/comida.jpg" alt="">
+            <div class="text-side">
+              <p class="text-name">Carne <span>.................</.span>
+              </p>
+              <p class="p2">Cantidad restante: 13</p>
+              <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                <i class='bx bx-star'></i>
+              </div>
+          </li>
         </ul>
       </div>
-      
+
       <a href="#" id="menu-button">Ver menú</a>
     </div>
     <div id="img-back">
@@ -191,7 +290,8 @@
               fill="#101A24" />
           </g>
         </svg>
-        <svg id="flowers-2" width="187" height="177" viewBox="0 0 316 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg id="flowers-2" width="187" height="177" viewBox="0 0 316 300" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.2">
             <path
               d="M292.644 294.481C292.158 295.479 291.448 296.35 290.569 297.026C289.69 297.702 288.666 298.165 287.577 298.379C286.174 298.593 284.771 298.808 283.348 298.886C278.286 299.242 273.2 298.822 268.265 297.638C267.776 297.526 267.282 297.441 266.784 297.385C261.834 296.586 256.904 295.807 251.973 294.988C251.484 294.873 251.008 294.709 250.551 294.501C247.503 293.12 244.295 292.125 241.002 291.539C238.923 291.155 236.938 290.374 235.155 289.239C232.328 287.448 229.208 286.168 225.937 285.459C224.804 285.157 223.72 284.691 222.722 284.075C219.019 282.126 215.239 280.353 211.692 278.229C208.827 276.416 206.255 274.117 203.566 272.012C199.586 268.819 196.196 264.954 193.549 260.592C190.645 255.935 186.455 253.07 182.09 250.147C178.147 247.605 174.861 244.166 172.502 240.111C169.871 235.375 167.201 230.639 164.707 225.807C163.687 223.446 162.796 221.033 162.037 218.577C160.556 214.679 159.153 210.587 157.516 206.67C156.425 204.078 154.963 201.642 153.618 199.128C152.508 196.984 151.533 194.782 150.306 192.716C149.078 190.651 147.499 188.39 146.038 186.285C145.434 185.408 144.674 184.648 143.738 183.538C143.056 183.947 142.062 184.181 141.614 184.824C139.103 188.47 135.764 191.468 131.87 193.574C128.518 195.328 126.862 198.348 124.971 201.369C122.771 204.902 120.118 208.132 117.079 210.976C111.711 215.732 105.636 219.624 99.0718 222.513C97.8135 222.972 96.5052 223.279 95.1743 223.429C92.5434 223.936 89.9321 224.442 87.3792 224.871C84.464 225.171 81.5184 224.866 78.7266 223.975C76.9684 223.476 75.1062 223.476 73.348 223.975C69.1361 225.045 64.7867 225.472 60.4471 225.241C57.9546 225.038 55.4877 224.595 53.0807 223.916C50.8007 223.429 48.5401 222.844 46.299 222.182C44.5844 221.804 42.9313 221.187 41.3881 220.35C39.3367 219.054 37.0178 218.241 34.6063 217.972C30.7906 217.252 27.0878 216.027 23.5958 214.328C18.7823 212.379 13.8519 210.626 9.0189 208.657C6.97749 208.164 5.12694 207.079 3.69874 205.539C3.47108 205.291 3.20038 205.087 2.89974 204.935C1.72078 204.402 0.798506 203.427 0.331863 202.221C-0.13478 201.014 -0.108403 199.672 0.405306 198.485C2.18327 192.021 5.10735 185.928 9.03839 180.498C10.2074 179.212 11.6353 178.19 13.2283 177.496C13.9221 177.212 14.5191 176.733 14.9477 176.118C15.3763 175.503 15.6183 174.777 15.6448 174.028C15.6188 173.603 15.7062 173.179 15.8981 172.8C18.5289 168.396 20.3998 163.465 24.4922 160.016C26.3832 158.539 28.1435 156.903 29.7539 155.124C30.7089 153.768 31.3724 152.229 31.7027 150.603C33.0086 145.999 35.5413 141.836 39.0301 138.56C43.2822 134.647 48.3659 131.748 53.8992 130.083C55.9818 129.475 58.1258 129.103 60.2912 128.972C61.7919 128.823 63.2088 128.21 64.3447 127.218C65.5995 126.202 66.907 125.252 68.2617 124.373C68.7489 124.041 69.392 123.847 69.7233 123.418C71.672 120.826 74.868 120.124 77.5184 118.702C80.7987 117.217 84.3633 116.466 87.9638 116.5C92.7383 116.207 97.5518 116.383 102.677 116.363C101.372 115.74 100.222 115.233 99.0913 114.668C98.3922 114.401 97.8116 113.893 97.4543 113.235C97.0969 112.578 96.9864 111.814 97.1425 111.082C97.1342 110.623 97.2879 110.177 97.5767 109.82C97.8654 109.464 98.2706 109.22 98.721 109.133C99.4451 108.943 100.155 108.702 100.846 108.412C102.97 107.379 105.074 106.269 107.238 105.158C107.205 104.555 107.005 103.974 106.661 103.478C106.317 102.983 105.842 102.593 105.289 102.352C102.917 100.601 101.098 98.2068 100.046 95.4529C98.4217 92.0819 96.3931 88.9211 94.005 86.0403C92.4856 84.15 91.5389 81.8644 91.2767 79.4534C90.9065 76.7251 90.1464 74.0553 89.8541 71.3465C89.5709 68.8036 89.5187 66.2402 89.6982 63.6878C89.9418 60.2048 89.8439 56.7063 89.4059 53.2424C88.8681 50.385 88.7108 47.469 88.9382 44.5703C88.9136 42.7437 88.7179 40.9234 88.3536 39.1333C88.0525 36.1487 87.9548 33.1472 88.0612 30.1494C88.4243 27.4327 88.9712 24.7437 89.6982 22.101L91.2767 14.3059C92.2511 9.39494 94.044 4.97122 98.5846 2.28191C100.03 1.27814 101.64 0.533035 103.34 0.0797967C104.703 -0.0981322 106.089 0.0223269 107.402 0.432837C108.714 0.843348 109.921 1.5341 110.94 2.4573C112.11 3.39271 113.084 4.56198 114.175 5.59483C118.073 9.2975 122.126 12.9807 126.043 16.7223C129.089 19.5649 132.434 22.0676 136.021 24.1862C144.993 29.3572 153.171 35.7961 160.303 43.3036C163.043 46.3215 165.564 49.5323 167.844 52.9111C173.338 60.9009 176.632 70.1963 177.393 79.8627C177.588 82.6104 178.212 85.2997 178.563 88.028C178.758 89.4896 178.797 90.9707 178.933 92.9194C180.765 90.2496 182.421 87.989 183.902 85.6115C185.546 82.9076 187.545 80.4366 189.846 78.2647C190.748 77.2904 191.581 76.2551 192.341 75.1661C193.218 74.5815 194.289 73.9968 195.225 73.2173C196.16 72.4378 197.602 71.3855 198.752 70.4111C199.434 69.846 200.019 69.1444 200.701 68.4623C201.383 67.7803 201.597 67.4295 202.026 67.449C203.488 67.449 204.189 66.3382 205.261 65.812C208.418 64.2919 211.536 62.694 214.771 61.3883C220.42 59.3759 226.257 57.9331 232.193 57.0815C238.254 55.9317 244.217 54.3727 250.278 53.1839C253.045 52.6383 255.89 52.5019 258.716 52.229C266.355 51.508 273.955 50.631 281.107 47.513C286.556 45.3916 292.372 44.3716 298.218 44.5119C299.219 44.5695 300.212 44.7328 301.18 44.9991C302.607 45.4624 304.075 45.7887 305.564 45.9735C309.092 46.0904 311.411 48.1951 313.671 50.4556C315.932 52.7162 315.62 53.6906 313.866 55.9512C311.547 59.0108 309.423 62.2262 306.948 65.1494C304.863 67.5673 302.596 69.8215 300.166 71.8922C296.287 75.4212 292.78 79.3393 289.701 83.5848C286.045 88.5701 282.972 93.9579 280.542 99.6427C278.866 103.384 277.288 107.204 275.28 110.751C272.396 115.798 269.765 121.04 265.537 125.211C263.159 127.549 261.015 130.122 258.618 132.402C256.865 134.058 254.838 135.422 252.967 136.942C249.596 139.69 246.185 142.36 242.97 145.244C241.259 146.849 239.226 148.071 237.007 148.83C236.307 149.185 235.652 149.623 235.058 150.136C236.247 150.449 237.459 150.67 238.682 150.798C242.441 150.979 246.091 152.119 249.284 154.111C251.306 155.268 253.139 156.727 254.721 158.437C256.762 160.307 259.232 161.645 261.912 162.335C264.668 163.392 267.285 164.779 269.707 166.466C274.404 169.331 277.794 173.599 281.4 177.555C282.063 178.407 282.583 179.361 282.939 180.381C283.217 181.379 283.71 182.304 284.384 183.092C285.057 183.879 285.894 184.51 286.837 184.941C287.442 185.243 287.938 185.726 288.256 186.324C288.574 186.921 288.698 187.602 288.61 188.273C288.578 188.978 288.703 189.681 288.976 190.332C289.249 190.982 289.663 191.564 290.189 192.034C290.703 192.587 291.077 193.255 291.28 193.983C291.95 196.044 293.332 197.798 295.177 198.933C296.171 199.546 297.016 200.371 297.652 201.349C299.92 204.342 301.787 207.617 303.206 211.093C304.216 214.095 304.594 217.273 304.317 220.428C304.161 223.585 304.2 226.8 302.368 229.626C302.049 230.39 301.909 231.216 301.959 232.043C302.203 233.527 301.986 235.051 301.336 236.408C301.208 236.626 301.154 236.878 301.18 237.129C301.803 241.026 301.316 244.924 302.953 248.685C303.415 249.756 303.736 250.883 303.908 252.037C304.079 252.843 303.99 253.682 303.655 254.434C301.706 257.533 301.121 261.118 299.991 264.529L299.757 265.289L299.523 268.796V269.108C299.928 271.8 299.728 274.548 298.939 277.154C298.151 279.759 296.793 282.157 294.963 284.172C294.482 284.627 294.136 285.207 293.964 285.847C293.792 286.487 293.8 287.162 293.989 287.797C294.238 288.944 294.248 290.13 294.016 291.28C293.785 292.43 293.318 293.52 292.644 294.481Z"
@@ -202,7 +302,7 @@
           </g>
         </svg>
       </div>
-      </div>
     </div>
   </div>
-</div>
+  <script src="js/menu.js"></script>
+</body>
