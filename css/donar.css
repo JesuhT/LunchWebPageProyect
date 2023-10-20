@@ -143,12 +143,17 @@ body {
 /* COLOR ACTIVO */
 .nav-list a:hover {
   border-bottom: 2px solid var(--main-color);
+  text-decoration: none;
   color: var(--main-color);
 }
   
 .nav-list #active {
   color: var(--main-color);
   border-bottom: 2px solid var(--main-color);
+}
+
+.nav-list #no-line:hover {
+  border-bottom: none;
 }
 /* NAV MOBILE RESPONSIVE */
 .mobile-nav {

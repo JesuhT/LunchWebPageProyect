@@ -1,0 +1,318 @@
+-- Inserción de datos
+insert into Administradores (ID_administrador) values (34);
+insert into Administradores (ID_administrador) values (35);
+
+
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (1, 'Carne molida', 'fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (2, 'Carne asada', 'tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (3, 'Carne bistec', 'accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (4, 'Carne frita', 'ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (5, 'Carne a la plancha', 'aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (6, 'Carne guisada', 'sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (7, 'Pollo asada', 'varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (8, 'Pollo bistec', 'nullam orci pede venenatis non sodales sed tincidunt eu felis fusce');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (9, 'Pollo frita', 'mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (10, 'Pollo a la plancha', 'maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (11, 'Pollo guisada', 'adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (12, 'Cerdo asada', 'rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (13, 'Cerdo bistec', 'ac est lacinia nisi venenatis tristique fusce congue diam id');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (14, 'Cerdo frita', 'pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (15, 'Cerdo a la plancha', 'sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (16, 'Cerdo guisada', 'luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (17, 'Arroz de pollo', 'turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (18, 'Arroz trifasico', 'aliquet massa id lobortis convallis tortor risus dapibus augue vel');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (19, 'Arroz de cerdo', 'donec dapibus duis at velit eu est congue elementum in hac');
+insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (20, 'Pescado', 'curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor');
+
+
+insert into Menus (ID_menu) values (1);
+insert into Menus (ID_menu) values (2);
+insert into Menus (ID_menu) values (3);
+insert into Menus (ID_menu) values (4);
+insert into Menus (ID_menu) values (5);
+
+
+insert into Filas_Virtuales (ID_fila, fecha_realización, num_personas) values (1, '2023/10/12', 12);
+
+
+insert into Facultades (ID_facultad, nombre) values (1, 'Ciencias Empresariales y Económicas');
+insert into Facultades (ID_facultad, nombre) values (2, 'Ingeniería');
+insert into Facultades (ID_facultad, nombre) values (3, 'Ciencias Básicas');
+insert into Facultades (ID_facultad, nombre) values (4, 'Humanidades');
+insert into Facultades (ID_facultad, nombre) values (5, 'Ciencias de la Salud');
+insert into Facultades (ID_facultad, nombre) values (6, 'Ciencias de la Educación');
+
+
+insert into Programas (ID_programa, nombre, ID_facultad) values (1, 'Administración de Empresas', 1);
+insert into Programas (ID_programa, nombre, ID_facultad) values (2, 'Agronómica', 2);
+insert into Programas (ID_programa, nombre, ID_facultad) values (3, 'Biología', 3);
+insert into Programas (ID_programa, nombre, ID_facultad) values (4, 'Antropología', 4);
+insert into Programas (ID_programa, nombre, ID_facultad) values (5, 'Enfermería', 5);
+insert into Programas (ID_programa, nombre, ID_facultad) values (6, 'Licenciatura en Artes', 6);
+insert into Programas (ID_programa, nombre, ID_facultad) values (7, 'Contaduría Pública', 1);
+insert into Programas (ID_programa, nombre, ID_facultad) values (8, 'Sistemas', 2);
+
+
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 1);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (4, 2);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 3);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 4);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 5);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 6);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (1, 7);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 8);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 9);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 10);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (5, 11);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 12);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 13);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 14);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (5, 15);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 16);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 17);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 18);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (5, 19);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 20);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 1);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 2);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 3);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (5, 4);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (1, 5);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (4, 6);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (4, 7);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (1, 8);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (5, 9);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (5, 10);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 11);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (4, 12);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 13);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 14);
+insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (1, 15);
+
+
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (1, 'Meredeth', 'Tregensoe', 'mtregensoe0@sphinn.com', 'sG2@Ri4L@HkpM#k', 3045901317);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (2, 'Brook', 'Petre', 'bpetre1@imgur.com', 'tF0$!hIPZl7W?Fc', 3101541755);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (3, 'Johann', 'Rowth', 'jrowth2@prweb.com', 'zD5<7yN79(+', 3003000313);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (4, 'Alvinia', 'Cotsford', 'acotsford3@amazon.de', 'sA9_4i8<N<', 3258404652);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (5, 'Fair', 'Kornyshev', 'fkornyshev4@yellowbook.com', 'xJ7%N07eu6', 3110661562);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (6, 'Doralyn', 'Revington', 'drevington5@yellowpages.com', 'nX4@AT<m', 3026113197);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (7, 'Mercie', 'Tabord', 'mtabord6@wp.com', 'jV9?U?x>B>', 3080877480);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (8, 'Demetria', 'Brickwood', 'dbrickwood7@woothemes.com', 'vN9~E(}su"5#nf22', 3096664279);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (9, 'Aubert', 'Willetts', 'awilletts8@amazon.com', 'sB3"rES''C3mq&sCN', 3249405360);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (10, 'Oriana', 'Linnane', 'olinnane9@disqus.com', 'xO6*{3<=WYyBHX6', 3247655344);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (11, 'Lark', 'Alben', 'lalbena@icio.us', 'dY2,BLB+|_', 3181177985);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (12, 'Doe', 'Goodboddy', 'dgoodboddyb@fastcompany.com', 'vL2(L1B~qf"', 3220062201);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (13, 'Allyn', 'Manntschke', 'amanntschkec@pcworld.com', 'qN0*qm,W', 3009160346);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (14, 'Lanna', 'Keneforde', 'lkeneforded@wisc.edu', 'mT3!pYOzYgUBoG(', 3068250876);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (15, 'Lannie', 'Barttrum', 'lbarttrume@moonfruit.com', 'jG2?1dy4*BIERA', 3033494550);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (16, 'Augusto', 'Crowley', 'acrowleyf@constantcontact.com', 'lS5_&EX~p', 3095081625);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (17, 'Lesly', 'Wyborn', 'lwyborng@google.com.br', 'nU4*j=Pe{', 3010253591);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (18, 'Tiena', 'Olenov', 'tolenovh@w3.org', 'lY7@lX%Aj<@7', 3050986937);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (19, 'Peirce', 'Heffron', 'pheffroni@blogspot.com', 'tS0/Sk$*zah&TC(', 3248477839);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (20, 'Urbain', 'Guillem', 'uguillemj@nsw.gov.au', 'mX8!&8?E2>', 3238543456);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (21, 'Lorelle', 'Gumme', 'lgummek@bandcamp.com', 'rS9?Eg4rA?rB', 3030539242);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (22, 'Weylin', 'Easen', 'weasenl@pcworld.com', 'mH7!=s{To', 3095323473);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (23, 'Deane', 'Sewter', 'dsewterm@intel.com', 'fI0/b+`oO', 3128306573);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (24, 'Justen', 'Napleton', 'jnapletonn@canalblog.com', 'eK4(bnZUTa781o$', 3075882986);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (25, 'Siana', 'Beckenham', 'sbeckenhamo@wikispaces.com', 'eH9(343V', 3099582861);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (26, 'Alwyn', 'MacMorland', 'amacmorlandp@cloudflare.com', 'sE4+@ZK_', 3017213485);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (27, 'Talbert', 'Engledow', 'tengledowq@geocities.com', 'zD7&}gLp', 3096383924);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (28, 'Clea', 'Grant', 'cgrantr@japanpost.jp', 'yU5''a/KH', 3135476257);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (29, 'Marcello', 'Phillput', 'mphillputs@acquirethisname.com', 'uM9#IdL/', 3140913472);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (30, 'Wilmar', 'Vaadeland', 'wvaadelandt@simplemachines.org', 'zK9`7vtm', 3105026028);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (31, 'Ami', 'Phipard-Shears', 'aphipardshearsu@clickbank.net', 'rG3)fcr=sZW', 3143642005);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (32, 'Ceil', 'Newick', 'cnewickv@mysql.com', 'mR1~V4lCTuoT$', 3176499209);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (33, 'Falkner', 'Sheddan', 'fsheddanw@multiply.com', 'hL9%Bmfw+', 3021163292);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (34, 'Verena', 'Heather', 'vheatherx@github.io', 'xN6''5@1GXzb<Te', 3077749622);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (35, 'Suzann', 'Darbishire', 'sdarbishirey@cloudflare.com', 'aR7/T=VR{vy', 3088604856);
+
+
+
+insert into Estudiantes (ID_estudiante, ID_Programa) values (1, 3);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (2, 5);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (3, 5);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (4, 2);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (5, 3);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (6, 8);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (7, 2);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (8, 7);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (9, 5);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (10, 7);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (11, 3);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (12, 1);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (13, 5);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (14, 2);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (15, 2);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (16, 2);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (17, 1);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (18, 7);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (19, 1);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (20, 3);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (21, 2);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (22, 8);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (23, 6);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (24, 6);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (25, 4);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (26, 5);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (27, 6);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (28, 4);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (29, 5);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (30, 7);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (31, 4);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (32, 1);
+insert into Estudiantes (ID_estudiante, ID_Programa) values (33, 2);
+
+
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (1, 25, 17, 1, 'velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum', '2023/12/08');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (2, 23, 4, 2, 'pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget', '2023/12/14');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (3, 17, 14, 0, 'volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed', '2023/12/08');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (4, 13, 2, 5, 'nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in', '2023/06/21');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (5, 17, 18, 3, 'donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia', '2023/09/15');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (6, 33, 1, 1, 'ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est', '2023/11/21');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (7, 28, 19, 2, 'ac lobortis vel dapibus at diam nam', '2023/02/13');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (8, 32, 19, 2, 'augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus', '2023/02/18');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (9, 25, 19, 4, 'ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam', '2023/07/09');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (10, 25, 11, 0, 'luctus et ultrices posuere cubilia curae duis', '2023/02/02');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (11, 19, 14, 0, 'tempus vivamus in felis eu sapien cursus vestibulum proin eu mi', '2023/02/25');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (12, 32, 6, 1, 'pellentesque volutpat dui maecenas tristique est et', '2023/01/08');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (13, 19, 8, 4, 'lacinia eget tincidunt eget tempus vel', '2023/02/22');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (14, 6, 5, 1, 'augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent', '2023/01/26');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (15, 6, 6, 5, 'porttitor id consequat in consequat', '2023/06/17');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (16, 24, 4, 2, 'ut mauris eget massa tempor convallis nulla neque libero convallis', '2023/12/20');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (17, 9, 4, 0, 'amet lobortis sapien sapien non mi integer ac', '2023/02/23');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (18, 6, 8, 2, 'curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien', '2023/07/18');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (19, 32, 14, 1, 'turpis elementum ligula vehicula consequat morbi a ipsum integer a', '2023/04/22');
+insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (20, 25, 6, 4, 'pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit', '2023/03/14');
+
+
+
+insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (1, 'Lunes', 1);
+insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (2, 'Martes', 2);
+insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (3, 'Miercoles', 3);
+insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (4, 'Jueves', 4);
+insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (5, 'Viernes', 5);
+
+
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 1);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 2);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 3);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 4);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 5);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 6);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 7);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 8);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (1, 9);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 10);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 11);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 12);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (1, 13);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 14);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 15);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 16);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 17);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 18);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 19);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 20);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (1, 21);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 22);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 23);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 24);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (1, 25);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 26);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (1, 27);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 28);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 29);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 30);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 31);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 32);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (1, 33);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 1);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 2);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 3);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 4);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 5);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 6);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 7);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 8);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 9);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (5, 10);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 11);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 12);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 13);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 14);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (4, 15);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 16);
+insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (2, 17);
+
+
+insert into Estados (ID_estado, nombre) values (1, 'Disponible');
+insert into Estados (ID_estado, nombre) values (2, 'En curso');
+insert into Estados (ID_estado, nombre) values (3, 'Recibido');
+
+
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (1, 12, 1, '2023/05/03', '4:28:12', 3);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (2, 3, 2, '2023/01/13', '2:46:42', 1);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (3, 25, 3, '2023/09/19', '12:25:47', 1);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (4, 7, 4, '2023/11/06', '3:19:37', 3);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (5, 27, 5, '2023/07/16', '21:26:46', 1);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (6, 10, 6, '2023/04/18', '20:03:28', 3);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (7, 14, 7, '2023/07/23', '19:22:29', 3);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (8, 10, 8, '2023/03/30', '19:34:12', 3);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (9, 11, 9, '2023/12/22', '11:44:37', 3);
+insert into Donaciones (ID_donación, ID_donante, ID_beneficiario, fecha, hora, ID_estado) values (10, 5, 10, '2023/05/29', '19:16:54', 1);
+
+
+insert into Estados_Donaciones (ID_donación, ID_estado) values (1, 1);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (2, 2);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (3, 1);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (4, 1);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (5, 3);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (6, 2);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (7, 1);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (8, 1);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (9, 2);
+insert into Estados_Donaciones (ID_donación, ID_estado) values (10, 1);
+
+
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (1, 1, 1, '19:58:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (2, 1, 2, '20:00:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (3, 1, 3, '20:01:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (4, 1, 4, '20:02:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (5, 1, 5, '20:03:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (6, 1, 6, '20:04:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (7, 1, 7, '20:05:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (8, 1, 8, '20:06:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (9, 1, 9, '20:07:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (10, 1, 10, '20:08:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (11, 1, 11, '20:09:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (12, 1, 12, '20:10:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (13, 1, 13, '20:11:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (14, 1, 14, '20:12:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (15, 1, 15, '20:13:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (16, 1, 16, '20:14:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (17, 1, 17, '20:15:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (18, 1, 18, '20:16:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (19, 1, 19, '20:17:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (20, 1, 20, '20:18:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (21, 1, 21, '20:19:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (22, 1, 22, '20:20:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (23, 1, 23, '20:21:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (24, 1, 24, '20:22:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (25, 1, 25, '20:23:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (26, 1, 26, '20:24:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (27, 1, 27, '20:25:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (28, 1, 28, '20:26:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (29, 1, 29, '20:27:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (30, 1, 30, '20:28:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (31, 1, 31, '20:29:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (32, 1, 32, '20:30:21');
+insert into Estudiantes_En_Fila  (ID_estudiante, ID_fila, turno, hora_ingreso) values (33, 1, 33, '20:31:21');
+
+
+
+insert into Modificaciones_Menus (ID_administrador, ID_menu, fecha, hora) values (35, 2, '2023/11/21', '19:53:49');
+insert into Modificaciones_Menus (ID_administrador, ID_menu, fecha, hora) values (34, 1, '2023/07/29', '19:11:20');
+insert into Modificaciones_Menus (ID_administrador, ID_menu, fecha, hora) values (35, 5, '2023/07/29', '9:46:58');
+insert into Modificaciones_Menus (ID_administrador, ID_menu, fecha, hora) values (34, 3, '2023/03/07', '21:55:43');
+insert into Modificaciones_Menus (ID_administrador, ID_menu, fecha, hora) values (35, 4, '2023/03/26', '19:56:19');
+insert into Modificaciones_Menus (ID_administrador, ID_menu, fecha, hora) values (34, 2, '2023/05/01', '6:08:46');

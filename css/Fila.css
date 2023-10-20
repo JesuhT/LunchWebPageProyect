@@ -149,7 +149,9 @@ body{
   border-bottom: 2px solid var(--main-color);
   color: var(--main-color);
 }
-
+.nav-list #no-line:hover {
+  border-bottom: none;
+}
 /* NAV MOBILE RESPONSIVE */
 .mobile-nav {
   float: right;
