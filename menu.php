@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if($_SESSION["s_usuario"] === null){
-    header("Location: login.php");
+if ($_SESSION["s_usuario"] === null) {
+  header("Location: login.php");
 }
 
 ?>
@@ -10,10 +10,8 @@ if($_SESSION["s_usuario"] === null){
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -21,11 +19,10 @@ if($_SESSION["s_usuario"] === null){
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!--remixxicons-->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="css/menu.css" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -76,7 +73,9 @@ if($_SESSION["s_usuario"] === null){
             <li class="items"><a href="index.php" id="">Home</a></li>
             <li class="items"><a href="index.php#content-servicios">Servicios</a></li>
             <li class="items"><a href="#">Contact us</a></li>
-            <li class="items" id="no-line"><a href="profile.php"><?php echo $_SESSION["s_usuario"];?></a></li>
+            <li class="items" id="no-line"><a href="profile.php">
+                <?php echo $_SESSION["s_usuario"]; ?>
+              </a></li>
             <li class="items" id="back-donar"><a href="donaciones.php" id="donar-text">Donar</a></li>
 
           </ul>
@@ -86,9 +85,6 @@ if($_SESSION["s_usuario"] === null){
   </header>
   <section class="img-side">
     <div class="back-static">
-      <div class="move">
-
-      </div>
     </div>
   </section>
   <div class="top-side">
@@ -109,579 +105,142 @@ if($_SESSION["s_usuario"] === null){
           stroke="#EA6A12" stroke-opacity="0.3" />
       </svg>
     </div>
+    <div class="today-menu">
+      <div class="idance">
+        <div class="schedule content-block">
+          <div class="container">
+            <h2 data-aos="zoom-in-up" class="aos-init aos-animate">Schedule</h2>
 
-    <div class="weekdays">
-      <h1>Menú de almuerzos</h1>
-      <h3>Menú de hoy</h3>
-      <div class="today-menu">
-        <ul class="days-container-today">
-          <li class="food" id="start">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2">Cantidad restante: 14</p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
+            <div class="timetable">
+
+              <!-- Schedule Top Navigation -->
+              <ul class="nav nav-tabs">
+                <li class="nav-link active">Mon</a>
+                <li class="nav-link">Tue</a>
+                <li class="nav-link">Wed</a>
+                <li class="nav-link">Thu</li>
+                <li class="nav-link">Fri</a>
+                <li class="nav-link">Sat</a>
+                <li class="nav-link">Sun</li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane show active">
+                  <div class="row">
+                    <!-- Schedule Item 1 -->
+                    <div class="col-md-6">
+                      <div class="timetable-item">
+                        <div class="timetable-item-img">
+                          <img src="https://www.bootdey.com/image/100x80/FFB6C1/000000" alt="Contemporary Dance">
+                        </div>
+                        <div class="timetable-item-main">
+                          <div class="timetable-item-time">4:00pm - 5:00pm</div>
+                          <div class="timetable-item-name">Contemporary Dance</div>
+                          <a href="#" class="btn btn-primary btn-book">Book</a>
+                          <div class="timetable-item-like">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <div class="timetable-item-like-count">11</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Schedule Item 2 -->
+                    <div class="col-md-6">
+                      <div class="timetable-item">
+                        <div class="timetable-item-img">
+                          <img src="https://www.bootdey.com/image/100x80/00FFFF/000000" alt="Break Dance">
+                        </div>
+                        <div class="timetable-item-main">
+                          <div class="timetable-item-time">5:00pm - 6:00pm</div>
+                          <div class="timetable-item-name">Break Dance</div>
+                          <a href="#" class="btn btn-primary btn-book">Book</a>
+                          <div class="timetable-item-like">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <div class="timetable-item-like-count">28</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Schedule Item 3 -->
+                    <div class="col-md-6">
+                      <div class="timetable-item">
+                        <div class="timetable-item-img">
+                          <img src="https://www.bootdey.com/image/100x80/8A2BE2/000000" alt="Street Dance">
+                        </div>
+                        <div class="timetable-item-main">
+                          <div class="timetable-item-time">5:00pm - 6:00pm</div>
+                          <div class="timetable-item-name">Street Dance</div>
+                          <a href="#" class="btn btn-primary btn-book">Book</a>
+                          <div class="timetable-item-like">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <div class="timetable-item-like-count">28</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Schedule Item 4 -->
+                    <div class="col-md-6">
+                      <div class="timetable-item">
+                        <div class="timetable-item-img">
+                          <img src="https://www.bootdey.com/image/100x80/6495ED/000000" alt="Yoga">
+                        </div>
+                        <div class="timetable-item-main">
+                          <div class="timetable-item-time">7:00pm - 8:00pm</div>
+                          <div class="timetable-item-name">Yoga</div>
+                          <a href="#" class="btn btn-primary btn-book">Book</a>
+                          <div class="timetable-item-like">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <div class="timetable-item-like-count">23</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Schedule Item 5 -->
+                    <div class="col-md-6">
+                      <div class="timetable-item">
+                        <div class="timetable-item-img">
+                          <img src="https://www.bootdey.com/image/100x80/00FFFF/000000" alt="Stretching">
+                        </div>
+                        <div class="timetable-item-main">
+                          <div class="timetable-item-time">6:00pm - 7:00pm</div>
+                          <div class="timetable-item-name">Stretching</div>
+                          <a href="#" class="btn btn-primary btn-book">Book</a>
+                          <div class="timetable-item-like">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <div class="timetable-item-like-count">14</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Schedule Item 6 -->
+                    <div class="col-md-6">
+                      <div class="timetable-item">
+                        <div class="timetable-item-img">
+                          <img src="https://www.bootdey.com/image/100x80/008B8B/000000" alt="Street Dance">
+                        </div>
+                        <div class="timetable-item-main">
+                          <div class="timetable-item-time">8:00pm - 9:00pm</div>
+                          <div class="timetable-item-name">Street Dance</div>
+                          <a href="#" class="btn btn-primary btn-book">Book</a>
+                          <div class="timetable-item-like">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <div class="timetable-item-like-count">9</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2">Cantidad restante: 30</p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2">Cantidad restante: 37</p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2">Cantidad restante: 23</p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2">Cantidad restante: 33</p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2">Cantidad restante: 13</p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-      <h3>En la semana</h3>
-
-      <div class="week-menu">
-        <h4>Lunes</h4>
-        <hr>
-        <ul class="days-container lunes">
-          <li class="food" id="start">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <h4>Martes</h4>
-        <hr>
-        <ul class="days-container martes">
-          <li class="food" id="start">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <h4>Miercoles</h4>
-        <hr>
-        <ul class="days-container miercoles">
-          <li class="food" id="start">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <h4>Jueves</h4>
-        <hr>
-        <ul class="days-container jueves">
-          <li class="food" id="start">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <h4>Viernes</h4>
-        <hr>
-        <ul class="days-container viernes">
-          <li class="food" id="start">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida-2.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Embutido <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-          <li class="food">
-            <img src="assets/img/menu/comida.jpg" alt="">
-            <div class="text-side">
-              <p class="text-name">Carne <span>.................</.span>
-              </p>
-              <p class="p2"></p>
-              <div class="stars">
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star'></i>
-                <i class='bx bxs-star-half'></i>
-                <i class='bx bx-star'></i>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
       <a href="#donar-text" id="menu-button">Volver arriba</a>
     </div>
     <div id="img-back">
@@ -711,5 +270,8 @@ if($_SESSION["s_usuario"] === null){
       </div>
     </div>
   </div>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1RTS0P1CD"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/menu.js"></script>
 </body>

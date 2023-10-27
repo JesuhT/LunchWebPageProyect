@@ -1,99 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    list-style: none;
-    text-decoration: none;
-    color: black;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }
 
 :root {
-    --main-color: rgba(19, 42, 103,0.8);
-    --color-nav: transparent;
-    --color-content: rgb(0, 74, 135);
-    --pag-bm-color: #fff;
-    --pag-bs-color: rgb(246, 247, 251);
-    --font-color: #000;
-    --font-white: #fff;
-    --font-size-nav: 16px;
-    --font-size-paragraph: 18px;
-    --font-size-title-medium: 30px;
-    --font-size-title-large: 41px;
-    --font-size-mobile: 24px;
-  }
-  
+  --main-color: rgba(19, 42, 103, 0.8);
+  --color-nav: transparent;
+  --color-content: rgb(0, 74, 135);
+  --pag-bm-color: #fff;
+  --pag-bs-color: rgb(246, 247, 251);
+  --font-color: #000;
+  --font-white: #fff;
+  --font-size-nav: 16px;
+  --font-size-paragraph: 18px;
+  --font-size-title-medium: 30px;
+  --font-size-title-large: 41px;
+  --font-size-mobile: 24px;
+}
+
 body {
-    background-color: var(--pag-bm-color);
-    user-select: none;
+  background-color: var(--pag-bm-color);
+  user-select: none;
 }
-  
+
 .header-area {
-    background-color: var(--color-nav);
-    width: 100%;
-    z-index: 999;
-    padding: 12px 50px;
+  background-color: var(--color-nav);
+  width: 100%;
+  z-index: 999;
+  padding: 12px 50px;
 }
-  
+
 .navigation-s {
-    width: 100%;
-    margin: auto;
-    display: table;
-    z-index: 999;
-    border-bottom: rgba(233, 233, 233, 0.479);
+  width: 100%;
+  margin: auto;
+  display: table;
+  z-index: 999;
+  border-bottom: rgba(233, 233, 233, 0.479);
 }
-  
+
 .navigation-d {
-    line-height: 19px;
-    width: 100%;
-    position: relative;
+  line-height: 19px;
+  width: 100%;
+  position: relative;
 }
-  
+
 .logo-area {
-    float: left;
-    padding: 17px 0px;
-    align-items: center;
+  float: left;
+  padding: 17px 0px;
+  align-items: center;
 }
-  
+
 .logo-area .logo {
-    color: var(--font-color);
-    padding: 15px;
-    font-size: 20px;
-    font-weight: 400px;
+  color: var(--font-color);
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 400px;
 }
-  
+
 .logo-area span {
-    font-size: var(--font-size-mobile);
-    font-weight: 900px;
-    color: var(--main-color);
+  font-size: var(--font-size-mobile);
+  font-weight: 900px;
+  color: var(--main-color);
 }
-  
+
 .mobile-nav {
-    display: none;
+  display: none;
 }
-  /* BARRA DE NAVEGACIÓN */
+/* BARRA DE NAVEGACIÓN */
 #Layer_1 {
-    width: 40px;
-    line-height: 20px;
+  width: 40px;
+  line-height: 20px;
 }
 .nav {
   float: right;
 }
-  
+
 .nav .items {
- display: inline-block;
+  display: inline-block;
   margin: 21px 5px;
 }
-  
+
 .nav-list {
   justify-content: space-between;
   height: 60px;
   text-align: center;
 }
-  
+
 .nav-list a {
   position: relative;
   width: 100%;
@@ -103,7 +103,7 @@ body {
   transition: all 0.1s ease;
   font-size: var(--font-size-nav);
 }
-  
+
 /* Donar button */
 .nav-list #back-donar {
   padding: 0;
@@ -112,7 +112,7 @@ body {
   height: fit-content;
   transition: all ease 0.3s;
 }
-  
+
 #donar-text {
   color: var(--font-white);
   margin: 0;
@@ -133,7 +133,7 @@ body {
   font-weight: 600;
   transition: all ease 0.3s;
 }
-  
+
 #donar-text:hover,
 #back-donar:hover {
   background-color: var(--pag-bm-color);
@@ -146,7 +146,7 @@ body {
   text-decoration: none;
   color: var(--main-color);
 }
-  
+
 .nav-list #active {
   color: var(--main-color);
   border-bottom: 2px solid var(--main-color);
@@ -170,150 +170,75 @@ body {
 }
 /* IMAGE TOP*/
 .img-side {
-  width: 100%;
-  height: 30vw;
   overflow: hidden;
 }
 
 .back-static {
   position: static;
-  height: 30vw;
-  width: 100%;
+  height: 8vh;
   top: auto;
   bottom: 0;
   right: auto;
-  background: url(../assets/img/cafetería_unimag.jpg) no-repeat center/cover;
+  background-color: var(--pag-bs-color);
 }
 /* BACKGROUND SVG'S*/
 #elipse1 {
-    position: absolute;
-    z-index: -1;
-    top: -65%;
-    left: -35%;
-    width: 700px;
-    height: 700px;
-  }
-  
-  #elipse2 {
-    position: absolute;
-    z-index: -1;
-    top: -70%;
-    left: -30%;
-    width: 700px;
-    height: 700px;
-  }
-  
-  #elipse3 {
-    position: absolute;
-    z-index: -1;
-    top: -58%;
-    left: -23%;
-    width: 700px;
-    height: 700px;
-  }
-  
-  #flowers-1 {
-    position: absolute;
-    z-index: -1;
-    top: -20%;
-    right: 67%;
-  }
-  
-#flowers-2 {
-    position: absolute;
-    z-index: -1;
-    top: -15%;
-    left: 68%;
+  position: absolute;
+  z-index: -1;
+  top: -65%;
+  left: -35%;
+  width: 700px;
+  height: 700px;
 }
 
+#elipse2 {
+  position: absolute;
+  z-index: -1;
+  top: -70%;
+  left: -30%;
+  width: 700px;
+  height: 700px;
+}
+
+#elipse3 {
+  position: absolute;
+  z-index: -1;
+  top: -58%;
+  left: -23%;
+  width: 700px;
+  height: 700px;
+}
+
+#flowers-1 {
+  position: absolute;
+  z-index: -1;
+  top: -20%;
+  right: 67%;
+}
+
+#flowers-2 {
+  position: absolute;
+  z-index: -1;
+  top: -15%;
+  left: 68%;
+}
 
 /* ------- CONTAINER CARDS ------- */
-.titulo p{
+.titulo p {
   font-size: 30px;
-  margin-left: 30px;
   margin-top: 40px;
   font-weight: 600;
 }
-.container{
+.container {
   position: relative;
   background-color: rgba(241, 241, 241, 0.582);
-  width: 100%;
   border-radius: 15px;
   margin: 0 20px;
   line-height: 1.3rem;
 }
-.container-cards{
-  position: relative;
-  max-width: 740px;
-  align-items: center;
-  margin: 20px;
-  padding: 5%;
-}
-
-/*------------ CARDS ---------- */
-.card{
-    display: flex;
-    max-width: 100%;
-    height: 100px;
-    margin: 10px;
-    padding: 10px 25px;
-    box-shadow: 0 0 12px #00000052;
-    align-items: center;
-    border-radius: 15px;
-    background-color: #fff;
-}
-.card img{
-  width: 50px;
-  border-radius: 50%;  
-  box-shadow: 0 0 12px #a1a1a1; 
-}
-.card .información{
-  position: relative;
-  width: 330px;
-  padding: 0 20px;
-  text-align: left;
-}
-
-.información p {
-  width: 100%;
-}
-.text-a{
-  font-size: 18px; 
-  margin-top: 10px;
-  font-weight: 600;
-}
-.text-b{
-   font-size: 15px;
-   font-weight: 500;
-   margin-top: 5px;
-   color: #0422cc;
-}
-.text-c{
- font-size: 15px;
- color: gray;
-}
-
-.card button{
-  padding: 10px 15px;
-  border-radius: 50%; 
-  background-color: #1a72ba;
-  border: none;
-  color: #fff;
-  margin-left: 15px;
-}
-
-.card button:hover{
-    background-color: #1f7ac5;
-    cursor: pointer;
-}
-
-.card .tiempo_donacion{
-  margin-left: 55px;
-}
-
 /*------ VERIICACIÓN ------ */
 
-.container-total{
+.container-total {
   position: relative;
   width: 100%;
   height: fit-content;
@@ -321,7 +246,7 @@ body {
   justify-content: space-between;
   padding: 50px;
 }
-.container_confirmacion{
+.container_confirmacion {
   background-color: rgba(241, 241, 241, 0.582);
   border-radius: 15px;
   padding: 30px 40px;
@@ -330,7 +255,7 @@ body {
   align-items: center;
   margin: 0 20px;
 }
-.container_confirmacion img{
+.container_confirmacion img {
   width: 130px;
   border-radius: 15px;
   margin: 30px 0;
@@ -338,7 +263,7 @@ body {
   aspect-ratio: 1;
 }
 
-.container_confirmacion .titulo h1{
+.container_confirmacion .titulo h1 {
   text-align: left;
   font-size: 40px;
 }
@@ -348,7 +273,7 @@ body {
   line-height: 2rem;
 }
 
-.verificar-identidad input{
+.verificar-identidad input {
   background-color: transparent;
   border: 2px solid var(--main-color);
   color: var(--font-color);
@@ -371,4 +296,53 @@ body {
 .verificar-identidad button:hover {
   background: var(--color-nav);
   color: var(--font-color);
+}
+
+/*------ CARDS DONATION------ */
+.container_cards_d{
+  margin-top:20px;
+  background-color: #f1f3f7;
+}
+.card {
+  margin-bottom: 24px;
+  -webkit-box-shadow: 0 2px 3px #e4e8f0;
+  box-shadow: 0 2px 3px #e4e8f0;
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #eff0f2;
+  border-radius: 1rem;
+}
+
+.font-size-18 {
+  font-size: 18px!important;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: #7f838b!important;
+}
+
+.font-size-20 {
+  font-size: 20px!important;
+}
+
+.font-size-15 {
+  font-size: 15px!important;
 }
