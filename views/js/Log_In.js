@@ -22,7 +22,7 @@ $('#formLogin').submit(function (e) {
     return false;
   } else {
     $.ajax({
-      url: "controllers/action/login.php",
+      url: "../controllers/action/login.php",
       type: "POST",
       datatype: "json",
       data: { Email: Email, Contraseña: Contraseña },

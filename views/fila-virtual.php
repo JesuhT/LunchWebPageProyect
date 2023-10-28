@@ -62,7 +62,7 @@ if($_SESSION["s_usuario"] === null){
         <div class="nav">
           <ul class="nav-list">
             <li class="items"><a href="#" id="active">Home</a></li>
-            <li class="items"><a href="index.php#content-servicios">Servicios</a></li>
+            <li class="items"><a href="/../index.php#content-servicios">Servicios</a></li>
             <li class="items"><a href="#">Contact us</a></li>
             <li class="items" id="no-line"><a href="profile.php"><?php echo $_SESSION["s_usuario"];?></a></li>
             <li class="items" id="back-donar"><a href="#" id="donar-text">Donar</a></li>

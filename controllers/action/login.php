@@ -11,7 +11,7 @@ $password = (isset($_POST['Contraseña'])) ? $_POST['Contraseña'] : '';
 
 // $pass = md5($password); //encripto la clave enviada por el usuario para compararla con la clava encriptada y almacenada en la BD
 
-$consulta = "SELECT * FROM usuarios inner join estudiantes WHERE Email='$usuario' AND Contraseña='$password' ";
+$consulta = "SELECT * FROM usuarios right join estudiantes WHERE Email='$usuario' AND Contraseña='$password' ";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $programa="SELECT programas.nombre AS Programa FROM usuarios
