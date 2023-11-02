@@ -65,7 +65,7 @@ if ($_SESSION["s_usuario"] === null) {
                 <?php echo $_SESSION["s_usuario"]; ?></a>
                 <ul class="dropdown-content">
                   <li><a href="profile.php">Editar perfil</a></li>
-                  <li><a href="controllers/action/logout.php">Cerrar sesión</a></li>
+                  <li><a href="/../controllers/action/logout.php">Cerrar sesión</a></li>
                 </ul>
 
               </li>

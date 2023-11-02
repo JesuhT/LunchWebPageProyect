@@ -11,10 +11,10 @@ signInButton.addEventListener('click', () => {
 /**Jquery para formularios */
 $('#formLogin').submit(function (e) {
   e.preventDefault();
-  var Email = $.trim($("#Email").val());
-  var Contraseña = $.trim($("#Contraseña").val());
+  var email = $.trim($("#Email").val());
+  var password = $.trim($("#Contraseña").val());
 
-  if (Email.length == "" || Contraseña == "") {
+  if (email.length == "" || password == "") {
     Swal.fire({
       type: 'warning',
       title: 'Debe ingresar un Email y/o Contraseña',
@@ -22,22 +22,35 @@ $('#formLogin').submit(function (e) {
     return false;
   } else {
     $.ajax({
-      url: "../controllers/action/login.php",
+      url: "../../controllers/action/login.php",
       type: "POST",
       datatype: "json",
-      data: { Email: Email, Contraseña: Contraseña },
+      data: { Email: email, Contraseña: password },
+      crossDomain: true, 
       success: function (data) {
+        console.log(data);    
+        // if (data.error) {
+        //   Swal.fire({
+        //     type: 'error',
+        //     title: data.error,
+        //   });
+        // }
+        
         if (data == "null") {
+          console.log(data);
           Swal.fire({
             type: 'error',
             title: 'Email y/o Contraseña incorrecta',
           });
-        } else {
+        }
+         else {
+          console.log(data);
           Swal.fire({
             type: 'success',
             title: '¡Conexión exitosa!',
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'Ingresar'
+            
           }).then((result) => {
             if (result.value) {
               window.location.href = "menu.php";

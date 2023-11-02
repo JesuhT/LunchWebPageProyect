@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignUp</title>
-    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="plugins/sweetalert2.min.css">
 </head>
@@ -36,8 +36,8 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <p>Usar tu cuenta</p>
-                <input id="Email" type="email" name="email" placeholder="Correo electrónico" >
-                <input id="Contraseña" type="password" name="pswd" placeholder="Contraseña" >
+                <input id="Email" type="email" name="email" placeholder="Correo electrónico" autocomplete="username" >
+                <input id="Contraseña" type="password" name="pswd" placeholder="Contraseña" autocomplete="current-password">
                 <a href="#">¿Olvidaste tu contraseña?</a>
                 <button>Ingresar</button>
             </form>

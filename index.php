@@ -66,7 +66,7 @@
             <li class="items"><a href="#" id="active">Home</a></li>
             <li class="items"><a href="#content-servicios">Servicios</a></li>
             <li class="items"><a href="#about">Contact us</a></li>
-            <li class="items"><a href="views/Login.php">Iniciar sesion</a></li>
+            <li class="items"><a href="views/login.php">Iniciar sesion</a></li>
             <li class="items" id="back-donar"><a href="views/donaciones.php" id="donar-text">Donar</a></li>
 
           </ul>
