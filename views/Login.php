@@ -28,7 +28,7 @@
             </form>
         </div>
         <div class="Sign-In">
-            <form id="formLogin" action="#" method="post">
+            <form id="formLogin" action="../controllers/action/login.php" method="POST">
                 <h1>Iniciar Sesión</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -39,7 +39,7 @@
                 <input id="Email" type="email" name="email" placeholder="Correo electrónico" autocomplete="username" >
                 <input id="Contraseña" type="password" name="pswd" placeholder="Contraseña" autocomplete="current-password">
                 <a href="#">¿Olvidaste tu contraseña?</a>
-                <button>Ingresar</button>
+                <button value="submit" >Ingresar</button>
             </form>
         </div>
         <div class="overlay-container">

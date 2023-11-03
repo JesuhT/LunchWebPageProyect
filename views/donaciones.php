@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION["s_usuario"] === null) {
+if ($_SESSION["ID_USUARIO"] === null) {
   header("Location: login.php");
 }
 
@@ -68,7 +68,7 @@ if ($_SESSION["s_usuario"] === null) {
             <li class="items"><a href="/../index.php" id="">Home</a></li>
             <li class="items"><a href="/../index.php#content-servicios">Servicios</a></li>
             <li class="items"><a href="#">Contact us</a></li>
-            <li class="items" id="no-line"><a href="profile.php"><?php echo $_SESSION["s_usuario"]; ?></a></li>
+            <li class="items" id="no-line"><a href="profile.php"><?php echo $_SESSION["NOMBRE"]; ?></a></li>
 
           </ul>
         </div>

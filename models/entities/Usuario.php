@@ -5,19 +5,19 @@ class Usuario {
     private $Nombre;
     private $Apellido;
     private $Email;
-    private $Contraseña;
+    private $Contrasena;
     private $Celular;
 
-    public function __construct($ID_user, $Nombre, $Apellido, $Email, $Contraseña, $Celular) {
+    public function __construct($ID_user, $Nombre, $Apellido, $Email, $Contrasena, $Celular) {
         $this->ID_user = $ID_user;
         $this->Nombre = $Nombre;
         $this->Apellido = $Apellido;
         $this->Email = $Email;
-        $this->Contraseña = $Contraseña;
+        $this->Contrasena = $Contrasena;
         $this->Celular = $Celular;
     }
 
-    public function getIDUser() {
+    public function getID_User() {
         return $this->ID_user;
     }
 
@@ -33,8 +33,8 @@ class Usuario {
         return $this->Email;
     }
 
-    public function getContraseña() {
-        return $this->Contraseña;
+    public function getContrasena() {
+        return $this->Contrasena;
     }
 
     public function getCelular() {

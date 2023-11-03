@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION["s_usuario"] === null) {
+if ($_SESSION["NOMBRE"] === null) {
   header("Location: login.php");
 }
 ?>
@@ -62,7 +62,7 @@ if ($_SESSION["s_usuario"] === null) {
             <li class="items"><a href="/../index.php#content-servicios">Servicios</a></li>
             <li class="items"><a href="#">Contact us</a></li>
             <li class="items dropdown"><a id="no-line" href="profile.php">
-                <?php echo $_SESSION["s_usuario"]; ?></a>
+                <?php echo $_SESSION["NOMBRE"]; ?></a>
                 <ul class="dropdown-content">
                   <li><a href="profile.php">Editar perfil</a></li>
                   <li><a href="/../controllers/action/logout.php">Cerrar sesión</a></li>
@@ -91,12 +91,12 @@ if ($_SESSION["s_usuario"] === null) {
         <div class="col-md-6">
           <div class="profile-head">
             <h5>
-              <?php echo $_SESSION["s_usuario"] . " ";
-              echo $_SESSION["a_usuario"];
+              <?php echo $_SESSION["NOMBRE"] . " ";
+              echo $_SESSION["APELLIDO"];
               ?>
             </h5>
             <h6>
-              <?php echo $_SESSION["p_usuario"]; ?>
+              <?php echo $_SESSION["CELULAR"]; ?>
             </h6>
             <p class="proile-rating">RANKINGS : <span>8/10</span></p>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -136,7 +136,7 @@ if ($_SESSION["s_usuario"] === null) {
                   <label>Name</label>
                 </div>
                 <div class="col-md-6">
-                  <p><?php echo $_SESSION["s_usuario"] . " " . $_SESSION["a_usuario"]; ?></p>
+                  <p><?php echo $_SESSION["NOMBRE"] . " " . $_SESSION["APELLIDO"]; ?></p>
                 </div>
               </div>
               <div class="row">
@@ -144,7 +144,7 @@ if ($_SESSION["s_usuario"] === null) {
                   <label>Email</label>
                 </div>
                 <div class="col-md-6">
-                  <p><?php echo $_SESSION["e_usuario"]; ?></p>
+                  <p><?php echo $_SESSION["EMAIL"]; ?></p>
                 </div>
               </div>
               <div class="row">
@@ -152,7 +152,7 @@ if ($_SESSION["s_usuario"] === null) {
                   <label>Phone</label>
                 </div>
                 <div class="col-md-6">
-                  <p><?php echo $_SESSION["c_usuario"]; ?></p>
+                  <p><?php echo $_SESSION["CELULAR"]; ?></p>
                 </div>
               </div>
               <div class="row">
