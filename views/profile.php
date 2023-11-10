@@ -160,7 +160,7 @@ if ($_SESSION["NOMBRE"] === null) {
                   <label>Profession</label>
                 </div>
                 <div class="col-md-6">
-                  <p><?php echo $_SESSION["p_usuario"]; ?></p>
+                  <p><?php echo $_SESSION["EMAIL"]; ?></p>
                 </div>
               </div>
             </div>
@@ -215,6 +215,10 @@ if ($_SESSION["NOMBRE"] === null) {
           </div>
         </div>
       </div>
+    </form>
+    <form action="../controllers/action/deleteaccount.php" method="POST">
+      <imput type="hidden" value="1" />
+      <input type="submit" name="eliminar_usuario" class="delete" value=" Eliminar Cuenta">
     </form>
   </div>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

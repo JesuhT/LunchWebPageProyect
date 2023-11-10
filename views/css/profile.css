@@ -282,3 +282,16 @@
     font-weight: 600;
     color: #0062cc;
 }
+
+.delete {
+  border: none;
+  float: right;
+  bottom: 0;
+  right: 10%;
+  border-radius: 1.5rem;
+  width: 20%;
+  padding: 5px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+}

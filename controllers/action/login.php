@@ -18,10 +18,9 @@ if (isset($_POST['email']) && isset($_POST['pswd'])) {
         $_SESSION['CELULAR'] = $usuario->getCelular();
         $_SESSION['EMAIL'] = $usuario->getEmail();
         header("Location: ../../views/menu.php");
-        echo "hi2";
+
     } else { // No puede iniciar sesión
         header("Location: ../../views/login.php");
-        echo "hi3";
 		}
     }
 ?>

@@ -1,6 +1,6 @@
 -- Inserción de datos
-insert into Administradores (ID_administrador) values (34);
-insert into Administradores (ID_administrador) values (35);
+insert into Roles (ID_rol, nombre) values (1, 'Estudiante');
+insert into Roles (ID_rol, nombre) values (2, 'Administrador');
 
 
 insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (1, 'Carne molida', 'fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet');
@@ -25,12 +25,6 @@ insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (19, 'Arroz de c
 insert into Almuerzos (ID_almuerzo, nombre, descripcion) values (20, 'Pescado', 'curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor');
 
 
-insert into Menus (ID_menu) values (1);
-insert into Menus (ID_menu) values (2);
-insert into Menus (ID_menu) values (3);
-insert into Menus (ID_menu) values (4);
-insert into Menus (ID_menu) values (5);
-
 
 insert into Filas_Virtuales (ID_fila, fecha_realización, num_personas) values (1, '2023/10/12', 12);
 
@@ -51,6 +45,21 @@ insert into Programas (ID_programa, nombre, ID_facultad) values (5, 'Enfermería
 insert into Programas (ID_programa, nombre, ID_facultad) values (6, 'Licenciatura en Artes', 6);
 insert into Programas (ID_programa, nombre, ID_facultad) values (7, 'Contaduría Pública', 1);
 insert into Programas (ID_programa, nombre, ID_facultad) values (8, 'Sistemas', 2);
+
+
+
+insert into Días_almuerzos (ID_Día, nombre) values (1, 'Lunes');
+insert into Días_almuerzos (ID_Día, nombre) values (2, 'Martes');
+insert into Días_almuerzos (ID_Día, nombre) values (3, 'Miercoles');
+insert into Días_almuerzos (ID_Día, nombre) values (4, 'Jueves');
+insert into Días_almuerzos (ID_Día, nombre) values (5, 'Viernes');
+
+
+insert into Menus (ID_menu, ID_dia) values (1,1);
+insert into Menus (ID_menu, ID_dia) values (2,2);
+insert into Menus (ID_menu, ID_dia) values (3,3);
+insert into Menus (ID_menu, ID_dia) values (4,4);
+insert into Menus (ID_menu, ID_dia) values (5,5);
 
 
 insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (3, 1);
@@ -90,77 +99,42 @@ insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (2, 14);
 insert into Almuerzos_En_Menus (ID_menu, ID_almuerzo) values (1, 15);
 
 
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (1, 'Meredeth', 'Tregensoe', 'mtregensoe0@sphinn.com', 'sG2@Ri4L@HkpM#k', 3045901317);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (2, 'Brook', 'Petre', 'bpetre1@imgur.com', 'tF0$!hIPZl7W?Fc', 3101541755);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (3, 'Johann', 'Rowth', 'jrowth2@prweb.com', 'zD5<7yN79(+', 3003000313);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (4, 'Alvinia', 'Cotsford', 'acotsford3@amazon.de', 'sA9_4i8<N<', 3258404652);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (5, 'Fair', 'Kornyshev', 'fkornyshev4@yellowbook.com', 'xJ7%N07eu6', 3110661562);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (6, 'Doralyn', 'Revington', 'drevington5@yellowpages.com', 'nX4@AT<m', 3026113197);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (7, 'Mercie', 'Tabord', 'mtabord6@wp.com', 'jV9?U?x>B>', 3080877480);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (8, 'Demetria', 'Brickwood', 'dbrickwood7@woothemes.com', 'vN9~E(}su"5#nf22', 3096664279);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (9, 'Aubert', 'Willetts', 'awilletts8@amazon.com', 'sB3"rES''C3mq&sCN', 3249405360);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (10, 'Oriana', 'Linnane', 'olinnane9@disqus.com', 'xO6*{3<=WYyBHX6', 3247655344);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (11, 'Lark', 'Alben', 'lalbena@icio.us', 'dY2,BLB+|_', 3181177985);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (12, 'Doe', 'Goodboddy', 'dgoodboddyb@fastcompany.com', 'vL2(L1B~qf"', 3220062201);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (13, 'Allyn', 'Manntschke', 'amanntschkec@pcworld.com', 'qN0*qm,W', 3009160346);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (14, 'Lanna', 'Keneforde', 'lkeneforded@wisc.edu', 'mT3!pYOzYgUBoG(', 3068250876);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (15, 'Lannie', 'Barttrum', 'lbarttrume@moonfruit.com', 'jG2?1dy4*BIERA', 3033494550);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (16, 'Augusto', 'Crowley', 'acrowleyf@constantcontact.com', 'lS5_&EX~p', 3095081625);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (17, 'Lesly', 'Wyborn', 'lwyborng@google.com.br', 'nU4*j=Pe{', 3010253591);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (18, 'Tiena', 'Olenov', 'tolenovh@w3.org', 'lY7@lX%Aj<@7', 3050986937);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (19, 'Peirce', 'Heffron', 'pheffroni@blogspot.com', 'tS0/Sk$*zah&TC(', 3248477839);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (20, 'Urbain', 'Guillem', 'uguillemj@nsw.gov.au', 'mX8!&8?E2>', 3238543456);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (21, 'Lorelle', 'Gumme', 'lgummek@bandcamp.com', 'rS9?Eg4rA?rB', 3030539242);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (22, 'Weylin', 'Easen', 'weasenl@pcworld.com', 'mH7!=s{To', 3095323473);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (23, 'Deane', 'Sewter', 'dsewterm@intel.com', 'fI0/b+`oO', 3128306573);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (24, 'Justen', 'Napleton', 'jnapletonn@canalblog.com', 'eK4(bnZUTa781o$', 3075882986);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (25, 'Siana', 'Beckenham', 'sbeckenhamo@wikispaces.com', 'eH9(343V', 3099582861);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (26, 'Alwyn', 'MacMorland', 'amacmorlandp@cloudflare.com', 'sE4+@ZK_', 3017213485);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (27, 'Talbert', 'Engledow', 'tengledowq@geocities.com', 'zD7&}gLp', 3096383924);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (28, 'Clea', 'Grant', 'cgrantr@japanpost.jp', 'yU5''a/KH', 3135476257);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (29, 'Marcello', 'Phillput', 'mphillputs@acquirethisname.com', 'uM9#IdL/', 3140913472);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (30, 'Wilmar', 'Vaadeland', 'wvaadelandt@simplemachines.org', 'zK9`7vtm', 3105026028);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (31, 'Ami', 'Phipard-Shears', 'aphipardshearsu@clickbank.net', 'rG3)fcr=sZW', 3143642005);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (32, 'Ceil', 'Newick', 'cnewickv@mysql.com', 'mR1~V4lCTuoT$', 3176499209);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (33, 'Falkner', 'Sheddan', 'fsheddanw@multiply.com', 'hL9%Bmfw+', 3021163292);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (34, 'Verena', 'Heather', 'vheatherx@github.io', 'xN6''5@1GXzb<Te', 3077749622);
-insert into Usuarios (ID_user, Nombre, Apellido, Email, Contraseña, Celular) values (35, 'Suzann', 'Darbishire', 'sdarbishirey@cloudflare.com', 'aR7/T=VR{vy', 3088604856);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (1, 'Judy', 'Stanex', 'jstanex0@vkontakte.ru', 'uT8`r>eTLN''!WU.', 3062393065, 1, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (2, 'Sharleen', 'Barfford', 'sbarfford1@npr.org', 'cW1=9@XRLf', 3110502728, 2, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (3, 'Jori', 'Halt', 'jhalt2@moonfruit.com', 'zT8{4`KEXFrnhv', 3041988776, 4, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (4, 'Caspar', 'Edleston', 'cedleston3@tripadvisor.com', 'mZ1#V"Su<~ORrOV', 3057404690, 1, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (5, 'Gay', 'Timmens', 'gtimmens4@craigslist.org', 'aB9>Ft@jgm4', 3067970238, 1, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (6, 'Davidde', 'Fairham', 'dfairham5@cam.ac.uk', 'iM0*+N9KTePsKC', 3183247955, 2, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (7, 'Mattie', 'Readett', 'mreadett6@netvibes.com', 'xB4Z*>H', 3141861957, 4, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (8, 'Ingar', 'Woollons', 'iwoollons7@bluehost.com', 'kM4z?0!''&', 3200748117, 6, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (9, 'Dynah', 'Kelston', 'dkelston8@google.co.jp', 'uZ1,,n=6Y~7S', 3252793409, 2, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (10, 'Fielding', 'Claesens', 'fclaesens9@marriott.com', 'bV6~PQ9f', 3193023471, 4, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (11, 'Candide', 'Yurshev', 'cyursheva@geocities.com', 'hD4|Yec7hY<', 3134166325, 3, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (12, 'Sam', 'Harrowsmith', 'sharrowsmithb@princeton.edu', 'kS4|SnE{q47r@', 3135057557, 7, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (13, 'Fidelio', 'Lantaff', 'flantaffc@cbc.ca', 'aV2!/l=d`y''m', 3260954496, 3, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (14, 'Anthe', 'Colbeck', 'acolbeckd@newyorker.com', 'fF0<mFNQNW>', 3090949562, 5, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (15, 'Dunn', 'Paybody', 'dpaybodye@ox.ac.uk', 'aF3?s}KIxJ%QZ', 3205862945, 5, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (16, 'Naoma', 'Kilmister', 'nkilmisterf@clickbank.net', 'wL5|H_9y.', 3268475533, 1, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (17, 'Rich', 'Capron', 'rcaprong@ihg.com', 'sJ0{s{q+', 3269816689, 7, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (18, 'Rosaline', 'Weatherell', 'rweatherellh@usa.gov', 'dD3}B>s', 3136084593, 5, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (19, 'Francis', 'Ruilton', 'fruiltoni@slate.com', 'fK0''eH4', 3070839715, 8, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (20, 'Tim', 'Mateescu', 'tmateescuj@umn.edu', 'aN8|!0WB2c', 3101301293, 5, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (21, 'Annora', 'Grzesiak', 'agrzesiakk@networksolutions.com', 'bX0.t?9eQpN', 3258902485, 6, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (22, 'Sherman', 'Oldman', 'soldmanl@nationalgeographic.com', 'fK0~"LaweZt', 3069060119, 4, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (23, 'Ulrika', 'Itshak', 'uitshakm@berkeley.edu', 'rN2=3x0@?Z!S~~', 3175181038, 1, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (24, 'Jordan', 'Bagby', 'jbagbyn@simplemachines.org', 'xE6}s{SR<2m', 3011739998, 8, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (25, 'Sukey', 'Golly', 'sgollyo@cdc.gov', 'aX1}ut_''%utN8y*', 3116186696, 6, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (26, 'Kaitlynn', 'Bassilashvili', 'kbassilashvilip@trellian.com', 'fO6_6$?|d%y"Zl|<', 3103187324, 7, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (27, 'Charlie', 'Nibley', 'cnibleyq@technorati.com', 'sG5_>I*=Eemp', 3100329939, 4, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (28, 'Moreen', 'Crumpton', 'mcrumptonr@hud.gov', 'fD4''~BJd0UWFL', 3115245371, 6, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (29, 'Haley', 'Hanney', 'hhanneys@ebay.com', 'gF8@ceK}z_', 3147291389, 8, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (30, 'Eddy', 'Yuryichev', 'eyuryichevt@digg.com', 'oO1}h*8>KDEV', 3211542866, 1, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (31, 'Alano', 'Gillbee', 'agillbeeu@artisteer.com', 'yV4<*F#', 3238425305, 6, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (32, 'Romonda', 'Greenlies', 'rgreenliesv@ox.ac.uk', 'pO6|t+A%', 3076489393, 1, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (33, 'Kore', 'Adran', 'kadranw@sfgate.com', 'aJ2."Xu$nE`+', 3228889576, 3, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (34, 'Grethel', 'Hawkeridge', 'ghawkeridgex@home.pl', 'uZ9~o*m!gvn<x"t&', 3259716223, 3, 1);
+insert into Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (35, 'Conrade', 'Ruslin', 'e@e.com', '123456', 3179507288, 6, 1);
 
-
-
-insert into Estudiantes (ID_estudiante, ID_Programa) values (1, 3);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (2, 5);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (3, 5);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (4, 2);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (5, 3);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (6, 8);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (7, 2);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (8, 7);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (9, 5);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (10, 7);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (11, 3);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (12, 1);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (13, 5);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (14, 2);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (15, 2);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (16, 2);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (17, 1);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (18, 7);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (19, 1);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (20, 3);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (21, 2);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (22, 8);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (23, 6);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (24, 6);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (25, 4);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (26, 5);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (27, 6);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (28, 4);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (29, 5);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (30, 7);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (31, 4);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (32, 1);
-insert into Estudiantes (ID_estudiante, ID_Programa) values (33, 2);
 
 
 insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, calificación, descripción, fecha_calificación) values (1, 25, 17, 1, 'velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum', '2023/12/08');
@@ -186,11 +160,7 @@ insert into Calificaciones (ID_calificación, ID_estudiante, ID_almuerzo, califi
 
 
 
-insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (1, 'Lunes', 1);
-insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (2, 'Martes', 2);
-insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (3, 'Miercoles', 3);
-insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (4, 'Jueves', 4);
-insert into Días_almuerzos (ID_Día, nombre, ID_menu) values (5, 'Viernes', 5);
+
 
 
 insert into Días_Almuerzos_Estudiantes (ID_dia, ID_estudiante) values (3, 1);

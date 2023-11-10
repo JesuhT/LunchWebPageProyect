@@ -1,4 +1,9 @@
 -- Creación de las tablas
+CREATE TABLE Roles (
+    ID_rol INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) UNIQUE NOT NULL
+);
+
 CREATE TABLE Almuerzos (
     ID_almuerzo INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
@@ -25,14 +30,15 @@ CREATE TABLE Usuarios (
     Nombre VARCHAR(32) NOT NULL,
     Apellido VARCHAR(32) NOT NULL,
     Email VARCHAR(32) UNIQUE NOT NULL,
-    Contraseña VARCHAR(32) NOT NULL,
-    Celular VARCHAR(20) UNIQUE NOT NULL
+    Contrasena VARCHAR(32) NOT NULL,
+    Celular VARCHAR(20) UNIQUE NOT NULL,
+    ID_programa INT,
+    ID_rol INT DEFAULT 1
 );
 
 CREATE TABLE Días_almuerzos (
     ID_Día INT PRIMARY KEY,
-    nombre VARCHAR(32) UNIQUE NOT NULL,
-    ID_menu INT NOT NULL
+    nombre VARCHAR(32) UNIQUE NOT NULL
 );
 
 CREATE TABLE Facultades (
@@ -46,7 +52,8 @@ CREATE TABLE Días_Almuerzos_Estudiantes (
 );
 
 CREATE TABLE Menus (
-    ID_menu INT AUTO_INCREMENT PRIMARY KEY
+    ID_menu INT AUTO_INCREMENT PRIMARY KEY,
+    ID_dia INT NOT NULL
 );
 
 CREATE TABLE Programas (
@@ -62,11 +69,6 @@ CREATE TABLE Donaciones (
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
     ID_estado INT NOT NULL
-);
-
-CREATE TABLE Estudiantes (
-    ID_estudiante INT AUTO_INCREMENT PRIMARY KEY,
-    ID_Programa INT NOT NULL
 );
 
 CREATE TABLE Estados (
@@ -86,10 +88,6 @@ CREATE TABLE Modificaciones_Menus (
     hora TIME NOT NULL
 );
 
-CREATE TABLE Administradores (
-    ID_administrador INT PRIMARY KEY
-);
-
 CREATE TABLE Almuerzos_En_Menus (
     ID_menu INT NOT NULL,
     ID_almuerzo INT NOT NULL
@@ -104,39 +102,40 @@ CREATE TABLE Estudiantes_En_Fila (
 
 -- agregar restricciones de clave foránea
 ALTER TABLE Calificaciones
-ADD CONSTRAINT Calificacion_fk0 FOREIGN KEY (ID_estudiante) REFERENCES Estudiantes(ID_estudiante),
-ADD CONSTRAINT Calificacion_fk1 FOREIGN KEY (ID_almuerzo) REFERENCES Almuerzos(ID_almuerzo);
+ADD CONSTRAINT Calificacion_fk0 FOREIGN KEY (ID_estudiante) REFERENCES Usuarios(ID_user) ON DELETE CASCADE,
+ADD CONSTRAINT Calificacion_fk1 FOREIGN KEY (ID_almuerzo) REFERENCES Almuerzos(ID_almuerzo) ON DELETE CASCADE;
 
-ALTER TABLE Días_almuerzos
-ADD CONSTRAINT Dia_almuerzo_fk0 FOREIGN KEY (ID_menu) REFERENCES Menus(ID_menu);
+ALTER TABLE Menus
+ADD CONSTRAINT Menu_fk0 FOREIGN KEY (ID_menu) REFERENCES Días_almuerzos(ID_Día) ON DELETE CASCADE;
 
 ALTER TABLE Días_Almuerzos_Estudiantes
-ADD CONSTRAINT Dias_Almuerzos_Estudiantes_fk0 FOREIGN KEY (ID_dia) REFERENCES Días_almuerzos(ID_Día),
-ADD CONSTRAINT Dias_Almuerzos_Estudiantes_fk1 FOREIGN KEY (ID_estudiante) REFERENCES Estudiantes(ID_estudiante);
+ADD CONSTRAINT Dias_Almuerzos_Estudiantes_fk0 FOREIGN KEY (ID_dia) REFERENCES Días_almuerzos(ID_Día) ON DELETE CASCADE,
+ADD CONSTRAINT Dias_Almuerzos_Estudiantes_fk1 FOREIGN KEY (ID_estudiante) REFERENCES Usuarios(ID_user) ON DELETE CASCADE;
 
 ALTER TABLE Programas
-ADD CONSTRAINT Programa_fk0 FOREIGN KEY (ID_facultad) REFERENCES Facultades(ID_facultad);
+ADD CONSTRAINT Programa_fk0 FOREIGN KEY (ID_facultad) REFERENCES Facultades(ID_facultad) ON DELETE CASCADE;
 
 ALTER TABLE Donaciones
-ADD CONSTRAINT Donación_fk0 FOREIGN KEY (ID_donante) REFERENCES Estudiantes(ID_estudiante),
-ADD CONSTRAINT Donación_fk1 FOREIGN KEY (ID_beneficiario) REFERENCES Estudiantes(ID_estudiante),
-ADD CONSTRAINT Donación_fk2 FOREIGN KEY (ID_estado) REFERENCES Estados(ID_estado);
-
-ALTER TABLE Estudiantes
-ADD CONSTRAINT Estudiante_fk2 FOREIGN KEY (ID_Programa) REFERENCES Programas(ID_programa);
+ADD CONSTRAINT Donación_fk0 FOREIGN KEY (ID_donante) REFERENCES Usuarios(ID_user) ON DELETE CASCADE,
+ADD CONSTRAINT Donación_fk1 FOREIGN KEY (ID_beneficiario) REFERENCES Usuarios(ID_user) ON DELETE CASCADE,
+ADD CONSTRAINT Donación_fk2 FOREIGN KEY (ID_estado) REFERENCES Estados(ID_estado) ON DELETE CASCADE;
 
 ALTER TABLE Estados_Donaciones
-ADD CONSTRAINT Estados_Donaciones_fk0 FOREIGN KEY (ID_donación) REFERENCES Donaciones(ID_donación),
-ADD CONSTRAINT Estados_Donaciones_fk1 FOREIGN KEY (ID_estado) REFERENCES Estados(ID_estado);
+ADD CONSTRAINT Estados_Donaciones_fk0 FOREIGN KEY (ID_donación) REFERENCES Donaciones(ID_donación) ON DELETE CASCADE,
+ADD CONSTRAINT Estados_Donaciones_fk1 FOREIGN KEY (ID_estado) REFERENCES Estados(ID_estado) ON DELETE CASCADE;
 
 ALTER TABLE Modificaciones_Menus
-ADD CONSTRAINT Modificaciones_Menu_fk0 FOREIGN KEY (ID_administrador) REFERENCES Administradores(ID_administrador),
-ADD CONSTRAINT Modificaciones_Menu_fk1 FOREIGN KEY (ID_menu) REFERENCES Menus(ID_menu);
+ADD CONSTRAINT Modificaciones_Menu_fk0 FOREIGN KEY (ID_administrador) REFERENCES Usuarios(ID_user) ON DELETE CASCADE,
+ADD CONSTRAINT Modificaciones_Menu_fk1 FOREIGN KEY (ID_menu) REFERENCES Menus(ID_menu) ON DELETE CASCADE;
 
 ALTER TABLE Almuerzos_En_Menus
-ADD CONSTRAINT Almuerzos_En_Menu_fk0 FOREIGN KEY (ID_menu) REFERENCES Menus(ID_menu),
-ADD CONSTRAINT Almuerzos_En_Menu_fk1 FOREIGN KEY (ID_almuerzo) REFERENCES Almuerzos(ID_almuerzo);
+ADD CONSTRAINT Almuerzos_En_Menu_fk0 FOREIGN KEY (ID_menu) REFERENCES Menus(ID_menu) ON DELETE CASCADE,
+ADD CONSTRAINT Almuerzos_En_Menu_fk1 FOREIGN KEY (ID_almuerzo) REFERENCES Almuerzos(ID_almuerzo) ON DELETE CASCADE;
 
 ALTER TABLE Estudiantes_En_Fila
-ADD CONSTRAINT Estudiantes_En_Fila_fk0 FOREIGN KEY (ID_estudiante) REFERENCES Estudiantes(ID_estudiante),
+ADD CONSTRAINT Estudiantes_En_Fila_fk0 FOREIGN KEY (ID_estudiante) REFERENCES Usuarios(ID_user) ON DELETE CASCADE,
 ADD CONSTRAINT Estudiantes_En_Fila_fk1 FOREIGN KEY (ID_fila) REFERENCES Filas_Virtuales(ID_fila);
+
+ALTER TABLE Usuarios
+ADD CONSTRAINT Estudiantes_fk0 FOREIGN KEY (ID_programa) REFERENCES Programas(ID_programa) ON DELETE CASCADE,
+ADD CONSTRAINT Estudiantes_fk1 FOREIGN KEY (ID_rol) REFERENCES Roles(ID_rol) ON DELETE CASCADE;

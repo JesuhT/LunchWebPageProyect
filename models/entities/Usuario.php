@@ -7,14 +7,19 @@ class Usuario {
     private $Email;
     private $Contrasena;
     private $Celular;
+    private $ID_programa;
+    private $ID_rol;
 
-    public function __construct($ID_user, $Nombre, $Apellido, $Email, $Contrasena, $Celular) {
+
+    public function __construct($ID_user, $Nombre, $Apellido, $Email, $Contrasena, $Celular, $ID_programa, $ID_rol) {
         $this->ID_user = $ID_user;
         $this->Nombre = $Nombre;
         $this->Apellido = $Apellido;
         $this->Email = $Email;
         $this->Contrasena = $Contrasena;
         $this->Celular = $Celular;
+        $this->ID_programa = $ID_programa;
+        $this->ID_rol = $ID_rol;
     }
 
     public function getID_User() {
@@ -53,12 +58,28 @@ class Usuario {
         $this->Email = $Email;
     }
 
-    public function setContraseña($Contraseña) {
-        $this->Contraseña = $Contraseña;
+    public function setContraseña($Contrasena) {
+        $this->Contrasena = $Contrasena;
     }
 
     public function setCelular($Celular) {
         $this->Celular = $Celular;
+    }
+
+    public function setID_programa($ID_programa) {
+        $this->ID_programa = $ID_programa;
+    }
+
+    public function getID_programa() {
+        return $this->ID_programa;
+    }
+
+    public function setID_rol($ID_rol) {
+        $this->ID_rol = $ID_rol;
+    }
+
+    public function getID_rol() {
+        return $this->ID_rol;
     }
 
     public function toArray() {

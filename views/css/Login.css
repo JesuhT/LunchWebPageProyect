@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     box-sizing: border-box;
@@ -9,7 +10,7 @@ body{
     justify-content: center;
     flex-direction: column;
     background: #f6f5f7;
-    font-family: 'monserrat', sans-serif;
+    font-family: 'Monserrat', sans-serif;
     min-height: 100%;
     margin: 10%;
 }
@@ -42,6 +43,11 @@ body{
     z-index: 1;
 }
 
+.Sign-Up .texto{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
 .Sign-In{
     width: 50%;
     z-index: 2;
@@ -71,7 +77,7 @@ p{
     margin: 15px 0 20px;
 }
 
-input{
+input, select{
     background: #eee;
     padding: 12px 15px;
     margin: 8px 15px;
@@ -80,6 +86,7 @@ input{
     border: none;
     outline: none;
 }
+
 
 a{
     color: #333;
@@ -182,40 +189,3 @@ button:active{
 .container.right-panel-active .overlay-right{
     transform: translateX(20%);
 }
-
-.social-container{
-    margin: 20px 0;
-}
-.social-container a{
-    height: 40px;
-    width: 40px;
-    margin: 0 5px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
