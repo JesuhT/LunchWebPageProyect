@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION["NOMBRE"])) {
+  header("Location: views/menu.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 

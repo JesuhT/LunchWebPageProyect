@@ -15,7 +15,7 @@
 
     <div class="container" id="main">
         <div class="Sign-Up">
-            <form id="registroForm" action="#" method="post">
+            <form id="registroForm" action="../controllers/action/signup.php" method="post">
                 <h1 class="texto">Crear cuenta</h1>
                 <input type="text" name="name" placeholder="Nombres">
                 <input type="text" name="lastname" placeholder="Apellidos">
@@ -27,11 +27,6 @@
                     <option value="1">Sistemas</option>
                     <option value="2">Civil</option>
                     <option value="2">Pesquera</option>
-                </select>
-                <select id="rol" name="rol">
-                    <option value="" disabled selected hidden>Rol</option>
-                    <option value="Estudiante">Estudiante</option>
-                    <option value="Administrador">Administrador</option>
                 </select>
                 <button name="submitt">Registrarse</button>
             </form>

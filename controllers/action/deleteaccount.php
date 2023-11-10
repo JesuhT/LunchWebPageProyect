@@ -7,17 +7,16 @@ if (isset($_POST['eliminar_usuario'])) {
 
     // Lógica para eliminar el usuario
     $resultado = borrarUsuario($userID);
-
-    if ($resultado) {
-        // Eliminación exitosa, cierra la sesión y redirige a la página de inicio o a una página de despedida
-        session_unset();
-        session_destroy();
-        header("Location: ../../index.php");
-    } else {
-        // Eliminación fallida, muestra un mensaje de error o redirige a la página de perfil con un mensaje de error
-        $_SESSION['errMsg'] = 'Error al intentar eliminar la cuenta.';
-        header("Location: ../../views/profile.php");
-    }
+    // Eliminación exitosa, cierra la sesión y redirige a la página de inicio o a una página de despedida
+    session_unset();
+    session_destroy();
+    unset($_SESSION["ID_USUARIO"]);
+    unset($_SESSION["NOMBRE"]);
+    unset($_SESSION["APELLIDO"]);
+    unset($_SESSION["CELULAR"]);
+    unset($_SESSION["EMAIL"]);
+    unset($_SESSION["FACULTAD"]);
+    header("Location: ../../index.php");    
 } else {
     // Redirige a alguna página por defecto si alguien intenta acceder directamente a este controlador sin enviar el formulario
     header("Location: ../../index.php");

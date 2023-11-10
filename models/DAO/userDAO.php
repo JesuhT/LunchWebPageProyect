@@ -76,9 +76,9 @@ class UsuarioDAO
     public function insertarUsuario(Usuario $usuario)
     {
         $data_source = new DataSource();
-        $sql = "INSERT INTO Usuarios (Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_role) VALUES (:Nombre, :Apellido, :Email, :Contrasena, :Celular, :ID_programa, :ID_role)";
+        $sql = "INSERT INTO Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) VALUES (:ID_user, :Nombre, :Apellido, :Email, :Contrasena, :Celular, :ID_programa, :ID_rol)";
         $resultado = $data_source->ejecutarActualizacion($sql, array(
-            
+            ':ID_user' => $usuario->getID_User(),
             ':Nombre' => $usuario->getNombre(),
             ':Apellido' => $usuario->getApellido(),
             ':Email' => $usuario->getEmail(),
