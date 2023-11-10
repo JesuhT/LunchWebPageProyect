@@ -63,12 +63,12 @@ if ($_SESSION["NOMBRE"] === null) {
             <li class="items"><a href="#">Contact us</a></li>
             <li class="items dropdown"><a id="no-line" href="profile.php">
                 <?php echo $_SESSION["NOMBRE"]; ?></a>
-                <ul class="dropdown-content">
-                  <li><a href="profile.php">Editar perfil</a></li>
-                  <li><a href="/../controllers/action/logout.php">Cerrar sesión</a></li>
-                </ul>
+              <ul class="dropdown-content">
+                <li><a href="profile.php">Editar perfil</a></li>
+                <li><a href="/../controllers/action/logout.php">Cerrar sesión</a></li>
+              </ul>
 
-              </li>
+            </li>
             <li class="items" id="back-donar"><a href="donaciones.php" id="donar-text">Donar</a></li>
 
           </ul>
@@ -110,7 +110,7 @@ if ($_SESSION["NOMBRE"] === null) {
           </div>
         </div>
         <div class="col-md-2">
-          <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+          <input id="btn-edit-profile" type="button" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
         </div>
       </div>
       <div class="row">
@@ -220,10 +220,69 @@ if ($_SESSION["NOMBRE"] === null) {
       <imput type="hidden" value="1" />
       <input type="submit" name="eliminar_usuario" class="delete" value=" Eliminar Cuenta">
     </form>
+
+    <div id="overlay"></div>
+    <!-- Account details card-->
+    <div class="win-float" id="win-fixed">
+      <div class="card mb-4">
+        <div class="card-header">Account Details</div>
+        <div class="card-body">
+          <form action="../controllers/action/updateinfo.php" method="post">
+            <!-- Form Group (username)-->
+            <div class="mb-3">
+              <label class="small mb-1" for="inputUsername">Username (Como tu nombre aparecerá para las otras personas del sitio)</label>
+              <input class="form-control" id="inputUsername" name="nuevoUsername" type="text" placeholder="Enter your username" value="username">
+            </div>
+            <!-- Form Row-->
+            <div class="row gx-3 mb-3">
+              <!-- Form Group (first name)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputFirstName">Nombres</label>
+                <input class="form-control" id="inputFirstName" name="nuevoNombre" type="text" placeholder="Escribe tu nombre" value="<?php echo $_SESSION["NOMBRE"]; ?>">
+              </div>
+              <!-- Form Group (last name)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputLastName">Apellidos</label>
+                <input class="form-control" id="inputLastName" name="nuevoApellido" type="text" placeholder="Escribe tu apellido" value="<?php echo $_SESSION["APELLIDO"]; ?>">
+              </div>
+            </div>
+            <!-- Form Group (email address)-->
+            <div class="mb-3">
+              <label class="small mb-1" for="inputEmailAddress">Email address</label>
+              <input class="form-control" id="inputEmailAddress" name="nuevoEmail" type="email" placeholder="Ingresa tu correo electronico" value="<?php echo $_SESSION["EMAIL"]; ?>">
+            </div>
+            <!-- Form Row-->
+            <div class="row gx-3 mb-3">
+              <!-- Form Group (phone number)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputPhone">Phone number</label>
+                <input class="form-control" id="inputPhone" name="nuevoTelefono" type="tel" placeholder="Enter your phone number" value="<?php echo $_SESSION["CELULAR"]; ?>">
+              </div>
+            </div>
+             <!-- Form Row        -->
+             <div class="row gx-3 mb-3">
+              <!-- Form Group (organization name)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputOrgName">Cambiar la contraseña(Opcional)</label>
+                <input class="form-control" id="inputOrgName" name="nuevaContraseña" type="password" placeholder="Ingresa una nueva contraseña"  value="">
+              </div>
+              <!-- Form Group (location)-->
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputLocation"></label>
+                <input class="form-control" id="inputLocation" name="confirmarContraseña" type="password" placeholder="Confirma la nueva contraseña" value="">
+              </div>
+            </div>
+            <!-- Save changes button-->
+            <input class="btn btn-primary" type="submit" name="submitActualizar" value="Actualizar" style="border:none;">
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/profile.js"></script>
+  <script src="js/profile.js"></script>
 </body>
 
 </html>

@@ -15,7 +15,9 @@ if (isset($_POST['eliminar_usuario'])) {
     unset($_SESSION["APELLIDO"]);
     unset($_SESSION["CELULAR"]);
     unset($_SESSION["EMAIL"]);
-    unset($_SESSION["FACULTAD"]);
+    unset($_SESSION['ID_PROGRAMA']);
+    unset($_SESSION['ROL']);
+    unset($_SESSION['CONTRASENA']);
     header("Location: ../../index.php");    
 } else {
     // Redirige a alguna página por defecto si alguien intenta acceder directamente a este controlador sin enviar el formulario

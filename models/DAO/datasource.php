@@ -46,7 +46,8 @@ class DataSource {
             $consulta=$this->conexion->prepare($sql);
             $consulta->execute($values);
             $numero_filas_afectadas = $consulta->rowCount();
-            return $this->conexion->lastInsertId();
+            $this->conexion=null;
+            return $numero_filas_afectadas;
         }else{
             return 0;
         }
