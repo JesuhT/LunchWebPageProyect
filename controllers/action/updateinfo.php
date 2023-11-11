@@ -25,7 +25,7 @@ if (!empty($nuevaContraseña)) {
             $nombre,
             $apellido,
             $email,
-            password_hash($nuevaContraseña, PASSWORD_DEFAULT), // Hashea la nueva contraseña
+            $nuevaContraseña, // Hashea la nueva contraseña
             $telefono,
             $_SESSION["ID_PROGRAMA"],
             $_SESSION["ROL"]
@@ -68,9 +68,9 @@ if (empty($mensajeError)) {
 
     // Redirige según el resultado
     if ($resultado) {
-        header("Location: ../../views/menu.php?msg=Actualización exitosa");
+        header("Location: ../../views/profile.php?msg=Actualización exitosa");
     } else {
-        header("Location: ../../views/menu.php?msg=Error en la actualización");
+        header("Location: ../../views/profile.php?msg=Error en la actualización");
     }
 } else {
     // Vuelve al formulario con el mensaje de error
