@@ -5,7 +5,7 @@ class UsuarioDAO
     public function autenticarUsuario($email, $Contrasena)
     {
         $data_source = new DataSource();
-        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuarios WHERE email = :Email AND Contrasena = :Contrasena", 
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuario WHERE email = :Email AND Contrasena = :Contrasena", 
                                                         array(':Email'=>$email,':Contrasena'=>$Contrasena));
         $usuario = null;
 
@@ -31,7 +31,7 @@ class UsuarioDAO
     public function buscarUsuarioPorId($ID_user)
     {
         $data_source = new DataSource();
-        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuarios WHERE ID_user = :ID_user", array(':ID_user' => $ID_user));
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuario WHERE ID_user = :ID_user", array(':ID_user' => $ID_user));
         $usuario = null;
 
         if(count($data_table)==1){
@@ -54,7 +54,7 @@ class UsuarioDAO
     public function leerUsuarios()
     {
         $data_source = new DataSource();
-        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuarios");
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuario");
         $usuarios = array();
 
         foreach($data_table as $indice=>$valor){
@@ -76,7 +76,7 @@ class UsuarioDAO
     public function insertarUsuario(Usuario $usuario)
     {
         $data_source = new DataSource();
-        $sql = "INSERT INTO Usuarios (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) VALUES (:ID_user, :Nombre, :Apellido, :Email, :Contrasena, :Celular, :ID_programa, :ID_rol)";
+        $sql = "INSERT INTO Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) VALUES (:ID_user, :Nombre, :Apellido, :Email, :Contrasena, :Celular, :ID_programa, :ID_rol)";
         $resultado = $data_source->ejecutarActualizacion($sql, array(
             ':ID_user' => $usuario->getID_User(),
             ':Nombre' => $usuario->getNombre(),
@@ -96,7 +96,7 @@ class UsuarioDAO
 
     public function modificarContraseña(Usuario $user, $newPassword){
         $data_source = new DataSource();
-        $sql = "UPDATE Usuarios SET Contrasena = :Contrasena WHERE idUser = :idUser";
+        $sql = "UPDATE Usuario SET Contrasena = :Contrasena WHERE idUser = :idUser";
         $resultado = $data_source->ejecutarActualizacion($sql, array(
             ':Contrasena' => $newPassword,
             ':idUser' => $user->getID_User()
@@ -108,7 +108,7 @@ class UsuarioDAO
     public function modificarUsuario(Usuario $usuario)
     {
         $data_source = new DataSource();
-        $sql = "UPDATE Usuarios SET ID_user = :ID_user, Nombre = :Nombre, Apellido = :Apellido, Email = :Email, Contrasena = :Contrasena, Celular = :Celular, ID_programa=:ID_programa, ID_rol=:ID_rol WHERE ID_user = :ID_user";
+        $sql = "UPDATE Usuario SET ID_user = :ID_user, Nombre = :Nombre, Apellido = :Apellido, Email = :Email, Contrasena = :Contrasena, Celular = :Celular, ID_programa=:ID_programa, ID_rol=:ID_rol WHERE ID_user = :ID_user";
         $resultado = $data_source->ejecutarActualizacion($sql,array(
             
             ':Nombre' => $usuario->getNombre(),
@@ -127,7 +127,7 @@ class UsuarioDAO
     public function borrarUsuario($ID_user)
     {
         $data_source = new DataSource();
-        $resultado= $data_source->ejecutarActualizacion("DELETE FROM Usuarios WHERE ID_user = :ID_user", array('ID_user'=>$ID_user));
+        $resultado= $data_source->ejecutarActualizacion("DELETE FROM Usuario WHERE ID_user = :ID_user", array('ID_user'=>$ID_user));
 
         return $resultado;
     }
