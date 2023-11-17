@@ -5,7 +5,7 @@ require_once(__DIR__ . "/../mdb/mdbUser.php");
 
 
 if (isset($_POST['email']) && isset($_POST['pswd'])) {
-    // Username and password sent from Form
+    // Username y password enviados por formulario
     $username = $_POST['email'];
     $password = $_POST['pswd'];
 

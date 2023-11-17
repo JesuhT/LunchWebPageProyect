@@ -48,11 +48,11 @@ insert into Programa (ID_programa, nombre, ID_facultad) values (8, 'Sistemas', 2
 
 
 
-insert into Dia_almuerzo (ID_Día, nombre) values (1, 'Lunes');
-insert into Dia_almuerzo (ID_Día, nombre) values (2, 'Martes');
-insert into Dia_almuerzo (ID_Día, nombre) values (3, 'Miercoles');
-insert into Dia_almuerzo (ID_Día, nombre) values (4, 'Jueves');
-insert into Dia_almuerzo (ID_Día, nombre) values (5, 'Viernes');
+insert into Dia_almuerzo (ID_dia, nombre) values (1, 'Lunes');
+insert into Dia_almuerzo (ID_dia, nombre) values (2, 'Martes');
+insert into Dia_almuerzo (ID_dia, nombre) values (3, 'Miercoles');
+insert into Dia_almuerzo (ID_dia, nombre) values (4, 'Jueves');
+insert into Dia_almuerzo (ID_dia, nombre) values (5, 'Viernes');
 
 
 insert into Menu (ID_menu, ID_dia) values (1,1);
@@ -163,56 +163,56 @@ insert into Calificacion (ID_calificacion, ID_estudiante, ID_almuerzo, calificac
 
 
 
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 1);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 2);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 3);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 4);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 5);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 6);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 7);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 8);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 9);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 10);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 11);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 12);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 13);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 14);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 15);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 16);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 17);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 18);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 19);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 20);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 21);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 22);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 23);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 24);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 25);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 26);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 27);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 28);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 29);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 30);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 31);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 32);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 33);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 1);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 2);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 3);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 4);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 5);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 6);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 7);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 8);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 9);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 10);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 11);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 12);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 13);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 14);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 15);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 16);
-insert into ias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 17);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 1);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 2);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 3);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 4);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 5);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 6);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 7);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 8);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 9);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 10);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 11);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 12);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 13);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 14);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 15);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 16);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 17);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 18);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 19);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 20);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 21);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 22);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 23);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 24);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 25);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 26);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 27);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 28);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 29);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 30);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 31);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 32);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (1, 33);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 1);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 2);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 3);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 4);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 5);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 6);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 7);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 8);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 9);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (5, 10);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 11);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 12);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 13);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 14);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (4, 15);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (3, 16);
+insert into Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) values (2, 17);
 
 
 insert into Estado (ID_estado, nombre) values (1, 'Disponible');

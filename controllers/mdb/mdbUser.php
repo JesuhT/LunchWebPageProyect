@@ -1,8 +1,30 @@
 <?php
 function autenticarUsuario($username, $password){
     require_once(__DIR__."/../../models/DAO/userDAO.php");
+    require_once(__DIR__ . "/../../models/DAO/programaDAO.php");
+    require_once(__DIR__ . "/../../models/DAO/rolDAO.php"); // Agregamos el RolDAO
+
     $dao = new UsuarioDAO();
     $usuario = $dao->autenticarUsuario($username, $password);
+
+    if ($usuario != null) {
+        $programaDAO = new ProgramaDAO();
+        $programa = $programaDAO->buscarProgramaPorId($usuario->getID_programa());
+
+        if ($programa != null) {
+            // Si se encuentra el programa, almacena el nombre en $_SESSION
+            $_SESSION['NOMBRE_PROGRAMA'] = $programa->getNombre();
+        }
+
+        $rolDAO = new RolDAO();
+        $rol = $rolDAO->buscarRolPorId($usuario->getID_rol());
+
+        if ($rol != null) {
+            // Si se encuentra el rol, almacena el nombre en $_SESSION
+            $_SESSION['NOMBRE_ROL'] = $rol->getNombre();
+        }
+    }
+
     return $usuario;
 }
 

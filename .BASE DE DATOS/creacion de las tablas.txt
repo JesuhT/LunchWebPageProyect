@@ -19,7 +19,7 @@ CREATE TABLE Calificacion (
     fecha_calificacion DATE NOT NULL
 );
 
-CREATE TABLE Filas_Virtual (
+CREATE TABLE Fila_Virtual (
     ID_fila INT AUTO_INCREMENT PRIMARY KEY,
     fecha_realizacion DATE NOT NULL,
     num_personas INT NOT NULL
@@ -46,7 +46,7 @@ CREATE TABLE Facultad (
     nombre VARCHAR(200) UNIQUE NOT NULL
 );
 
-CREATE TABLE Días_Almuerzos_Estudiante (
+CREATE TABLE Dias_Almuerzos_Estudiante (
     ID_dia INT NOT NULL,
     ID_estudiante INT NOT NULL
 );

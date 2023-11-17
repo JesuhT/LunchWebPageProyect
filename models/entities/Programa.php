@@ -14,11 +14,11 @@ class Programa{
     public function getID_programa() {
         return $this->ID_programa;
     }
-        
+
     public function getNombre() {
         return $this->nombre;
     }
-        
+    
     public function getID_facultad() {
         return $this->ID_facultad;
     }

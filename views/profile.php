@@ -96,7 +96,7 @@ if ($_SESSION["NOMBRE"] === null) {
               ?>
             </h5>
             <h6>
-              <?php echo $_SESSION["CELULAR"]; ?>
+              <?php echo $_SESSION["NOMBRE_ROL"]; ?>
             </h6>
             <p class="proile-rating">RANKINGS : <span>8/10</span></p>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -160,7 +160,7 @@ if ($_SESSION["NOMBRE"] === null) {
                   <label>Profession</label>
                 </div>
                 <div class="col-md-6">
-                  <p><?php echo $_SESSION["EMAIL"]; ?></p>
+                  <p><?php echo $_SESSION["NOMBRE_PROGRAMA"]; ?></p>
                 </div>
               </div>
             </div>

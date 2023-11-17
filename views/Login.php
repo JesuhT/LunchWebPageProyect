@@ -8,7 +8,7 @@
     <title>SignUp</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="plugins/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 </head>
 
 <body>
@@ -51,17 +51,17 @@
                 <div class="overlay-left">
                     <h1>Bienvenido</h1>
                     <p>Inicia un nuevo camino con nosotros</p>
-                    <button id="signIn">Sign In</button>
+                    <button id="signIn">Iniciar sesión</button>
                 </div>
                 <div class="overlay-right">
                     <h1>¡Hola!</h1>
                     <p>Que gusto tenerte de vuelta</p>
-                    <button id="signUp">Log In</button>
+                    <button id="signUp">Registrarse</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="plugins/sweetalert2.all.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/log_in.js"></script>
 </body>

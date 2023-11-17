@@ -109,19 +109,19 @@ if ($_SESSION["ID_USUARIO"] === null) {
       <div class="idance">
         <div class="schedule content-block">
           <div class="container">
-            <h2 data-aos="zoom-in-up" class="aos-init aos-animate">Schedule</h2>
+            <h2 data-aos="zoom-in-up" class="aos-init aos-animate">Horario de almuerzos</h2>
 
             <div class="timetable">
 
               <!-- Schedule Top Navigation -->
               <ul class="nav nav-tabs">
-                <li class="nav-link active">Mon</a>
-                <li class="nav-link">Tue</a>
-                <li class="nav-link">Wed</a>
-                <li class="nav-link">Thu</li>
-                <li class="nav-link">Fri</a>
-                <li class="nav-link">Sat</a>
-                <li class="nav-link">Sun</li>
+                <li class="nav-link active">Lun</a>
+                <li class="nav-link">Mar</a>
+                <li class="nav-link">Mie</a>
+                <li class="nav-link">Jue</li>
+                <li class="nav-link">Vie</a>
+                <li class="nav-link">Sab</a>
+                <li class="nav-link">Dom</li>
               </ul>
               <div class="tab-content">
                 <div class="tab-pane show active">
