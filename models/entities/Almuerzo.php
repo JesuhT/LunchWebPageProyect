@@ -5,7 +5,7 @@ class Almuerzo{
     private $nombre;
     private $descripcion;
 
-    public function __construct($ID_almuerzo, $nombre,$descripcion) {
+    public function __construct($ID_almuerzo, $nombre, $descripcion) {
         $this->ID_almuerzo = $ID_almuerzo;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;

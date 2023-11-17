@@ -1,0 +1,62 @@
+// Obtén el nombre completo del día actual
+var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+var hoy = new Date().getDay(); // Retorna un número de 0 (Domingo) a 6 (Sábado)
+var nombreDiaActual = diasSemana[hoy];
+
+
+$(document).ready(function() {
+    // Función para hacer la solicitud AJAX
+    function cargarAlmuerzos(dia) {
+        $.ajax({
+            type: "POST",
+            url: "/../../controllers/action/listaralmuerzo.php",
+            data: { dia: dia },
+            dataType: "json",
+            success: function(response) {
+                $("#row").empty();
+
+                for (var i = 0; i < response.length; i++) {
+                    var almuerzo = response[i];
+                    console.log(almuerzo);
+                    var html = '<div class="col-md-6">' +
+                               '    <div class="timetable-item">' +
+                               '        <div class="timetable-item-main">' +
+                               '           <div class="timetable-item-img">'+
+                               '              <img src="https://www.bootdey.com/image/100x80/FFB6C1/000000" alt="Contemporary Dance">'+
+                               '             </div>'+
+                               '            <div class="timetable-item-time">' + almuerzo.nombre + '</div>' +
+                               '            <div class="timetable-item-name">' + almuerzo.descripcion + '</div>' +
+                               '             <a href="#" class="btn btn-primary btn-book">Ver mas</a>'+
+                               '        </div>' +
+                               '    </div>' +
+                               '</div>';
+
+                    $("#row").append(html);
+                }
+            },
+            error: function(error) {
+                console.error("Error en la solicitud AJAX", error);
+            }
+        });
+    }
+    $(".nav-link").each(function() {
+        if ($(this).text() === nombreDiaActual) {
+            $(this).addClass("active");
+            cargarAlmuerzos(nombreDiaActual);
+        }
+    });
+    
+    // Al hacer clic en un enlace
+    $(".nav-link").on("click", function() {
+        $(".nav-link").removeClass("active");
+        $(this).addClass("active");
+
+        var dia = $(this).text().trim();
+        console.log(dia);
+        cargarAlmuerzos(dia);
+    });
+});
+
+
+
+// Agrega la clase "activo" al elemento del menú que coincide con el día actual
