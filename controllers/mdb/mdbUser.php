@@ -62,12 +62,9 @@ function borrarUsuario($id){
     $res = $dao->borrarUsuario($id);
     return $res;
 }
-function verUsuarios(){
-    $dao=new UsuarioDAO();
-    $usuarios = $dao->verUsuarios();
-    return $usuarios;
-} 
+ 
 function verUsuarioPorId($idUsuario){
+    require_once(__DIR__."/../../models/DAO/userDAO.php");
     $dao=new UsuarioDAO();
     $usuario = $dao->verUsuarioPorId($idUsuario);
     return $usuario;

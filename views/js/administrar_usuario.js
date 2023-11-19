@@ -6,6 +6,7 @@ function ajaxVerUsuarios(){
   $.ajax({
       url: "/../../controllers/actionadmin/ver-usuarios.php",
       success: function(result){ 
+        console.log(result);
          insertarUsuariosEnTabla(JSON.parse(result));
       },
   error: function(xhr){
@@ -23,6 +24,7 @@ $(document).ready(function() {
       url: $(this).attr('action'),
       data: $(this).serialize(), // Serializa los datos del formulario
       success: function(response) {
+        console.log(response);
         var result = JSON.parse(response);
         
         // Muestra el mensaje de éxito
@@ -37,8 +39,8 @@ $(document).ready(function() {
 });
 
 function insertarUsuariosEnTabla(result) {
+  console.log(result);
   let usuarios = '';
-  console.log(result[i].Nombre);
   $.each(result, function(i) {
       usuarios += '<tr id=' + result[i].ID_usuario + '>'
           + '<td class="data-list" width="100" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Nombre + '</td>'
@@ -47,7 +49,6 @@ function insertarUsuariosEnTabla(result) {
           + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Contrasena + '</td>'
           + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Celular + '</td>'
           + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].ID_programa +'</td>'
-          + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].ID_rol +'</td>'
           + '<td class="data-list" width="150" class="text-center" style="border: 1px solid #dddddd; text-align: left; padding: 8px;">'
           + '<div class="btn-container">' 
           + '<a href="#" class="editar btn btn-sm" data-id="' + result[i].ID_usuario + '" style="background-color: #007BFF; color: #fff;" role="button" aria-pressed="true">'

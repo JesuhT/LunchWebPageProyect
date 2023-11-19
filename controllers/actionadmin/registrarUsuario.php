@@ -3,7 +3,7 @@
     session_start();
     
     require_once (__DIR__."/../mdb/mdbUser.php");
-    require_once (__DIR__."/../../modells/entities/Usuario.php");
+    require_once (__DIR__."/../../models/entities/Usuario.php");
     
         $nombres = filter_input(INPUT_POST,'nombres');
         $apellidos = filter_input(INPUT_POST,'apellidos');
@@ -13,9 +13,9 @@
         $idRol = filter_input(INPUT_POST,'rol');
         $idPrograma = filter_input(INPUT_POST,'programa');
         
-        $usuario = new Usuario(NULL, $nombres, $apellidos, $email, $contrasena, $celular, $idRol, $idPrograma);
+        $usuario = new Usuario(NULL, $nombres, $apellidos, $email, $contrasena, $celular, $idPrograma, $idRol);
         $estado  = insertarUsuario($usuario);
-        $msg="Se logró registrar el usuario";
+        $msg = "Se logró registrar el usuario";
        
     $resultado = [
         'estado' => $estado,

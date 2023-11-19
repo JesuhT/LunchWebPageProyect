@@ -26,7 +26,7 @@ if ($_SESSION["ID_ROL"] === 1) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     referrerpolicy="no-referrer" />
   <!----===== Iconscout CSS ===== -->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
   <title>Admin Dashboard Panel</title>
 </head>
@@ -70,9 +70,9 @@ if ($_SESSION["ID_ROL"] === 1) {
       </ul>
 
       <ul class="logout-mode">
-        <li><a href="#">
+        <li><a href="/../controllers/action/logout.php">
             <i class="uil uil-signout"></i>
-            <a class="link-name" href="/../controllers/action/logout.php">Logout</a>
+            <span class="link-name" >Logout</span>
           </a></li>
 
         <li class="mode">

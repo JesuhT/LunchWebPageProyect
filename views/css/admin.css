@@ -56,6 +56,7 @@ body.dark {
   --box3-color: #3a3b3c;
   --box4-color: #ccc;
   --title-icon-color: #ccc;
+  --pag-bm-color:#3a3b3c;
 }
 /* === Custom Scroll Bar CSS === */
 ::-webkit-scrollbar {
@@ -393,16 +394,14 @@ nav.close ~ .dashboard .top {
   text-align: center;
 }
 .activity-data {
-  display: flex;
-  flex-direction: row;
+
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
 .activity-data .data {
-  display: flex;
-  flex-direction: column;
+
   margin: 0 15px;
 }
 .activity-data .data-title {
@@ -410,6 +409,7 @@ nav.close ~ .dashboard .top {
   font-weight: 500;
   color: var(--text-color);
   margin: 0 15px;
+  background-color: var(--pag-bm-color);
 }
 .activity-data .data .data-list {
   font-size: 18px;
