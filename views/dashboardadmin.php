@@ -21,7 +21,7 @@ if ($_SESSION["ID_ROL"] === 1) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!----======== CSS ======== -->
-  <link rel="stylesheet" href="/views/css/admin.css">
+  <link rel="stylesheet" href="css/admin.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     referrerpolicy="no-referrer" />
@@ -181,7 +181,7 @@ if ($_SESSION["ID_ROL"] === 1) {
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="../controlador/accion/registrarUsuario.php" method="post">
+        <form action="/../controllers/actionadmin/registrarUsuario.php" method="post">
           <div class="modal-body">
             <div class="container-fluid">
               <div style="padding:7px 0;" class="justify-content-center row">
@@ -242,7 +242,7 @@ if ($_SESSION["ID_ROL"] === 1) {
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="../controlador/accion/editarUsuario.php" method="post">
+        <form action="/../controllers/actionadmin/editarUsuario.php" method="post">
           <div class="modal-body">
             <div class="container-fluid">
               <div style="padding:7px 0;" class="justify-content-center row">
@@ -292,13 +292,13 @@ if ($_SESSION["ID_ROL"] === 1) {
     </div>
   </div>
   <!-- end modal -->
-  <script src="/views/js/adminfront.js"></script>
+  <script src="js/adminfront.js"></script>
   <!-- end modal -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
-  <script src="/views/js/administrar_usuario.js"></script>
-  <script src="/views/js/cargarProgramas.js"></script>
+  <script src="js/administrar_usuario.js"></script>
+  <script src="js/cargarProgramas.js"></script>
 </body>
 
 </html>
