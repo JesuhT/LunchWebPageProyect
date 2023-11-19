@@ -55,6 +55,7 @@ class UsuarioDAO
                 'Apellido' => $usuario->getApellido(),
                 'Email' => $usuario->getEmail(),
                 'Celular' => $usuario->getCelular(),
+                'Contrasena' => $usuario->getContrasena(),
                 'ID_rol' => $usuario->getID_rol(),
                 'ID_programa' => $usuario->getID_programa());
             return $usuarioArray;
@@ -184,7 +185,7 @@ class UsuarioDAO
             'Nombres' => $fila["Nombres"],
             'Apellidos' => $fila["Apellidos"],
             'Email' => $fila["Email"],
-            'Contrasena' => $fila["Contraseña"],
+            'Contrasena' => $fila["Contrasena"],
             'Celular' => $fila["Celular"],
             'ID_rol' => $fila["ID_rol"],
             'NombrePrograma' => $fila["NombrePrograma"]
