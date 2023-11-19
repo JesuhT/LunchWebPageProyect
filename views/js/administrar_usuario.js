@@ -42,7 +42,7 @@ function insertarUsuariosEnTabla(result) {
   console.log(result);
   let usuarios = '';
   $.each(result, function(i) {
-      usuarios += '<tr id=' + result[i].ID_usuario + '>'
+      usuarios += '<tr id=' + result[i].ID_user + '>'
           + '<td class="data-list" width="100" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Nombre + '</td>'
           + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Apellido + '</td>'
           + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Email + '</td>'
@@ -51,11 +51,11 @@ function insertarUsuariosEnTabla(result) {
           + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].ID_programa +'</td>'
           + '<td class="data-list" width="150" class="text-center" style="border: 1px solid #dddddd; text-align: left; padding: 8px;">'
           + '<div class="btn-container">' 
-          + '<a href="#" class="editar btn btn-sm" data-id="' + result[i].ID_usuario + '" style="background-color: #007BFF; color: #fff;" role="button" aria-pressed="true">'
+          + '<a href="#" class="editar btn btn-sm" data-id="' + result[i].ID_user + '" style="background-color: #007BFF; color: #fff;" role="button" aria-pressed="true">'
           + '<i class="fas fa-edit"></i> Editar</a>'
           + '</div>'
           + '<div class="btn-container">'
-          + '<a href="/../../controllers/actionadmin/eliminarUsuario.php?idUsuario=' + result[i].ID_usuario + '" class="btn btn-danger btn-sm" role="button" aria-pressed="true">'
+          + '<a href="/../../controllers/actionadmin/eliminarUsuario.php?idUsuario=' + result[i].ID_user + '" class="btn btn-danger btn-sm" role="button" aria-pressed="true">'
           + '<i class="fas fa-trash-alt"></i> Eliminar</a>'
           + '</div></td>'
           + '</tr>';

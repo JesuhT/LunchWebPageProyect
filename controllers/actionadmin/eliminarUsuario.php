@@ -4,5 +4,5 @@
     $idUsuario = $_GET['idUsuario'];
     borrarUsuario($idUsuario);
 
-    header("Location: ../../vista/admin-profile.php");
+    header("Location: /../../views/dashboardadmin.php");
     

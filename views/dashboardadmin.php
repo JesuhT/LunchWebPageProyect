@@ -214,8 +214,8 @@ if ($_SESSION["ID_ROL"] === 1) {
                 <div class="rol col-md-8">
                   <select class=" form-control" name="rol">
                     <option>Elegir rol</option>
-                    <option value="1">Administrador</option>
-                    <option value="2">Estudiante</option>
+                    <option value="2">Administrador</option>
+                    <option value="1">Estudiante</option>
                   </select>
                 </div>
               </div>

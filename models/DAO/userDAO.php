@@ -49,7 +49,15 @@ class UsuarioDAO
                     $data_table[$indice]["ID_rol"]
                 );
             }
-            return $usuario;
+            $usuarioArray = array(
+                'ID_user' => $usuario->getID_User(),
+                'Nombre' => $usuario->getNombre(),
+                'Apellido' => $usuario->getApellido(),
+                'Email' => $usuario->getEmail(),
+                'Celular' => $usuario->getCelular(),
+                'ID_rol' => $usuario->getID_rol(),
+                'ID_programa' => $usuario->getID_programa());
+            return $usuarioArray;
         }
     }
 
