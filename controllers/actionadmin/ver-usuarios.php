@@ -1,6 +1,5 @@
 <?php
-    
-    require_once($_SERVER['DOCUMENT_ROOT']."/almuerzo/controlador/mdb/mdbUsuario.php");
-
+    session_start();
+    require_once(__DIR__ . "/../mdb/mdbUser.php");
     $usuarios = verUsuarios();
-    echo json_encode($usuarios);  
+    echo json_encode($usuarios);

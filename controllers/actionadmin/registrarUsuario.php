@@ -11,9 +11,9 @@
         $contrasena = filter_input(INPUT_POST,'contrasena');
         $celular = filter_input(INPUT_POST,'celular');
         $idRol = filter_input(INPUT_POST,'rol');
-        $nombrePrograma = filter_input(INPUT_POST,'nombrePrograma');
+        $idPrograma = filter_input(INPUT_POST,'programa');
         
-        $usuario = new Usuario(NULL, $nombres, $apellidos, $email, $contrasena, $celular, $idRol, $nombrePrograma);
+        $usuario = new Usuario(NULL, $nombres, $apellidos, $email, $contrasena, $celular, $idRol, $idPrograma);
         $estado  = registrarUsuario($usuario);
         $msg="Se logró registrar el usuario";
        

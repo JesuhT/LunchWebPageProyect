@@ -27,5 +27,25 @@ class ProgramaDAO
             return null;
         }
     }
+    public function verProgramas(){
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT ID_programa, nombre FROM Programa", null);
+
+        if (!$data_table) {
+            return array();
+        }
+        $programas = array();
+
+        foreach($data_table as $fila){
+            $idPrograma = isset($fila["ID_programa"]) ? $fila["ID_programa"] : null;
+            $nombrePrograma = isset($fila["nombre"]) ? $fila["nombre"] : null;
+            $programa = array(
+                'ID_programa' => $idPrograma,
+                'nombre' => $nombrePrograma
+            );
+            $programas[] = $programa;
+        }
+        return $programas;
+    }
 
 }

@@ -1,8 +1,9 @@
 <?php
+    session_start();
     require_once (__DIR__.'/../mdb/mdbUsuario.php');
     
-    $idUsuario = filter_input(INPUT_POST,'idUsuario');
+    $idUsuario = $_GET['idUsuario'];
 
-    $usuario = verUsuarioPorId($idUsuario);
+    $usuario = buscarUsuarioPorId($idUsuario);
    
     echo json_encode($usuario);  

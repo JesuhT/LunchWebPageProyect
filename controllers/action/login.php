@@ -18,7 +18,7 @@ if (isset($_POST['email']) && isset($_POST['pswd'])) {
         $_SESSION['CELULAR'] = $usuario->getCelular();
         $_SESSION['EMAIL'] = $usuario->getEmail();
         $_SESSION['ID_PROGRAMA'] = $usuario->getID_programa();
-        $_SESSION['ROL'] = $usuario->getID_rol();
+        $_SESSION['ID_ROL'] = $usuario->getID_rol();
         $_SESSION['CONTRASENA'] = $usuario->getContrasena();
         header("Location: ../../views/menu.php");
 

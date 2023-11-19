@@ -4,7 +4,9 @@ session_start();
 if ($_SESSION["ID_USUARIO"] === null) {
   header("Location: login.php");
 }
-
+if ($_SESSION["ID_ROL"] === 2) {
+  header("Location: dashboardadmin.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -100,10 +102,10 @@ if ($_SESSION["ID_USUARIO"] === null) {
         <path id="vector-s" d="M0.947609 110.983C90.8994 39.2656 364.445 -70.3429 739.011 64.9628C1113.58 200.268 1640.11 166.708 1856.55 133.015" stroke="#EA6A12" stroke-opacity="0.3" />
       </svg>
     </div>
-    <?php if ($_SESSION['tieneAlmuerzoHoy']) { ?>
+    <?php if ($_SESSION['TORF']==1) { ?>
       <div class="ithas" data-placement="top" data-toggle="popover" data-content="Hoy es un día para reclamar almuerzo.">Hoy es un día para reclamar almuerzo. Mira el menú de hoy.</div>
     <?php } else { ?>
-      <div class="ithas" data-placement="top" data-toggle="popover">Hoy no pides almuerzo :(</div>
+      <div class="ithas" data-placement="top" data-toggle="popover">Hoy no pides almuerzo</div>
     <?php } ?>
 
     <div class="today-menu">
