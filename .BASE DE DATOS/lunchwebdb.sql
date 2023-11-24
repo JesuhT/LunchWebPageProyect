@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2023 at 10:46 AM
+-- Generation Time: Nov 19, 2023 at 11:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,44 +18,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lunchwebdb`
+-- Database: `test`
 --
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administradores`
+-- Table structure for table `almuerzo`
 --
 
-CREATE TABLE `administradores` (
-  `ID_administrador` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `administradores`
---
-
-INSERT INTO `administradores` (`ID_administrador`) VALUES
-(34),
-(35);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `almuerzos`
---
-
-CREATE TABLE `almuerzos` (
+CREATE TABLE `almuerzo` (
   `ID_almuerzo` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `almuerzos`
+-- Dumping data for table `almuerzo`
 --
 
-INSERT INTO `almuerzos` (`ID_almuerzo`, `nombre`, `descripcion`) VALUES
+INSERT INTO `almuerzo` (`ID_almuerzo`, `nombre`, `descripcion`) VALUES
 (1, 'Carne molida', 'fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet'),
 (2, 'Carne asada', 'tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi'),
 (3, 'Carne bistec', 'accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam'),
@@ -80,19 +64,19 @@ INSERT INTO `almuerzos` (`ID_almuerzo`, `nombre`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `almuerzos_en_menus`
+-- Table structure for table `almuerzos_en_menu`
 --
 
-CREATE TABLE `almuerzos_en_menus` (
+CREATE TABLE `almuerzos_en_menu` (
   `ID_menu` int(11) NOT NULL,
   `ID_almuerzo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `almuerzos_en_menus`
+-- Dumping data for table `almuerzos_en_menu`
 --
 
-INSERT INTO `almuerzos_en_menus` (`ID_menu`, `ID_almuerzo`) VALUES
+INSERT INTO `almuerzos_en_menu` (`ID_menu`, `ID_almuerzo`) VALUES
 (3, 1),
 (4, 2),
 (2, 3),
@@ -132,23 +116,23 @@ INSERT INTO `almuerzos_en_menus` (`ID_menu`, `ID_almuerzo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `calificaciones`
+-- Table structure for table `calificacion`
 --
 
-CREATE TABLE `calificaciones` (
-  `ID_calificación` int(11) NOT NULL,
+CREATE TABLE `calificacion` (
+  `ID_calificacion` int(11) NOT NULL,
   `ID_estudiante` int(11) NOT NULL,
   `ID_almuerzo` int(11) NOT NULL,
-  `calificación` int(11) NOT NULL,
-  `descripción` varchar(255) DEFAULT NULL,
-  `fecha_calificación` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `calificacion` int(11) NOT NULL,
+  `descripcion` varchar(255) DEFAULT NULL,
+  `fecha_calificacion` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `calificaciones`
+-- Dumping data for table `calificacion`
 --
 
-INSERT INTO `calificaciones` (`ID_calificación`, `ID_estudiante`, `ID_almuerzo`, `calificación`, `descripción`, `fecha_calificación`) VALUES
+INSERT INTO `calificacion` (`ID_calificacion`, `ID_estudiante`, `ID_almuerzo`, `calificacion`, `descripcion`, `fecha_calificacion`) VALUES
 (1, 25, 17, 1, 'velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum', '2023-12-08'),
 (2, 23, 4, 2, 'pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget', '2023-12-14'),
 (3, 17, 14, 0, 'volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed', '2023-12-08'),
@@ -173,73 +157,19 @@ INSERT INTO `calificaciones` (`ID_calificación`, `ID_estudiante`, `ID_almuerzo`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donaciones`
+-- Table structure for table `dias_almuerzos_estudiante`
 --
 
-CREATE TABLE `donaciones` (
-  `ID_donación` int(11) NOT NULL,
-  `ID_donante` int(11) NOT NULL,
-  `ID_beneficiario` int(11) NOT NULL,
-  `fecha` date NOT NULL,
-  `hora` time NOT NULL,
-  `ID_estado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `donaciones`
---
-
-INSERT INTO `donaciones` (`ID_donación`, `ID_donante`, `ID_beneficiario`, `fecha`, `hora`, `ID_estado`) VALUES
-(1, 12, 1, '2023-05-03', '04:28:12', 3),
-(2, 3, 2, '2023-01-13', '02:46:42', 1),
-(3, 25, 3, '2023-09-19', '12:25:47', 1),
-(4, 7, 4, '2023-11-06', '03:19:37', 3),
-(5, 27, 5, '2023-07-16', '21:26:46', 1),
-(6, 10, 6, '2023-04-18', '20:03:28', 3),
-(7, 14, 7, '2023-07-23', '19:22:29', 3),
-(8, 10, 8, '2023-03-30', '19:34:12', 3),
-(9, 11, 9, '2023-12-22', '11:44:37', 3),
-(10, 5, 10, '2023-05-29', '19:16:54', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `días_almuerzos`
---
-
-CREATE TABLE `días_almuerzos` (
-  `ID_Día` int(11) NOT NULL,
-  `nombre` varchar(32) NOT NULL,
-  `ID_menu` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `días_almuerzos`
---
-
-INSERT INTO `días_almuerzos` (`ID_Día`, `nombre`, `ID_menu`) VALUES
-(1, 'Lunes', 1),
-(2, 'Martes', 2),
-(3, 'Miercoles', 3),
-(4, 'Jueves', 4),
-(5, 'Viernes', 5);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `días_almuerzos_estudiantes`
---
-
-CREATE TABLE `días_almuerzos_estudiantes` (
+CREATE TABLE `dias_almuerzos_estudiante` (
   `ID_dia` int(11) NOT NULL,
   `ID_estudiante` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `días_almuerzos_estudiantes`
+-- Dumping data for table `dias_almuerzos_estudiante`
 --
 
-INSERT INTO `días_almuerzos_estudiantes` (`ID_dia`, `ID_estudiante`) VALUES
+INSERT INTO `dias_almuerzos_estudiante` (`ID_dia`, `ID_estudiante`) VALUES
 (3, 1),
 (4, 2),
 (4, 3),
@@ -294,19 +224,72 @@ INSERT INTO `días_almuerzos_estudiantes` (`ID_dia`, `ID_estudiante`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `estados`
+-- Table structure for table `dia_almuerzo`
 --
 
-CREATE TABLE `estados` (
+CREATE TABLE `dia_almuerzo` (
+  `ID_dia` int(11) NOT NULL,
+  `nombre` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `dia_almuerzo`
+--
+
+INSERT INTO `dia_almuerzo` (`ID_dia`, `nombre`) VALUES
+(4, 'Jueves'),
+(1, 'Lunes'),
+(2, 'Martes'),
+(3, 'Miercoles'),
+(5, 'Viernes');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donacion`
+--
+
+CREATE TABLE `donacion` (
+  `ID_donacion` int(11) NOT NULL,
+  `ID_donante` int(11) NOT NULL,
+  `ID_beneficiario` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL,
+  `ID_estado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `donacion`
+--
+
+INSERT INTO `donacion` (`ID_donacion`, `ID_donante`, `ID_beneficiario`, `fecha`, `hora`, `ID_estado`) VALUES
+(1, 12, 1, '2023-05-03', '04:28:12', 3),
+(2, 3, 2, '2023-01-13', '02:46:42', 1),
+(3, 25, 3, '2023-09-19', '12:25:47', 1),
+(4, 7, 4, '2023-11-06', '03:19:37', 3),
+(5, 27, 5, '2023-07-16', '21:26:46', 1),
+(6, 10, 6, '2023-04-18', '20:03:28', 3),
+(7, 14, 7, '2023-07-23', '19:22:29', 3),
+(8, 10, 8, '2023-03-30', '19:34:12', 3),
+(9, 11, 9, '2023-12-22', '11:44:37', 3),
+(10, 5, 10, '2023-05-29', '19:16:54', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `estado`
+--
+
+CREATE TABLE `estado` (
   `ID_estado` int(11) NOT NULL,
   `nombre` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `estados`
+-- Dumping data for table `estado`
 --
 
-INSERT INTO `estados` (`ID_estado`, `nombre`) VALUES
+INSERT INTO `estado` (`ID_estado`, `nombre`) VALUES
 (1, 'Disponible'),
 (2, 'En curso'),
 (3, 'Recibido');
@@ -314,19 +297,19 @@ INSERT INTO `estados` (`ID_estado`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `estados_donaciones`
+-- Table structure for table `estado_donacion`
 --
 
-CREATE TABLE `estados_donaciones` (
-  `ID_donación` int(11) NOT NULL,
+CREATE TABLE `estado_donacion` (
+  `ID_donacion` int(11) NOT NULL,
   `ID_estado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `estados_donaciones`
+-- Dumping data for table `estado_donacion`
 --
 
-INSERT INTO `estados_donaciones` (`ID_donación`, `ID_estado`) VALUES
+INSERT INTO `estado_donacion` (`ID_donacion`, `ID_estado`) VALUES
 (1, 1),
 (2, 2),
 (3, 1),
@@ -341,56 +324,6 @@ INSERT INTO `estados_donaciones` (`ID_donación`, `ID_estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `estudiantes`
---
-
-CREATE TABLE `estudiantes` (
-  `ID_estudiante` int(11) NOT NULL,
-  `ID_Programa` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `estudiantes`
---
-
-INSERT INTO `estudiantes` (`ID_estudiante`, `ID_Programa`) VALUES
-(12, 1),
-(17, 1),
-(19, 1),
-(32, 1),
-(4, 2),
-(7, 2),
-(14, 2),
-(15, 2),
-(16, 2),
-(21, 2),
-(33, 2),
-(1, 3),
-(5, 3),
-(11, 3),
-(20, 3),
-(25, 4),
-(28, 4),
-(31, 4),
-(2, 5),
-(3, 5),
-(9, 5),
-(13, 5),
-(26, 5),
-(29, 5),
-(23, 6),
-(24, 6),
-(27, 6),
-(8, 7),
-(10, 7),
-(18, 7),
-(30, 7),
-(6, 8),
-(22, 8);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `estudiantes_en_fila`
 --
 
@@ -399,7 +332,7 @@ CREATE TABLE `estudiantes_en_fila` (
   `ID_fila` int(11) NOT NULL,
   `turno` int(11) NOT NULL,
   `hora_ingreso` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `estudiantes_en_fila`
@@ -443,19 +376,19 @@ INSERT INTO `estudiantes_en_fila` (`ID_estudiante`, `ID_fila`, `turno`, `hora_in
 -- --------------------------------------------------------
 
 --
--- Table structure for table `facultades`
+-- Table structure for table `facultad`
 --
 
-CREATE TABLE `facultades` (
+CREATE TABLE `facultad` (
   `ID_facultad` int(11) NOT NULL,
   `nombre` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `facultades`
+-- Dumping data for table `facultad`
 --
 
-INSERT INTO `facultades` (`ID_facultad`, `nombre`) VALUES
+INSERT INTO `facultad` (`ID_facultad`, `nombre`) VALUES
 (3, 'Ciencias Básicas'),
 (6, 'Ciencias de la Educación'),
 (5, 'Ciencias de la Salud'),
@@ -466,61 +399,62 @@ INSERT INTO `facultades` (`ID_facultad`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `filas_virtuales`
+-- Table structure for table `fila_virtual`
 --
 
-CREATE TABLE `filas_virtuales` (
+CREATE TABLE `fila_virtual` (
   `ID_fila` int(11) NOT NULL,
-  `fecha_realización` date NOT NULL,
+  `fecha_realizacion` date NOT NULL,
   `num_personas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `filas_virtuales`
+-- Dumping data for table `fila_virtual`
 --
 
-INSERT INTO `filas_virtuales` (`ID_fila`, `fecha_realización`, `num_personas`) VALUES
+INSERT INTO `fila_virtual` (`ID_fila`, `fecha_realizacion`, `num_personas`) VALUES
 (1, '2023-10-12', 12);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menus`
+-- Table structure for table `menu`
 --
 
-CREATE TABLE `menus` (
-  `ID_menu` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `menu` (
+  `ID_menu` int(11) NOT NULL,
+  `ID_dia` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `menus`
+-- Dumping data for table `menu`
 --
 
-INSERT INTO `menus` (`ID_menu`) VALUES
-(1),
-(2),
-(3),
-(4),
-(5);
+INSERT INTO `menu` (`ID_menu`, `ID_dia`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `modificaciones_menus`
+-- Table structure for table `modificaciones_menu`
 --
 
-CREATE TABLE `modificaciones_menus` (
+CREATE TABLE `modificaciones_menu` (
   `ID_administrador` int(11) NOT NULL,
   `ID_menu` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `modificaciones_menus`
+-- Dumping data for table `modificaciones_menu`
 --
 
-INSERT INTO `modificaciones_menus` (`ID_administrador`, `ID_menu`, `fecha`, `hora`) VALUES
+INSERT INTO `modificaciones_menu` (`ID_administrador`, `ID_menu`, `fecha`, `hora`) VALUES
 (35, 2, '2023-11-21', '19:53:49'),
 (34, 1, '2023-07-29', '19:11:20'),
 (35, 5, '2023-07-29', '09:46:58'),
@@ -531,20 +465,20 @@ INSERT INTO `modificaciones_menus` (`ID_administrador`, `ID_menu`, `fecha`, `hor
 -- --------------------------------------------------------
 
 --
--- Table structure for table `programas`
+-- Table structure for table `programa`
 --
 
-CREATE TABLE `programas` (
+CREATE TABLE `programa` (
   `ID_programa` int(11) NOT NULL,
   `nombre` varchar(32) NOT NULL,
   `ID_facultad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `programas`
+-- Dumping data for table `programa`
 --
 
-INSERT INTO `programas` (`ID_programa`, `nombre`, `ID_facultad`) VALUES
+INSERT INTO `programa` (`ID_programa`, `nombre`, `ID_facultad`) VALUES
 (1, 'Administración de Empresas', 1),
 (2, 'Agronómica', 2),
 (3, 'Biología', 3),
@@ -557,133 +491,140 @@ INSERT INTO `programas` (`ID_programa`, `nombre`, `ID_facultad`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Table structure for table `rol`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `rol` (
+  `ID_rol` int(11) NOT NULL,
+  `Nombre` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `rol`
+--
+
+INSERT INTO `rol` (`ID_rol`, `Nombre`) VALUES
+(2, 'Administrador'),
+(1, 'Estudiante');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE `usuario` (
   `ID_user` int(11) NOT NULL,
   `Nombre` varchar(32) NOT NULL,
   `Apellido` varchar(32) NOT NULL,
   `Email` varchar(32) NOT NULL,
-  `Contraseña` varchar(32) NOT NULL,
-  `Celular` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `Contrasena` varchar(32) NOT NULL,
+  `Celular` varchar(20) NOT NULL,
+  `ID_programa` int(11) DEFAULT NULL,
+  `ID_rol` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuarios` (`ID_user`, `Nombre`, `Apellido`, `Email`, `Contraseña`, `Celular`) VALUES
-(1, 'Meredeth', 'Tregensoe', 'mtregensoe0@sphinn.com', 'sG2@Ri4L@HkpM#k', '3045901317'),
-(2, 'Brook', 'Petre', 'bpetre1@imgur.com', 'tF0$!hIPZl7W?Fc', '3101541755'),
-(3, 'Johann', 'Rowth', 'jrowth2@prweb.com', 'zD5<7yN79(+', '3003000313'),
-(4, 'Alvinia', 'Cotsford', 'acotsford3@amazon.de', 'sA9_4i8<N<', '3258404652'),
-(5, 'Fair', 'Kornyshev', 'fkornyshev4@yellowbook.com', 'xJ7%N07eu6', '3110661562'),
-(6, 'Doralyn', 'Revington', 'drevington5@yellowpages.com', 'nX4@AT<m', '3026113197'),
-(7, 'Mercie', 'Tabord', 'mtabord6@wp.com', 'jV9?U?x>B>', '3080877480'),
-(8, 'Demetria', 'Brickwood', 'dbrickwood7@woothemes.com', 'vN9~E(}su\"5#nf22', '3096664279'),
-(9, 'Aubert', 'Willetts', 'awilletts8@amazon.com', 'sB3\"rES\'C3mq&sCN', '3249405360'),
-(10, 'Oriana', 'Linnane', 'olinnane9@disqus.com', 'xO6*{3<=WYyBHX6', '3247655344'),
-(11, 'Lark', 'Alben', 'lalbena@icio.us', 'dY2,BLB+|_', '3181177985'),
-(12, 'Doe', 'Goodboddy', 'dgoodboddyb@fastcompany.com', 'vL2(L1B~qf\"', '3220062201'),
-(13, 'Allyn', 'Manntschke', 'amanntschkec@pcworld.com', 'qN0*qm,W', '3009160346'),
-(14, 'Lanna', 'Keneforde', 'lkeneforded@wisc.edu', 'mT3!pYOzYgUBoG(', '3068250876'),
-(15, 'Lannie', 'Barttrum', 'lbarttrume@moonfruit.com', 'jG2?1dy4*BIERA', '3033494550'),
-(16, 'Augusto', 'Crowley', 'acrowleyf@constantcontact.com', 'lS5_&EX~p', '3095081625'),
-(17, 'Lesly', 'Wyborn', 'lwyborng@google.com.br', 'nU4*j=Pe{', '3010253591'),
-(18, 'Tiena', 'Olenov', 'tolenovh@w3.org', 'lY7@lX%Aj<@7', '3050986937'),
-(19, 'Peirce', 'Heffron', 'pheffroni@blogspot.com', 'tS0/Sk$*zah&TC(', '3248477839'),
-(20, 'Urbain', 'Guillem', 'uguillemj@nsw.gov.au', 'mX8!&8?E2>', '3238543456'),
-(21, 'Lorelle', 'Gumme', 'lgummek@bandcamp.com', 'rS9?Eg4rA?rB', '3030539242'),
-(22, 'Weylin', 'Easen', 'weasenl@pcworld.com', 'mH7!=s{To', '3095323473'),
-(23, 'Deane', 'Sewter', 'dsewterm@intel.com', 'fI0/b+`oO', '3128306573'),
-(24, 'Justen', 'Napleton', 'jnapletonn@canalblog.com', 'eK4(bnZUTa781o$', '3075882986'),
-(25, 'Siana', 'Beckenham', 'e@e.com', '123456', '3099582861'),
-(26, 'Alwyn', 'MacMorland', 'amacmorlandp@cloudflare.com', 'sE4+@ZK_', '3017213485'),
-(27, 'Talbert', 'Engledow', 'tengledowq@geocities.com', 'zD7&}gLp', '3096383924'),
-(28, 'Clea', 'Grant', 'cgrantr@japanpost.jp', 'yU5\'a/KH', '3135476257'),
-(29, 'Marcello', 'Phillput', 'mphillputs@acquirethisname.com', 'uM9#IdL/', '3140913472'),
-(30, 'Wilmar', 'Vaadeland', 'wvaadelandt@simplemachines.org', 'zK9`7vtm', '3105026028'),
-(31, 'Ami', 'Phipard-Shears', 'aphipardshearsu@clickbank.net', 'rG3)fcr=sZW', '3143642005'),
-(32, 'Ceil', 'Newick', 'cnewickv@mysql.com', 'mR1~V4lCTuoT$', '3176499209'),
-(33, 'Falkner', 'Sheddan', 'fsheddanw@multiply.com', 'hL9%Bmfw+', '3021163292'),
-(34, 'Verena', 'Heather', 'vheatherx@github.io', 'xN6\'5@1GXzb<Te', '3077749622'),
-(35, 'Suzann', 'Darbishire', 'sdarbishirey@cloudflare.com', 'aR7/T=VR{vy', '3088604856');
+INSERT INTO `usuario` (`ID_user`, `Nombre`, `Apellido`, `Email`, `Contrasena`, `Celular`, `ID_programa`, `ID_rol`) VALUES
+(1, 'Judy', 'Stanex', 'jstanex0@vkontakte.ru', 'uT8`r>eTLN\'!WU.', '3062393065', 1, 1),
+(2, 'Sharleen', 'Barfford', 'sbarfford1@npr.org', 'cW1=9@XRLf', '3110502728', 2, 1),
+(3, 'Jori', 'Halt', 'jhalt2@moonfruit.com', 'zT8{4`KEXFrnhv', '3041988776', 4, 1),
+(4, 'Caspar', 'Edleston', 'cedleston3@tripadvisor.com', 'mZ1#V\"Su<~ORrOV', '3057404690', 1, 1),
+(5, 'Gay', 'Timmens', 'gtimmens4@craigslist.org', 'aB9>Ft@jgm4', '3067970238', 1, 1),
+(6, 'Davidde', 'Fairham', 'dfairham5@cam.ac.uk', 'iM0*+N9KTePsKC', '3183247955', 2, 1),
+(7, 'Mattie', 'Readett', 'mreadett6@netvibes.com', 'xB4Z*>H', '3141861957', 4, 1),
+(8, 'Ingar', 'Woollons', 'iwoollons7@bluehost.com', 'kM4z?0!\'&', '3200748117', 6, 1),
+(9, 'Dynah', 'Kelston', 'dkelston8@google.co.jp', 'uZ1,,n=6Y~7S', '3252793409', 2, 1),
+(10, 'Fielding', 'Claesens', 'fclaesens9@marriott.com', 'bV6~PQ9f', '3193023471', 4, 1),
+(11, 'Candide', 'Yurshev', 'cyursheva@geocities.com', 'hD4|Yec7hY<', '3134166325', 3, 1),
+(12, 'Sam', 'Harrowsmith', 'sharrowsmithb@princeton.edu', 'kS4|SnE{q47r@', '3135057557', 7, 1),
+(13, 'Fidelio', 'Lantaff', 'flantaffc@cbc.ca', 'aV2!/l=d`y\'m', '3260954496', 3, 1),
+(14, 'Anthe', 'Colbeck', 'acolbeckd@newyorker.com', 'fF0<mFNQNW>', '3090949562', 5, 1),
+(15, 'Dunn', 'Paybody', 'dpaybodye@ox.ac.uk', 'aF3?s}KIxJ%QZ', '3205862945', 5, 1),
+(16, 'Naoma', 'Kilmister', 'nkilmisterf@clickbank.net', 'wL5|H_9y.', '3268475533', 1, 1),
+(17, 'Rich', 'Capron', 'rcaprong@ihg.com', 'sJ0{s{q+', '3269816689', 7, 1),
+(18, 'Rosaline', 'Weatherell', 'rweatherellh@usa.gov', 'dD3}B>s', '3136084593', 5, 1),
+(19, 'Francis', 'Ruilton', 'fruiltoni@slate.com', 'fK0\'eH4', '3070839715', 8, 1),
+(20, 'Tim', 'Mateescu', 'tmateescuj@umn.edu', 'aN8|!0WB2c', '3101301293', 5, 1),
+(21, 'Annora', 'Grzesiak', 'agrzesiakk@networksolutions.com', 'bX0.t?9eQpN', '3258902485', 6, 1),
+(22, 'Sherman', 'Oldman', 'soldmanl@nationalgeographic.com', 'fK0~\"LaweZt', '3069060119', 4, 1),
+(23, 'Ulrika', 'Itshak', 'uitshakm@berkeley.edu', 'rN2=3x0@?Z!S~~', '3175181038', 1, 1),
+(24, 'Jordan', 'Bagby', 'jbagbyn@simplemachines.org', 'xE6}s{SR<2m', '3011739998', 8, 1),
+(25, 'Sukey', 'Golly', 'sgollyo@cdc.gov', 'aX1}ut_\'%utN8y*', '3116186696', 6, 1),
+(26, 'Kaitlynn', 'Bassilashvili', 'kbassilashvilip@trellian.com', 'fO6_6$?|d%y\"Zl|<', '3103187324', 7, 1),
+(27, 'Charlie', 'Nibley', 'cnibleyq@technorati.com', 'sG5_>I*=Eemp', '3100329939', 4, 1),
+(28, 'Moreen', 'Crumpton', 'mcrumptonr@hud.gov', 'fD4\'~BJd0UWFL', '3115245371', 6, 1),
+(29, 'Haley', 'Hanney', 'hhanneys@ebay.com', 'gF8@ceK}z_', '3147291389', 8, 1),
+(30, 'Eddy', 'Yuryichev', 'eyuryichevt@digg.com', 'oO1}h*8>KDEV', '3211542866', 1, 1),
+(31, 'Alano', 'Gillbee', 'agillbeeu@artisteer.com', 'yV4<*F#', '3238425305', 6, 1),
+(32, 'Romonda', 'Greenlies', 'rgreenliesv@ox.ac.uk', 'pO6|t+A%', '3076489393', 1, 1),
+(33, 'Kore', 'Adran', 'kadranw@sfgate.com', 'aJ2.\"Xu$nE`+', '3228889576', 3, 1),
+(34, 'Grethel', 'Hawkeridge', 'ghawkeridgex@home.pl', 'uZ9~o*m!gvn<x\"t&', '3259716223', 3, 2),
+(35, 'Conrade', 'Ruslin', 'e@e.com', '123456', '3179507288', 6, 2);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `administradores`
+-- Indexes for table `almuerzo`
 --
-ALTER TABLE `administradores`
-  ADD PRIMARY KEY (`ID_administrador`);
-
---
--- Indexes for table `almuerzos`
---
-ALTER TABLE `almuerzos`
+ALTER TABLE `almuerzo`
   ADD PRIMARY KEY (`ID_almuerzo`);
 
 --
--- Indexes for table `almuerzos_en_menus`
+-- Indexes for table `almuerzos_en_menu`
 --
-ALTER TABLE `almuerzos_en_menus`
+ALTER TABLE `almuerzos_en_menu`
   ADD KEY `Almuerzos_En_Menu_fk0` (`ID_menu`),
   ADD KEY `Almuerzos_En_Menu_fk1` (`ID_almuerzo`);
 
 --
--- Indexes for table `calificaciones`
+-- Indexes for table `calificacion`
 --
-ALTER TABLE `calificaciones`
-  ADD PRIMARY KEY (`ID_calificación`),
+ALTER TABLE `calificacion`
+  ADD PRIMARY KEY (`ID_calificacion`),
   ADD KEY `Calificacion_fk0` (`ID_estudiante`),
   ADD KEY `Calificacion_fk1` (`ID_almuerzo`);
 
 --
--- Indexes for table `donaciones`
+-- Indexes for table `dias_almuerzos_estudiante`
 --
-ALTER TABLE `donaciones`
-  ADD PRIMARY KEY (`ID_donación`),
+ALTER TABLE `dias_almuerzos_estudiante`
+  ADD KEY `Dias_Almuerzos_Estudiantes_fk0` (`ID_dia`),
+  ADD KEY `Dias_Almuerzos_Estudiantes_fk1` (`ID_estudiante`);
+
+--
+-- Indexes for table `dia_almuerzo`
+--
+ALTER TABLE `dia_almuerzo`
+  ADD PRIMARY KEY (`ID_dia`),
+  ADD UNIQUE KEY `nombre` (`nombre`);
+
+--
+-- Indexes for table `donacion`
+--
+ALTER TABLE `donacion`
+  ADD PRIMARY KEY (`ID_donacion`),
   ADD KEY `Donación_fk0` (`ID_donante`),
   ADD KEY `Donación_fk1` (`ID_beneficiario`),
   ADD KEY `Donación_fk2` (`ID_estado`);
 
 --
--- Indexes for table `días_almuerzos`
+-- Indexes for table `estado`
 --
-ALTER TABLE `días_almuerzos`
-  ADD PRIMARY KEY (`ID_Día`),
-  ADD UNIQUE KEY `nombre` (`nombre`),
-  ADD KEY `Dia_almuerzo_fk0` (`ID_menu`);
-
---
--- Indexes for table `días_almuerzos_estudiantes`
---
-ALTER TABLE `días_almuerzos_estudiantes`
-  ADD KEY `Dias_Almuerzos_Estudiantes_fk0` (`ID_dia`),
-  ADD KEY `Dias_Almuerzos_Estudiantes_fk1` (`ID_estudiante`);
-
---
--- Indexes for table `estados`
---
-ALTER TABLE `estados`
+ALTER TABLE `estado`
   ADD PRIMARY KEY (`ID_estado`);
 
 --
--- Indexes for table `estados_donaciones`
+-- Indexes for table `estado_donacion`
 --
-ALTER TABLE `estados_donaciones`
-  ADD KEY `Estados_Donaciones_fk0` (`ID_donación`),
-  ADD KEY `Estados_Donaciones_fk1` (`ID_estado`);
-
---
--- Indexes for table `estudiantes`
---
-ALTER TABLE `estudiantes`
-  ADD PRIMARY KEY (`ID_estudiante`),
-  ADD KEY `Estudiante_fk2` (`ID_Programa`);
+ALTER TABLE `estado_donacion`
+  ADD KEY `Estado_Donacion_fk0` (`ID_donacion`),
+  ADD KEY `Estado_Donacion_fk1` (`ID_estado`);
 
 --
 -- Indexes for table `estudiantes_en_fila`
@@ -693,109 +634,118 @@ ALTER TABLE `estudiantes_en_fila`
   ADD KEY `Estudiantes_En_Fila_fk1` (`ID_fila`);
 
 --
--- Indexes for table `facultades`
+-- Indexes for table `facultad`
 --
-ALTER TABLE `facultades`
+ALTER TABLE `facultad`
   ADD PRIMARY KEY (`ID_facultad`),
   ADD UNIQUE KEY `nombre` (`nombre`);
 
 --
--- Indexes for table `filas_virtuales`
+-- Indexes for table `fila_virtual`
 --
-ALTER TABLE `filas_virtuales`
+ALTER TABLE `fila_virtual`
   ADD PRIMARY KEY (`ID_fila`);
 
 --
--- Indexes for table `menus`
+-- Indexes for table `menu`
 --
-ALTER TABLE `menus`
+ALTER TABLE `menu`
   ADD PRIMARY KEY (`ID_menu`);
 
 --
--- Indexes for table `modificaciones_menus`
+-- Indexes for table `modificaciones_menu`
 --
-ALTER TABLE `modificaciones_menus`
+ALTER TABLE `modificaciones_menu`
   ADD KEY `Modificaciones_Menu_fk0` (`ID_administrador`),
   ADD KEY `Modificaciones_Menu_fk1` (`ID_menu`);
 
 --
--- Indexes for table `programas`
+-- Indexes for table `programa`
 --
-ALTER TABLE `programas`
+ALTER TABLE `programa`
   ADD PRIMARY KEY (`ID_programa`),
   ADD UNIQUE KEY `nombre` (`nombre`),
   ADD KEY `Programa_fk0` (`ID_facultad`);
 
 --
--- Indexes for table `usuarios`
+-- Indexes for table `rol`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `rol`
+  ADD PRIMARY KEY (`ID_rol`),
+  ADD UNIQUE KEY `Nombre` (`Nombre`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
   ADD PRIMARY KEY (`ID_user`),
   ADD UNIQUE KEY `Email` (`Email`),
-  ADD UNIQUE KEY `Celular` (`Celular`);
+  ADD UNIQUE KEY `Celular` (`Celular`),
+  ADD KEY `Usuario_fk0` (`ID_programa`),
+  ADD KEY `Usuario_fk1` (`ID_rol`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `almuerzos`
+-- AUTO_INCREMENT for table `almuerzo`
 --
-ALTER TABLE `almuerzos`
+ALTER TABLE `almuerzo`
   MODIFY `ID_almuerzo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `calificaciones`
+-- AUTO_INCREMENT for table `calificacion`
 --
-ALTER TABLE `calificaciones`
-  MODIFY `ID_calificación` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+ALTER TABLE `calificacion`
+  MODIFY `ID_calificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `donaciones`
+-- AUTO_INCREMENT for table `donacion`
 --
-ALTER TABLE `donaciones`
-  MODIFY `ID_donación` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `donacion`
+  MODIFY `ID_donacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `estados`
+-- AUTO_INCREMENT for table `estado`
 --
-ALTER TABLE `estados`
+ALTER TABLE `estado`
   MODIFY `ID_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `estudiantes`
+-- AUTO_INCREMENT for table `facultad`
 --
-ALTER TABLE `estudiantes`
-  MODIFY `ID_estudiante` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
---
--- AUTO_INCREMENT for table `facultades`
---
-ALTER TABLE `facultades`
+ALTER TABLE `facultad`
   MODIFY `ID_facultad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `filas_virtuales`
+-- AUTO_INCREMENT for table `fila_virtual`
 --
-ALTER TABLE `filas_virtuales`
+ALTER TABLE `fila_virtual`
   MODIFY `ID_fila` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `menus`
+-- AUTO_INCREMENT for table `menu`
 --
-ALTER TABLE `menus`
+ALTER TABLE `menu`
   MODIFY `ID_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `programas`
+-- AUTO_INCREMENT for table `programa`
 --
-ALTER TABLE `programas`
+ALTER TABLE `programa`
   MODIFY `ID_programa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT for table `rol`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `rol`
+  MODIFY `ID_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
   MODIFY `ID_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
@@ -803,72 +753,73 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Constraints for table `almuerzos_en_menus`
+-- Constraints for table `almuerzos_en_menu`
 --
-ALTER TABLE `almuerzos_en_menus`
-  ADD CONSTRAINT `Almuerzos_En_Menu_fk0` FOREIGN KEY (`ID_menu`) REFERENCES `menus` (`ID_menu`),
-  ADD CONSTRAINT `Almuerzos_En_Menu_fk1` FOREIGN KEY (`ID_almuerzo`) REFERENCES `almuerzos` (`ID_almuerzo`);
+ALTER TABLE `almuerzos_en_menu`
+  ADD CONSTRAINT `Almuerzos_En_Menu_fk0` FOREIGN KEY (`ID_menu`) REFERENCES `menu` (`ID_menu`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Almuerzos_En_Menu_fk1` FOREIGN KEY (`ID_almuerzo`) REFERENCES `almuerzo` (`ID_almuerzo`) ON DELETE CASCADE;
 
 --
--- Constraints for table `calificaciones`
+-- Constraints for table `calificacion`
 --
-ALTER TABLE `calificaciones`
-  ADD CONSTRAINT `Calificacion_fk0` FOREIGN KEY (`ID_estudiante`) REFERENCES `estudiantes` (`ID_estudiante`),
-  ADD CONSTRAINT `Calificacion_fk1` FOREIGN KEY (`ID_almuerzo`) REFERENCES `almuerzos` (`ID_almuerzo`);
+ALTER TABLE `calificacion`
+  ADD CONSTRAINT `Calificacion_fk0` FOREIGN KEY (`ID_estudiante`) REFERENCES `usuario` (`ID_user`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Calificacion_fk1` FOREIGN KEY (`ID_almuerzo`) REFERENCES `almuerzo` (`ID_almuerzo`) ON DELETE CASCADE;
 
 --
--- Constraints for table `donaciones`
+-- Constraints for table `dias_almuerzos_estudiante`
 --
-ALTER TABLE `donaciones`
-  ADD CONSTRAINT `Donación_fk0` FOREIGN KEY (`ID_donante`) REFERENCES `estudiantes` (`ID_estudiante`),
-  ADD CONSTRAINT `Donación_fk1` FOREIGN KEY (`ID_beneficiario`) REFERENCES `estudiantes` (`ID_estudiante`),
-  ADD CONSTRAINT `Donación_fk2` FOREIGN KEY (`ID_estado`) REFERENCES `estados` (`ID_estado`);
+ALTER TABLE `dias_almuerzos_estudiante`
+  ADD CONSTRAINT `Dias_Almuerzos_Estudiantes_fk0` FOREIGN KEY (`ID_dia`) REFERENCES `dia_almuerzo` (`ID_dia`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Dias_Almuerzos_Estudiantes_fk1` FOREIGN KEY (`ID_estudiante`) REFERENCES `usuario` (`ID_user`) ON DELETE CASCADE;
 
 --
--- Constraints for table `días_almuerzos`
+-- Constraints for table `donacion`
 --
-ALTER TABLE `días_almuerzos`
-  ADD CONSTRAINT `Dia_almuerzo_fk0` FOREIGN KEY (`ID_menu`) REFERENCES `menus` (`ID_menu`);
+ALTER TABLE `donacion`
+  ADD CONSTRAINT `Donación_fk0` FOREIGN KEY (`ID_donante`) REFERENCES `usuario` (`ID_user`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Donación_fk1` FOREIGN KEY (`ID_beneficiario`) REFERENCES `usuario` (`ID_user`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Donación_fk2` FOREIGN KEY (`ID_estado`) REFERENCES `estado` (`ID_estado`) ON DELETE CASCADE;
 
 --
--- Constraints for table `días_almuerzos_estudiantes`
+-- Constraints for table `estado_donacion`
 --
-ALTER TABLE `días_almuerzos_estudiantes`
-  ADD CONSTRAINT `Dias_Almuerzos_Estudiantes_fk0` FOREIGN KEY (`ID_dia`) REFERENCES `días_almuerzos` (`ID_Día`),
-  ADD CONSTRAINT `Dias_Almuerzos_Estudiantes_fk1` FOREIGN KEY (`ID_estudiante`) REFERENCES `estudiantes` (`ID_estudiante`);
-
---
--- Constraints for table `estados_donaciones`
---
-ALTER TABLE `estados_donaciones`
-  ADD CONSTRAINT `Estados_Donaciones_fk0` FOREIGN KEY (`ID_donación`) REFERENCES `donaciones` (`ID_donación`),
-  ADD CONSTRAINT `Estados_Donaciones_fk1` FOREIGN KEY (`ID_estado`) REFERENCES `estados` (`ID_estado`);
-
---
--- Constraints for table `estudiantes`
---
-ALTER TABLE `estudiantes`
-  ADD CONSTRAINT `Estudiante_fk2` FOREIGN KEY (`ID_Programa`) REFERENCES `programas` (`ID_programa`);
+ALTER TABLE `estado_donacion`
+  ADD CONSTRAINT `Estado_Donacion_fk0` FOREIGN KEY (`ID_donacion`) REFERENCES `donacion` (`ID_donacion`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Estado_Donacion_fk1` FOREIGN KEY (`ID_estado`) REFERENCES `estado` (`ID_estado`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `estudiantes_en_fila`
 --
 ALTER TABLE `estudiantes_en_fila`
-  ADD CONSTRAINT `Estudiantes_En_Fila_fk0` FOREIGN KEY (`ID_estudiante`) REFERENCES `estudiantes` (`ID_estudiante`),
-  ADD CONSTRAINT `Estudiantes_En_Fila_fk1` FOREIGN KEY (`ID_fila`) REFERENCES `filas_virtuales` (`ID_fila`);
+  ADD CONSTRAINT `Estudiantes_En_Fila_fk0` FOREIGN KEY (`ID_estudiante`) REFERENCES `usuario` (`ID_user`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Estudiantes_En_Fila_fk1` FOREIGN KEY (`ID_fila`) REFERENCES `fila_virtual` (`ID_fila`);
 
 --
--- Constraints for table `modificaciones_menus`
+-- Constraints for table `menu`
 --
-ALTER TABLE `modificaciones_menus`
-  ADD CONSTRAINT `Modificaciones_Menu_fk0` FOREIGN KEY (`ID_administrador`) REFERENCES `administradores` (`ID_administrador`),
-  ADD CONSTRAINT `Modificaciones_Menu_fk1` FOREIGN KEY (`ID_menu`) REFERENCES `menus` (`ID_menu`);
+ALTER TABLE `menu`
+  ADD CONSTRAINT `Menu_fk0` FOREIGN KEY (`ID_menu`) REFERENCES `dia_almuerzo` (`ID_dia`) ON DELETE CASCADE;
 
 --
--- Constraints for table `programas`
+-- Constraints for table `modificaciones_menu`
 --
-ALTER TABLE `programas`
-  ADD CONSTRAINT `Programa_fk0` FOREIGN KEY (`ID_facultad`) REFERENCES `facultades` (`ID_facultad`);
+ALTER TABLE `modificaciones_menu`
+  ADD CONSTRAINT `Modificaciones_Menu_fk0` FOREIGN KEY (`ID_administrador`) REFERENCES `usuario` (`ID_user`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Modificaciones_Menu_fk1` FOREIGN KEY (`ID_menu`) REFERENCES `menu` (`ID_menu`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `programa`
+--
+ALTER TABLE `programa`
+  ADD CONSTRAINT `Programa_fk0` FOREIGN KEY (`ID_facultad`) REFERENCES `facultad` (`ID_facultad`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `Usuario_fk0` FOREIGN KEY (`ID_programa`) REFERENCES `programa` (`ID_programa`) ON DELETE CASCADE,
+  ADD CONSTRAINT `Usuario_fk1` FOREIGN KEY (`ID_rol`) REFERENCES `rol` (`ID_rol`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

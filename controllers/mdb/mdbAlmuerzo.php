@@ -11,4 +11,34 @@ function obtenerAlmuerzosUsuario($usuario,$dia) {
     $tienealmuerzo = $dao->obtenerAlmuerzosUsuario($usuario,$dia);
     return $tienealmuerzo;
 }
+
+function leerAlmuerzos() {
+    $dao = new AlmuerzoDAO();
+    $almuerzos = $dao->leerAlmuerzos();
+    return $almuerzos;
+}
+
+function modificarAlmuerzo($almuerzo) {
+    $dao = new AlmuerzoDAO();
+    $resultado = $dao->modificarAlmuerzo($almuerzo);
+    return $resultado;
+}
+
+function buscarAlmuerzoPorId($id) {
+    $dao = new AlmuerzoDAO();
+    $resultado = $dao->buscarAlmuerzoPorId($id);
+    return $resultado;
+}
+
+function borrarAlmuerzo($id) {
+    $dao = new AlmuerzoDAO();
+    $resultado = $dao->borrarAlmuerzo($id);
+    return $resultado;
+}
+
+function isertarAlmuerzo($almuerzo) {
+    $dao = new AlmuerzoDAO();
+    $resultado = $dao->isertarAlmuerzo($almuerzo);
+    return $resultado;
+}
 ?>

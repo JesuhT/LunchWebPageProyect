@@ -132,8 +132,8 @@ insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_p
 insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (31, 'Alano', 'Gillbee', 'agillbeeu@artisteer.com', 'yV4<*F#', 3238425305, 6, 1);
 insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (32, 'Romonda', 'Greenlies', 'rgreenliesv@ox.ac.uk', 'pO6|t+A%', 3076489393, 1, 1);
 insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (33, 'Kore', 'Adran', 'kadranw@sfgate.com', 'aJ2."Xu$nE`+', 3228889576, 3, 1);
-insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (34, 'Grethel', 'Hawkeridge', 'ghawkeridgex@home.pl', 'uZ9~o*m!gvn<x"t&', 3259716223, 3, 1);
-insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (35, 'Conrade', 'Ruslin', 'e@e.com', '123456', 3179507288, 6, 1);
+insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (34, 'Grethel', 'Hawkeridge', 'ghawkeridgex@home.pl', 'uZ9~o*m!gvn<x"t&', 3259716223, 3, 2);
+insert into Usuario (ID_user, Nombre, Apellido, Email, Contrasena, Celular, ID_programa, ID_rol) values (35, 'Conrade', 'Ruslin', 'e@e.com', '123456', 3179507288, 6, 2);
 
 
 

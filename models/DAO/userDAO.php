@@ -1,5 +1,6 @@
 <?php require_once("datasource.php");
 require_once(__DIR__ . "/../entities/Usuario.php");
+require_once (__DIR__.'/../../controllers/mdb/mdbPrograma.php');
 class UsuarioDAO
 {
     public function autenticarUsuario($email, $Contrasena)
@@ -57,7 +58,8 @@ class UsuarioDAO
                 'Celular' => $usuario->getCelular(),
                 'Contrasena' => $usuario->getContrasena(),
                 'ID_rol' => $usuario->getID_rol(),
-                'ID_programa' => $usuario->getID_programa());
+                'ID_programa' => $usuario->getID_programa()
+            );
             return $usuarioArray;
         }
     }
@@ -67,6 +69,7 @@ class UsuarioDAO
         $data_source = new DataSource();
         $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuario",NULL);
         $usuarios = array();
+        
         if (!$data_table) {
             return array();
         }
@@ -81,11 +84,13 @@ class UsuarioDAO
                 $data_table[$indice]["ID_programa"],
                 $data_table[$indice]["ID_rol"]
             );
+            
             array_push($usuarios, $usuario);
         }
         $usuariosArray = array();
 
         foreach ($usuarios as $usuario) {
+            $programa = buscarProgramaPorId($usuario->getID_programa());
             $usuarioArray = array(
 
                 'ID_user' => $usuario->getID_User(),
@@ -95,6 +100,7 @@ class UsuarioDAO
                 'Celular' => $usuario->getCelular(),
                 'ID_rol' => $usuario->getID_rol(),
                 'ID_programa' => $usuario->getID_programa(),
+                'programa' => $programa->getNombre(),
             );
 
             $usuariosArray[] = $usuarioArray;
@@ -158,6 +164,51 @@ class UsuarioDAO
         return $resultado;
     }
 
+    public function verificarExistencia($valor, $columna)
+    {
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Usuario WHERE $columna = :valor", array(':valor' => $valor));
+        $usuarios = array();
+        if (count($data_table) > 0) {
+            // Usuario existe, devolver los datos del usuario
+            foreach ($data_table as $indice => $valor) {
+                $usuario = new Usuario(
+                    $data_table[$indice]["ID_user"],
+                    $data_table[$indice]["Nombre"],
+                    $data_table[$indice]["Apellido"],
+                    $data_table[$indice]["Email"],
+                    $data_table[$indice]["Contrasena"],
+                    $data_table[$indice]["Celular"],
+                    $data_table[$indice]["ID_programa"],
+                    $data_table[$indice]["ID_rol"]
+                );
+                
+                array_push($usuarios, $usuario);
+            }
+            $usuariosArray = array();
+    
+            foreach ($usuarios as $usuario) {
+                $programa = buscarProgramaPorId($usuario->getID_programa());
+                $usuarioArray = array(
+    
+                    'ID_user' => $usuario->getID_User(),
+                    'Nombre' => $usuario->getNombre(),
+                    'Apellido' => $usuario->getApellido(),
+                    'Email' => $usuario->getEmail(),
+                    'Celular' => $usuario->getCelular(),
+                    'ID_rol' => $usuario->getID_rol(),
+                    'ID_programa' => $usuario->getID_programa(),
+                    'programa' => $programa->getNombre(),
+                );
+    
+                $usuariosArray[] = $usuarioArray;
+            }
+            return $usuariosArray;
+        } else {
+            // Usuario no existe
+            return null;
+        }
+    }
     public function borrarUsuario($ID_user)
     {
         $data_source = new DataSource();
@@ -165,21 +216,23 @@ class UsuarioDAO
 
         return $resultado;
     }
-    
-    public function verUsuarioPorId($idUsuario){
+
+    public function verUsuarioPorId($idUsuario)
+    {
         $data_source = new DataSource();
         $data_table = $data_source->ejecutarConsulta(
             "SELECT Usuario.ID_user, Usuario.Nombre, Usuario.Apellido, Usuario.Email, Usuario.Contrasena, Usuario.Celular, Usuario.ID_rol, Usuario.ID_programa AS NombrePrograma,  
             FROM Usuario
             WHERE ID_user = :idUsuario",
-            array(':idUsuario' => $idUsuario));
-    
+            array(':idUsuario' => $idUsuario)
+        );
+
         if (!$data_table || empty($data_table)) {
-            return null; 
+            return null;
         }
 
         $fila = $data_table[0];
-    
+
         return [
             'ID_usuario' => $fila["ID_usuario"],
             'Nombres' => $fila["Nombres"],
@@ -191,4 +244,5 @@ class UsuarioDAO
             'NombrePrograma' => $fila["NombrePrograma"]
         ];
     }
+    
 }

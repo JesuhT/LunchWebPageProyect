@@ -13,10 +13,11 @@ $nuevaContraseña = $_POST['nuevaContraseña'];
 $confirmarContraseña = $_POST['confirmarContraseña'];
 
 // Inicializa el mensaje de error
-$mensajeError = '';
+$msg = '';
+$resultado=array();
 
 // Comprueba si se proporcionó una nueva contraseña
-if (!empty($nuevaContraseña)) {
+if (!empty($nuevaContraseña) && !empty($confirmarContraseña)) {
     // Comprueba la coincidencia con la confirmación
     if ($nuevaContraseña == $confirmarContraseña) {
         // Actualiza la contraseña solo si se proporciona y coincide con la confirmación
@@ -32,10 +33,19 @@ if (!empty($nuevaContraseña)) {
         );
     } else {
         // Muestra un mensaje de error si las contraseñas no coinciden
-        $mensajeError = 'Las contraseñas no coinciden';
+        $estado=false;
+        $msg = 'Las contraseñas no coinciden';
+        $resultado = [
+            'estado' => $estado,
+            'msg' => $msg
+        ];
+        echo json_encode($resultado);
     }
-} else {
+
+        
+} else if (!empty($nombre) || !empty($apellido) || !empty($email) || !empty($telefono)) {
     // Si no se proporciona una nueva contraseña, mantiene la contraseña actual
+
     $usuario = new Usuario(
         $_SESSION["ID_USUARIO"],
         $nombre,
@@ -49,9 +59,20 @@ if (!empty($nuevaContraseña)) {
 }
 
 // Actualiza el usuario si no hay errores
-if (empty($mensajeError)) {
+if (empty($msg)) {
     $resultado = modificarUsuario($usuario);
+    if (!$resultado) { // No puede iniciar sesión
+        $estado = false;
+        $msg = "Error de credenciales";
 
+		
+        $resultado = [
+            'estado' => $estado,
+            'msg' => $msg
+        ];
+        
+        echo json_encode($resultado);
+    }
     unset($_SESSION["NOMBRE"]);
     unset($_SESSION["APELLIDO"]);
     unset($_SESSION["CELULAR"]);
@@ -67,13 +88,6 @@ if (empty($mensajeError)) {
     $_SESSION['CONTRASENA'] = $usuario->getContrasena();
 
     // Redirige según el resultado
-    if ($resultado) {
-        header("Location: ../../views/profile.php?msg=Actualización exitosa");
-    } else {
-        header("Location: ../../views/profile.php?msg=Error en la actualización");
-    }
-} else {
-    // Vuelve al formulario con el mensaje de error
-    header("Location: ../../views/formulario_actualizacion.php?msgError=$mensajeError");
+    
 }
 ?>

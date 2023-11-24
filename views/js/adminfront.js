@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("loader-wrapper").style.display = "none";
         // Muestra el contenido principal
         document.getElementById("main-content").style.display = "block";
-    }, 6000); // Cambia 2000 a la duración real de tu carga
+    }, 2000); // Cambia 2000 a la duración real de tu carga
 });
 
 

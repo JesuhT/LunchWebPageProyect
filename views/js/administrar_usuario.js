@@ -30,13 +30,17 @@ $(document).ready(function () {
 
         // Muestra el mensaje de éxito
         Swal.fire({
-          icon: result.success ? 'success' : 'error',
+          icon: result.estado ? 'success' : 'error',
           title: result.msg,
           showConfirmButton: false,
           timer: 1500
         }).then(function () {
-          // Recarga la página después de cerrar SweetAlert
-          location.reload();
+          if(!result.estado){
+
+          } else { 
+            location.reload();
+          }
+          
         });
       },
       error: function (err) {
@@ -56,7 +60,7 @@ function insertarUsuariosEnTabla(result) {
       + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Apellido + '</td>'
       + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Email + '</td>'
       + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].Celular + '</td>'
-      + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].ID_programa + '</td>'
+      + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].programa + '</td>'
       + '<td class="data-list" width="150" class="text-center" style="border: 1px solid #dddddd; text-align: left; padding: 8px;">'
       + '<div class="btn-container">'
       + '<a class="editar btn btn-sm" data-id="' + result[i].ID_user + '" style="background-color: #007BFF; color: #fff;" role="button" aria-pressed="true">'
@@ -84,20 +88,19 @@ function insertarDatosUsuarioEnModal() {
         var usuario = JSON.parse(response);
         console.log(response);
         $("#modalEditarUsuario").modal('show');
-        $("#modalEditarUsuario input[name='ID']").val(usuario.ID_user);
+        $("#modalEditarUsuario input[name='IdUsuario']").val(usuario.ID_user);
         $("#modalEditarUsuario input[name='nombres']").val(usuario.Nombre);
         $("#modalEditarUsuario input[name='apellidos']").val(usuario.Apellido);
         $("#modalEditarUsuario input[name='email']").val(usuario.Email);
         $("#modalEditarUsuario input[name='contrasena']").val(usuario.Contrasena);
         $("#modalEditarUsuario input[name='celular']").val(usuario.Celular);
-        $("#modalEditarUsuario input[name='nombrePrograma']").val(usuario.ID_programa);
+        // Seleccionar el programa del usuario en el select correspondiente
+        var programaSelect = $("#modalEditarUsuario select[name='programa']");
+        programaSelect.val(usuario.ID_programa);
 
-
-        if (usuario.ID_rol == 2) {
-          $("#modalEditarUsuario .rol option:eq(1)").prop('selected', true);
-        } else {
-          $("#modalEditarUsuario .rol option:eq(2)").prop('selected', true);
-        }
+        // Seleccionar el rol del usuario en el select correspondiente
+        var rolSelect = $("#modalEditarUsuario select[name='rol']");
+        rolSelect.val(usuario.ID_rol);
       },
       error: function (err) {
         console.error('Error:', err);
@@ -123,7 +126,7 @@ function insertarDatosUsuarioEnModal() {
             var result = JSON.parse(response);
 
             Swal.fire({
-              icon: result.success ? 'success' : 'error',
+              icon: result.estado ? 'success' : 'error',
               title: result.msg,
               showConfirmButton: false,
               timer: 1500

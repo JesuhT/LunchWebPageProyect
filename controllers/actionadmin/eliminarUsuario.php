@@ -4,10 +4,12 @@ require_once(__DIR__ . '/../mdb/mdbUser.php');
 $idUsuario = $_GET['idUsuario'];
 $success = borrarUsuario($idUsuario);
 
-// Prepara el mensaje
-$msg = $success ? "El usuario ha sido eliminado correctamente" : "Error al eliminar el usuario";
+
+$estado=true;
+
+$msg = "El usuario ha sido eliminado correctamente";
 $resultado = [
-    'success' => $success,
+    'estado' => $estado,
     'msg' => $msg
 ];
 echo json_encode($resultado);

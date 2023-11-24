@@ -28,7 +28,7 @@
                     <option value="2">Civil</option>
                     <option value="2">Pesquera</option>
                 </select>
-                <button name="submitt">Registrarse</button>
+                <button value="submitt">Registrarse</button>
             </form>
         </div>
         <div class="Sign-In">

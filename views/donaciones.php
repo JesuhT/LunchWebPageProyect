@@ -2,9 +2,24 @@
 session_start();
 
 if ($_SESSION["ID_USUARIO"] === null) {
-  header("Location: login.php");
+    // Redirige a login.php después de 2 segundos
+    echo '<script>
+        setTimeout(function() {
+            window.location = "login.php";
+        }, 2000);
+    </script>';
+    exit; // Asegura que no se procese más código PHP
 }
 
+if ($_SESSION["ID_ROL"] === 2) {
+    // Redirige a index.php después de 2 segundos
+    echo '<script>
+        setTimeout(function() {
+            window.location = "dashboardadmin.php";
+        }, 2000);
+    </script>';
+    exit; // Asegura que no se procese más código PHP
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
