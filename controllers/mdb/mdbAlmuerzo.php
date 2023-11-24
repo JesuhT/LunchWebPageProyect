@@ -36,9 +36,9 @@ function borrarAlmuerzo($id) {
     return $resultado;
 }
 
-function isertarAlmuerzo($almuerzo) {
+function insertarAlmuerzo($almuerzo) {
     $dao = new AlmuerzoDAO();
-    $resultado = $dao->isertarAlmuerzo($almuerzo);
+    $resultado = $dao->insertarAlmuerzo($almuerzo);
     return $resultado;
 }
 ?>

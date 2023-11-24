@@ -10,7 +10,7 @@
 
         
         $almuerzo = new Almuerzo(NULL, $nombre, $descripcion);
-        $success  = isertarAlmuerzo($almuerzo);
+        $success  = insertarAlmuerzo($almuerzo);
 
             $estado=true;
         

@@ -423,22 +423,23 @@ if ($_SESSION["ID_ROL"] === 1) {
 					<div class="activity">
 						<div class="title">
 							<i class="uil uil-clock-three"></i>
-							<span class="text">Almuerzos</span>
+							<span class="text">Almuerzos en Menu</span>
 							<!-- Button trigger modal -->
 							<div class="container-fluid">
 								<div class="justify-content-center row">
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCrearAlmuerzo">
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarAlmuerzoMenu">
 										Crear almuerzo
 									</button>
 								</div>
 							</div>
 						</div>
-						<table class="activity-data table" id="almuerzosRegistrados">
+						<table class="activity-data table" id="almuerzosEnMenu">
 							<thead class="table">
 								<tr>
-									<th class="data-title" scope="col">ID</th>
-									<th class="data-title" scope="col">Nombre</th>
-									<th class="data-title" scope="col">Descripción</th>
+									<th class="data-title" scope="col">IDalmuerzo</th>
+									<th class="data-title" scope="col">Nombre Almuerzo</th>
+									<th class="data-title" scope="col">IDmenu</th>
+                  <th class="data-title" scope="col">Día</th>
 									<th class="data-title" scope="col">Acciones</th>
 								</tr>
 							</thead>
@@ -447,28 +448,33 @@ if ($_SESSION["ID_ROL"] === 1) {
 							</tbody>
 						</table>
 					</div>
-					<!-- Modal CREAR USUARIO -->
-					<div class="modal fade" id="modalCrearAlmuerzo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<!-- Modal CREAR ALMUEZO -->
+					<div class="modal fade" id="agregarAlmuerzoMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Registrar Almuerzo</h5>
+									<h5 class="modal-title" id="exampleModalLabel">Agregar un Almuerzo</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<form action="/../controllers/action/registrarAlmuerzo.php" method="post">
+								<form action="/../controllers/action/registrarAlmuerzoMenu.php" method="post">
 									<div class="modal-body">
 										<div class="container-fluid">
-											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="ID" type="email" class="form-control" name="ID_almuerzo"></div>
+                    <div style="padding:7px 0;" class="justify-content-center row">
+												<div class="col-md-8"><input placeholder="IDalmuerzoalmuerzo" type="text" class="form-control" name="ID_almuerzo">
+												</div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
 												<div class="col-md-8"><input placeholder="Nombre" type="text" class="form-control" name="nombre">
 												</div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="Descripcion" type="text" class="form-control" name="descripcion">
+												<div class="col-md-8"><input placeholder="IDmenu" class="form-control" name="ID_menu">
+												</div>
+											</div>
+                      <div style="padding:7px 0;" class="justify-content-center row">
+												<div class="col-md-8"><input placeholder="Día" class="form-control" name="dia">
 												</div>
 											</div>
 											<div class="justify-content-center row">
@@ -482,7 +488,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 						</div>
 					</div>
 
-					<!-- Modal EDITAR ALMUERZO-->
+					<!-- Modal EDITAR MENU-->
 					<div class="modal fade" id="modalEditarAlmuerzo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -492,7 +498,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<form id="formEditarAlmuerzo" action="/../controllers/action/editarAlmuerzo.php" method="post">
+								<form id="formEditarAlmuerzo" action="/../controllers/action/editarAlmuerzoMenu.php" method="post">
 									<div class="modal-body">
 										<div class="container-fluid">
 											<div style="padding:7px 0;" class="justify-content-center row">
@@ -504,7 +510,11 @@ if ($_SESSION["ID_ROL"] === 1) {
 												</div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="Descripción" class="form-control" name="descripcion">
+												<div class="col-md-8"><input placeholder="IDmenu" class="form-control" name="ID_menu">
+												</div>
+											</div>
+                      <div style="padding:7px 0;" class="justify-content-center row">
+												<div class="col-md-8"><input placeholder="Día" class="form-control" name="dia">
 												</div>
 											</div>
 
@@ -535,6 +545,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 
 	<script src="js/administrar_usuario.js"></script>
 	<script src="js/administrar_almuerzos.js"></script>
+	<script src="js/administrar_menu.js"></script>
 	<script src="js/cargarProgramas.js"></script>
 </body>
 

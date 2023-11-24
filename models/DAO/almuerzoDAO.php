@@ -29,7 +29,7 @@ class AlmuerzoDAO
 
         foreach ($almuerzos as $almuerzo) {
             $almuerzoArray = array(
-
+                'ID_almuerzo'=> $almuerzo->getID_almuerzo(),
                 'nombre' => $almuerzo->getNombre(),
                 'descripcion' => $almuerzo->getDescripcion(),
             );
@@ -127,7 +127,7 @@ class AlmuerzoDAO
         return $resultado;
     }
 
-    public function isertarAlmuerzo(Almuerzo $Almuerzo)
+    public function insertarAlmuerzo(Almuerzo $Almuerzo)
     {
         $data_source = new DataSource();
         $sql = "INSERT INTO Almuerzo (ID_almuerzo, nombre, descripcion) VALUES (:ID_almuerzo, :nombre, :descripcion)";
