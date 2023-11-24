@@ -65,6 +65,7 @@ if ($_SESSION["NOMBRE"] === null) {
                 <?php echo $_SESSION["NOMBRE"]; ?></a>
               <ul class="dropdown-content">
                 <li><a href="profile.php">Editar perfil</a></li>
+                <li><a href="dashboardadmin.php">Dashboard</a></li>
                 <li><a href="/../controllers/action/logout.php">Cerrar sesión</a></li>
               </ul>
 
@@ -98,7 +99,7 @@ if ($_SESSION["NOMBRE"] === null) {
             <h6>
               <?php echo $_SESSION["NOMBRE_ROL"]; ?>
             </h6>
-            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+            <p class="proile-rating">Donaciones : <span>4/5</span></p>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -116,16 +117,7 @@ if ($_SESSION["NOMBRE"] === null) {
       <div class="row">
         <div class="col-md-4">
           <div class="profile-work">
-            <p>WORK LINK</p>
-            <a href="">Website Link</a><br />
-            <a href="">Bootsnipp Profile</a><br />
-            <a href="">Bootply Profile</a>
-            <p>SKILLS</p>
-            <a href="">Web Designer</a><br />
-            <a href="">Web Developer</a><br />
-            <a href="">WordPress</a><br />
-            <a href="">WooCommerce</a><br />
-            <a href="">PHP, .Net</a><br />
+            
           </div>
         </div>
         <div class="col-md-8">

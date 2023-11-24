@@ -19,6 +19,7 @@ function insertarAlmuerzosEnMenuEnTabla(result) {
   console.log(result);
   let almuerzosEnMenu = '';
   $.each(result, function (i) {
+
     almuerzosEnMenu += '<tr id=' + result[i].ID_almuerzo + '>'
       + '<td class="data-list" width="100" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].ID_almuerzo + '</td>'
       + '<td class="data-list" width="100" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].nombre + '</td>'
@@ -26,11 +27,11 @@ function insertarAlmuerzosEnMenuEnTabla(result) {
       + '<td class="data-list" width="20" style="border: 1px solid #dddddd; text-align: left;padding: 8px;">' + result[i].dia + '</td>'
       + '<td class="data-list" width="150" class="text-center" style="border: 1px solid #dddddd; text-align: left; padding: 8px;">'
       + '<div class="btn-container">'
-      + '<a class="editaralmenu btn btn-sm" data-id="' + result[i].ID_almuerzo + '" style="background-color: #007BFF; color: #fff;" role="button" aria-pressed="true">'
+      + '<a class="editaralmenu btn btn-sm" data-id="' + result[i].ID_almuerzo + '" data-menu-id="' + result[i].ID_menu +  '" style="background-color: #007BFF; color: #fff;" role="button" aria-pressed="true">'
       + '<i class="fas fa-edit"></i> Editar</a>'
       + '</div>'
       + '<div class="btn-container">'
-      + '<a  data-id="' + result[i].ID_almuerzo + '" class="deleteAlmuerzoEnMenu btn btn-danger btn-sm" role="button" aria-pressed="true">'
+      + '<a  data-id="' + result[i].ID_almuerzo + '" data-menu-id="' + result[i].ID_menu + '" class="deleteAlmuerzoEnMenu btn btn-danger btn-sm" role="button" aria-pressed="true">'
       + '<i class="fas fa-trash-alt"></i> Eliminar</a>'
       + '</div></td>'
       + '</tr>';
@@ -44,24 +45,20 @@ function insertarAlmuerzosEnMenuEnTabla(result) {
 function insertarDatosAlmuerzoEnMenuEnModal() {
   $('.editaralmenu').click(function () {
     var almuerzoID = $(this).data('id');
+    var menuID = $(this).data('menu-id');
     console.log(almuerzoID);
+    console.log(menuID);
     $.ajax({
-      url: '/../../controllers/actionadmin/verUsuarioPorId.php?idUsuario=' + userID,
+      url: '/../../controllers/action/verAlmuerzoMenuId.php?idAlmuerzo=' + almuerzoID + '&idMenu=' + menuID,
       success: function (response) {
-        var usuario = JSON.parse(response);
-        console.log(response);
-        $("#almuerzosEnMenu").modal('show');
-        $("#almuerzosEnMenu input[name='ID_almuerzo']").val(usuario.ID_almuerzo);
-        $("#almuerzosEnMenu input[name='nombre']").val(usuario.nombre);
-        $("#almuerzosEnMenu input[name='ID_menu']").val(usuario.ID_menu);
-        $("#almuerzosEnMenu input[name='dia']").val(usuario.dia);
-        // Seleccionar el programa del usuario en el select correspondiente
-        var programaSelect = $("#modalEditarUsuario select[name='programa']");
-        programaSelect.val(usuario.ID_programa);
-
-        // Seleccionar el rol del usuario en el select correspondiente
-        var rolSelect = $("#modalEditarUsuario select[name='rol']");
-        rolSelect.val(usuario.ID_rol);
+        var almue = JSON.parse(response);
+        console.log(almue);
+        $("#modalEditarAlmuerzoMenu").modal('show');
+        $("#modalEditarAlmuerzoMenu input[name='ID_almuerzo']").val(almue[0].ID_almuerzo);
+        $("#modalEditarAlmuerzoMenu input[name='nombre']").val(almue[0].nombre);
+        $("#modalEditarAlmuerzoMenu input[name='ID_menu']").val(almue[0].ID_menu);
+        var diaSelect = $("#modalEditarAlmuerzoMenu select[name='dia']");
+        diaSelect.val(almue[0].ID_dia);
       },
       error: function (err) {
         console.error('Error:', err);
@@ -70,7 +67,7 @@ function insertarDatosAlmuerzoEnMenuEnModal() {
   });
   $('.deleteAlmuerzoEnMenu').click(function () {
     var almuerzoID = $(this).data('id');
-
+    var menuID = $(this).data('menu-id');
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción no se puede deshacer.',
@@ -82,7 +79,7 @@ function insertarDatosAlmuerzoEnMenuEnModal() {
     }).then((result) => {
       if (result.isConfirmed) {
         $.ajax({
-          url: '/../../controllers/action/eliminarAlmuerzoMenu.php?idAlmuerzo=' + almuerzoID,
+          url: '/../../controllers/action/eliminarAlmuerzoMenu.php?idAlmuerzo=' + almuerzoID + '&idMenu=' + menuID,
           success: function (response) {
             var result = JSON.parse(response);
 

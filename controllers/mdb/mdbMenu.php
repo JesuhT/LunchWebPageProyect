@@ -11,5 +11,19 @@ function leerAlmuerzosMenu() {
     $resultado = $dao->modificarAlmuerzo($almuerzo);
     return $resultado;
 } */
-
+function buscarAlmuerzoMenuPorId($almuerzo, $menu) {
+    $dao = new AlmuerzoEnMenuDAO();
+    $resultado = $dao->buscarAlmuerzoMenuPorId($almuerzo, $menu);
+    return $resultado;
+}
+function borrarAlmuerzoMenu($almuerzo, $menu) {
+    $dao = new AlmuerzoEnMenuDAO();
+    $resultado = $dao->borrarAlmuerzoMenu($almuerzo, $menu);
+    return $resultado;
+}
+function insertarAlmuerzoMenu($almuerzo) {
+    $dao = new AlmuerzoEnMenuDAO();
+    $resultado = $dao->insertarAlmuerzoMenu($almuerzo);
+    return $resultado;
+}
 ?>

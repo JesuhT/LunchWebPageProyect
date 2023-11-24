@@ -22,11 +22,8 @@
                 <input type="email" name="email" placeholder="Correo electrónico">
                 <input type="password" name="pswd" placeholder="Contraseña" required="">
                 <input type="text" name="phone" placeholder="Celular">
-                <select id="programa" name="programa">
+                <select class="programaSelect" id="programa" name="programa">
                     <option value="" disabled selected hidden>Programa</option>
-                    <option value="1">Sistemas</option>
-                    <option value="2">Civil</option>
-                    <option value="2">Pesquera</option>
                 </select>
                 <button value="submitt">Registrarse</button>
             </form>
@@ -64,6 +61,7 @@
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/log_in.js"></script>
+    <script src="js/cargarProgramas.js"></script>
 </body>
 
 </html>

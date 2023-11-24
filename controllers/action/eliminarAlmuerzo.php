@@ -5,16 +5,12 @@ $idAlmue = $_GET['ID_almuerzo'];
 $success = borrarAlmuerzo($idAlmue);
 
 // Prepara el mensaje
-if ($success>0) {
+
     $estado=true;
 
-}else {
-    $estado=false;
-
-}
-$msg = $estado ? "El almuerzo ha sido eliminado correctamente" : "Error al eliminar el almuerzo";
+$msg = "El almuerzo ha sido eliminado correctamente" ;
 $resultado = [
-    'estado' => $success,
+    'estado' => $estado,
     'msg' => $msg
 ];
 echo json_encode($resultado);

@@ -1,6 +1,6 @@
 <?php
 
-class Día_Almuerzo{
+class Dia_Almuerzo{
     private $ID_dia;
     private $nombre;
 

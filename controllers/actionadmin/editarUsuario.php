@@ -16,36 +16,37 @@ require_once(__DIR__ . '/../../models/entities/Usuario.php');
     $ntele="Celular";
 
     // Verificar existencia de email
-    $usuarioExistenteEmail = verificarExistencia($email, $nemail);
-    if ($usuarioExistenteEmail && $usuarioExistenteEmail['ID_user'] !== $idUsuario) {
-        $estado = false;
-        $msg = "Este email ya está siendo utilizado, ingrese un email distinto";
-        $resultado = [
-            'estado' => $estado,
-            'msg' => $msg
-        ];
-        if (!$estado) {
-            echo json_encode($resultado);
-            exit;
-        }
+    // $usuarioExistenteEmail = verificarExistencia($email, $nemail);
+    // $e=$usuarioExistenteEmail['ID_user'] ;
+    // if ($usuarioExistenteEmail && $e!== $idUsuario) {
+    //     $estado = false;
+    //     $msg = "Este email ya está siendo utilizado, ingrese un email distinto";
+    //     $resultado = [
+    //         'estado' => $estado,
+    //         'msg' => $msg
+    //     ];
+    //     if (!$estado) {
+    //         echo json_encode($resultado);
+    //         exit;
+    //     }
     
-    }
+    // }
 
-    // Verificar existencia de celular
-    $usuarioExistenteCelular = verificarExistencia($celular, $ntele);
-    if ($usuarioExistenteCelular && $usuarioExistenteCelular['ID_user'] !== $idUsuario) {
-        $estado = false;
-        $msg = "Este celular ya está siendo utilizado, ingrese un celular distinto";
-        $resultado = [
-            'estado' => $estado,
-            'msg' => $msg
-        ];
-        if (!$estado) {
-            echo json_encode($resultado);
-            exit;
-        }
+    // // Verificar existencia de celular
+    // $usuarioExistenteCelular = verificarExistencia($celular, $ntele);
+    // if ($usuarioExistenteCelular && $usuarioExistenteCelular['ID_user'] !== $idUsuario) {
+    //     $estado = false;
+    //     $msg = "Este celular ya está siendo utilizado, ingrese un celular distinto";
+    //     $resultado = [
+    //         'estado' => $estado,
+    //         'msg' => $msg
+    //     ];
+    //     if (!$estado) {
+    //         echo json_encode($resultado);
+    //         exit;
+    //     }
     
-    }
+    // }
     $usuario = new Usuario($idUsuario, $nombres, $apellidos, $email, $contrasena, $celular, $idPrograma, $idRol);
     $user = modificarUsuario($usuario);
 

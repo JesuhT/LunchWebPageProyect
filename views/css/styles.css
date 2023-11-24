@@ -286,9 +286,11 @@ html {
 }
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link.active {
   color: var(--color-content);
+
 }
 .navbar.fixed-top.navbar-dark .navbar-nav .nav-link::after {
   background-color: var(--color-content);
+
 }
 .content {
   padding: 120px 0;
@@ -296,10 +298,12 @@ html {
 @media screen and (max-width: 768px) {
   .navbar-brand {
     margin-left: 20px;
+    
   }
   .navbar-nav {
     padding: 0 20px;
     background-color: rgba(0, 0, 0, .9);
+    color: #747794;
   }
   .navbar.fixed-top .navbar-nav {
     background: transparent;
@@ -308,6 +312,7 @@ html {
 @media screen and (min-width: 767px) {
   .navbar-dark .navbar-nav .nav-link {
     padding: 23px 15px;
+    color: #747794;
   }
   .navbar-dark .navbar-nav .nav-link::after {
     content: '';
@@ -317,6 +322,7 @@ html {
     right: 30%;
     height: 1px;
     background-color: var(--color-content);
+    color: var(--font-white);
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     transform: scaleX(0);

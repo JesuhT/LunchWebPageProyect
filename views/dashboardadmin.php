@@ -64,28 +64,28 @@ if ($_SESSION["ID_ROL"] === 1) {
 
 			<div class="menu-items">
 				<ul class="nav-links">
-					<li><a href="#">
+					<li><a href="/index.php" class="1">
 							<i class="uil uil-estate active"></i>
 							<span class="link-name active">Inicio </span>
 						</a></li>
-					<li><a href="#">
+					<li><a href="#" class="Almuerzos">
 							<i class='bx bxs-bowl-rice'></i>
 							<span class="link-name">Almuerzos</span>
 						</a></li>
-					<li><a href="#">
+					<li><a href="#" class="En-Menu">
 							<i class='bx bxs-food-menu'></i>
-							<span class="link-name">En menu</span>
+							<span class="link-name">En-menu</span>
 						</a></li>
-					<li><a href="#">
-							<i class='bx bxs-gift'></i>
-							<span class="link-name">Donaciones</span>
+					<li><a href="#" class="Usuarios">
+							<i class="uil uil-user"></i>
+							<span class="link-name">Usuarios</span>
 						</a></li>
-					<li><a href="#">
+					<!-- <li><a href="#" class="Menu">
 							<i class="uil uil-comments"></i>
-							<span class="link-name">Calificiones</span>
-						</a></li>
+							<span class="link-name">Menu</span>
+						</a></li> -->
 				</ul>
-
+				
 				<ul class="logout-mode">
 					<li><a href="/../controllers/action/logout.php">
 							<i class="uil uil-signout"></i>
@@ -106,7 +106,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 			</div>
 		</nav>
 
-		<section class="dashboard">
+		<section id="prin" class="dashboard">
 			<div class="top">
 				<i class="uil uil-bars sidebar-toggle"></i>
 
@@ -134,7 +134,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 			</div>
 
 			<div class="dash-content">
-				<div class="overview">
+				<section class="overview" class="hide" id="over">
 					<div class="title">
 						<i class="uil uil-tachometer-fast-alt"></i>
 						<span class="text">Dashboard</span>
@@ -158,8 +158,8 @@ if ($_SESSION["ID_ROL"] === 1) {
 							<span class="number">20</span>
 						</div>
 					</div>
-				</div>
-				<setcion id="Usuarios">
+				</section>
+				<section id="Usuarios" class="hide">
 					<div class="activity">
 						<div class="title">
 							<i class="uil uil-clock-three"></i>
@@ -264,7 +264,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 									<div class="modal-body">
 										<div class="container-fluid">
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="ID" type="text" class="form-control" name="ID">
+												<div class="col-md-8"><input placeholder="ID usuario" type="text" class="form-control" name="IdUsuario" readonly>
 												</div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
@@ -295,7 +295,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 											<div style="padding:7px 0;" class="justify-content-center row">
 												<div class="rol col-md-8">
 													<select class=" form-control" name="rol">
-														<option>Elegir rol</option>
+														<option disabled selected>Elegir rol</option>
 														<option value="2">Administrador</option>
 														<option value="1">Estudiante</option>
 													</select>
@@ -314,9 +314,9 @@ if ($_SESSION["ID_ROL"] === 1) {
 						</div>
 					</div>
 					<!-- end modal -->
-				</setcion>
+				</section>
 				<!-- end USER -->
-				<setcion id="almuerzo">
+				<section id="Almuerzos"  class="hide">
 					<div class="activity">
 						<div class="title">
 							<i class="uil uil-clock-three"></i>
@@ -358,7 +358,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 									<div class="modal-body">
 										<div class="container-fluid">
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="ID" type="email" class="form-control" name="ID_almuerzo"></div>
+												<div class="col-md-8"><input placeholder="ID" type="email" class="form-control" name="ID_almuerzo" readonly></div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
 												<div class="col-md-8"><input placeholder="Nombre" type="text" class="form-control" name="nombre">
@@ -393,7 +393,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 									<div class="modal-body">
 										<div class="container-fluid">
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="ID" type="text" class="form-control" name="ID_almuerzo">
+												<div class="col-md-8"><input placeholder="ID" type="text" class="form-control" name="ID_almuerzo" readonly>
 												</div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
@@ -417,9 +417,9 @@ if ($_SESSION["ID_ROL"] === 1) {
 						</div>
 					</div>
 					<!-- end modal -->
-				</setcion>
+				</section>
 				<!-- end Almuerzo -->
-				<section id="Menu">
+				<section id="En-Menu" class="hide">
 					<div class="activity">
 						<div class="title">
 							<i class="uil uil-clock-three"></i>
@@ -439,7 +439,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 									<th class="data-title" scope="col">IDalmuerzo</th>
 									<th class="data-title" scope="col">Nombre Almuerzo</th>
 									<th class="data-title" scope="col">IDmenu</th>
-                  <th class="data-title" scope="col">Día</th>
+									<th class="data-title" scope="col">Día</th>
 									<th class="data-title" scope="col">Acciones</th>
 								</tr>
 							</thead>
@@ -461,20 +461,15 @@ if ($_SESSION["ID_ROL"] === 1) {
 								<form action="/../controllers/action/registrarAlmuerzoMenu.php" method="post">
 									<div class="modal-body">
 										<div class="container-fluid">
-                    <div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="IDalmuerzoalmuerzo" type="text" class="form-control" name="ID_almuerzo">
-												</div>
-											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="Nombre" type="text" class="form-control" name="nombre">
+												<div class="col-md-8"><input placeholder="IDalmuerzo" type="text" class="form-control" name="ID_almuerzo">
 												</div>
-											</div>
+											</div>											
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="IDmenu" class="form-control" name="ID_menu">
-												</div>
-											</div>
-                      <div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="Día" class="form-control" name="dia">
+												<div class="rol col-md-8">
+													<select class="diaSelect form-control" name="dia">
+														<option disabled selected>Dia</option>
+													</select>
 												</div>
 											</div>
 											<div class="justify-content-center row">
@@ -489,20 +484,20 @@ if ($_SESSION["ID_ROL"] === 1) {
 					</div>
 
 					<!-- Modal EDITAR MENU-->
-					<div class="modal fade" id="modalEditarAlmuerzo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="modalEditarAlmuerzoMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="ModalEditarLabel">Editar usuario</h5>
+									<h5 class="modal-title" id="ModalEditarLabel">Editar almuerzo en Menu</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<form id="formEditarAlmuerzo" action="/../controllers/action/editarAlmuerzoMenu.php" method="post">
+								<form id="formEditarAlmuerzoMenu" action="/../controllers/action/editarAlmuerzoMenu.php" method="post">
 									<div class="modal-body">
 										<div class="container-fluid">
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="ID" type="text" class="form-control" name="ID_almuerzo">
+												<div class="col-md-8"><input placeholder="ID_almuerzo" type="text" class="form-control" name="ID_almuerzo" readonly>
 												</div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
@@ -510,11 +505,14 @@ if ($_SESSION["ID_ROL"] === 1) {
 												</div>
 											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="IDmenu" class="form-control" name="ID_menu">
+												<div class="col-md-8"><input placeholder="IDmenu" class="form-control" name="ID_menu" readonly>
 												</div>
 											</div>
-                      <div style="padding:7px 0;" class="justify-content-center row">
-												<div class="col-md-8"><input placeholder="Día" class="form-control" name="dia">
+											<div style="padding:7px 0;" class="justify-content-center row">
+												<div class="rol col-md-8">
+													<select class="diaSelect form-control" name="dia">
+														<option disabled selected>Dia</option>
+													</select>
 												</div>
 											</div>
 
@@ -531,7 +529,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 					</div>
 					<!-- end modal -->
 				</section>
-				<!-- end MENU -->
+				
 			</div>
 		</section>
 
@@ -540,6 +538,45 @@ if ($_SESSION["ID_ROL"] === 1) {
 
 	<script src="js/adminfront.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function () {
+    // Oculta todas las secciones excepto la primera al cargar la página
+    $(".hide").hide();
+    $("#Usuarios").show();
+    $("#prin").show();
+	$("#over").show();
+
+    // Maneja los clics en los enlaces de la lista
+    $(".Menu").click(function (e) {
+		
+        $(".hide").hide();
+        $("#Menu").show();
+        $("#prin").show();
+
+    });
+	$(".En-Menu").click(function (e) {
+		
+        $(".hide").hide();
+        $("#En-Menu").show();
+        $("#prin").show();
+
+    });
+	$(".Usuarios").click(function (e) {
+		
+        $(".hide").hide();
+        $("#Usuarios").show();
+        $("#prin").show();
+
+    });
+	$(".Almuerzos").click(function (e) {
+		
+        $(".hide").hide();
+        $("#Almuerzos").show();
+        $("#prin").show();
+
+    });
+});
+	</script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="js/sweetalert2.all.min.js"></script>
 
@@ -547,6 +584,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 	<script src="js/administrar_almuerzos.js"></script>
 	<script src="js/administrar_menu.js"></script>
 	<script src="js/cargarProgramas.js"></script>
+	<script src="js/cargarDias.js"></script>
 </body>
 
 </html>

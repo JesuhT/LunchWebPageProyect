@@ -32,26 +32,6 @@ if (isset($_SESSION["NOMBRE"])) {
 <body id="page-top">
   <!-- Navigation-->
   <header class="header-area">
-    <!-- <nav class="navigation-s">
-      <div class="navigation-d">
-        <div class="logo-area">
-          
-          
-          <a href="#" class="logo">My<span>Luch</span></a>
-        </div>
-        <div class="nav">
-          <ul class="nav-list">
-            <li class="items"><a href="#" id="active">Home</a></li>
-            <li class="items"><a href="#content-servicios">Servicios</a></li>
-            <li class="items"><a href="#about">Contact us</a></li>
-            <li class="items"><a href="views/login.php">Iniciar sesion</a></li>
-            <li class="items" id="back-donar"><a href="views/donaciones.php" id="donar-text">Donar</a></li>
-
-          </ul>
-          
-        </div>
-      </div>
-    </nav> -->
     <nav class="navbar navbar-expand-md navbar-dark">
       <div class="container ">
         <div class="logo-area">
@@ -79,9 +59,9 @@ if (isset($_SESSION["NOMBRE"])) {
               </div>
             </li>
             <li><a href="#about" class="nav-item nav-link">Contact</a></li>
-            <li><a href="views/login.php" class="nav-item nav-link" >Iniciar sesión</a></li>
+            <li><a href="views/donaciones.php" class="nav-item nav-link" >Donar</a></li>
             
-            <li class="items nav-item nav-link" id="back-donar"><a href="views/donaciones.php" id="donar-text">Donar</a></li>
+            <li class="items nav-item nav-link" id="back-donar"><a href="views/login.php" id="donar-text">Iniciar sesión</a></li>
 
           </ul>
         </div>
@@ -266,10 +246,10 @@ if (isset($_SESSION["NOMBRE"])) {
           <div class="single-footer-widget section_padding_0_130">
             <!-- Footer Logo-->
             <div class="footer-logo mb-3"></div>
-            <p>Appland is completely creative, lightweight, clean app landing page.</p>
+            <p>Ten facil acceso a variedad de servicios para tus almuerzos
+              en la universidad del magdalena.</p>
             <!-- Copywrite Text-->
             <div class="copywrite-text mb-5">
-              <p class="mb-0">Made with <i class="lni-heart mr-1"></i>by<a class="ml-1" href="https://wrapbootstrap.com/user/DesigningWorld">Designing World</a></p>
             </div>
             <!-- Footer Social Area-->
             <div class="footer_social_area"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i class="fa fa-skype"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></div>
