@@ -108,11 +108,7 @@ if ($_SESSION["ID_USUARIO"] === null) {
         <path id="vector-s" d="M0.947609 110.983C90.8994 39.2656 364.445 -70.3429 739.011 64.9628C1113.58 200.268 1640.11 166.708 1856.55 133.015" stroke="#EA6A12" stroke-opacity="0.3" />
       </svg>
     </div>
-    <?php if ($_SESSION['TORF']==1) { ?>
-      <div class="ithas" data-placement="top" data-toggle="popover" data-content="Hoy es un día para reclamar almuerzo.">Hoy es un día para reclamar almuerzo. Mira el menú de hoy.</div>
-    <?php } else { ?>
-      <div class="ithas" data-placement="top" data-toggle="popover">Hoy no pides almuerzo</div>
-    <?php } ?>
+    
 
     <div class="today-menu">
       <div class="idance">
@@ -135,24 +131,7 @@ if ($_SESSION["ID_USUARIO"] === null) {
               <div class="tab-content">
                 <div class="tab-pane show active">
                   <div class="row" id="row">
-                    <!-- Schedule Item 1 -->
-                    <!-- <div class="col-md-6">
-                      <div class="timetable-item">
-                        <div class="timetable-item-img">
-                          <img src="https://www.bootdey.com/image/100x80/FFB6C1/000000" alt="Contemporary Dance">
-                        </div>
-                        <div class="timetable-item-main">
-                          <div class="timetable-item-time"></div>
-                          <div class="timetable-item-name">descripcion de la bd</div>
-                          <a href="#" class="btn btn-primary btn-book">Ver mas</a>
-                          <div class="timetable-item-like">
-                            <i class='bx bx-star' aria-hidden="true"></i>
-                            <i class='bx bxs-star' aria-hidden="true"></i>
-                            <div class="timetable-item-like-count">11</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
+                   
 
                   </div>
                 </div>
@@ -180,9 +159,51 @@ if ($_SESSION["ID_USUARIO"] === null) {
       </div>
     </div>
   </div>
+  <!-- Botón para abrir el modal -->
+
+
+<!-- Modal para calificar -->
+<div class="modal fade" id="modalCalificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Calificar almuerzo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido de calificación -->
+                <div class="d-flex justify-content-center">
+                    <div  class="card border-0" style="width: 18rem;">
+                    <div class="card-body text-center">
+                            <h5 class="card-title">Califica este almuerzo</h5>
+                            <span class="fa fa-star" id="1" style="cursor: pointer"></span>
+                            <span class="fa fa-star" id="2" style="cursor: pointer"></span>
+                            <span class="fa fa-star" id="3" style="cursor: pointer"></span>
+                            <span class="fa fa-star" id="4" style="cursor: pointer"></span>
+                            <span class="fa fa-star" id="5" style="cursor: pointer"></span>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Comentarios y Opiniones --> 
+                <div class="mb-3">
+                    <textarea class="form-control" id="descripcion" rows="3" placeholder="Agrega una descripción"></textarea>
+                </div>
+                <!-- Botón para enviar calificación -->
+                <div class="d-flex justify-content-center mt-3">
+                    <button id="btnEnviarCalificacion" class="btn btn-primary">Enviar calificación</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1RTS0P1CD"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/popper.min.js"></script>
+  <script src="js/calificarAlmuerzo.js"></script>
 </body>

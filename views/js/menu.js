@@ -19,17 +19,20 @@ $(document).ready(function() {
                     var almuerzo = response[i];
                     console.log(almuerzo);
                     var html = '<div class="col-md-6">' +
-                               '    <div class="timetable-item">' +
-                               '        <div class="timetable-item-main">' +
-                               '           <div class="timetable-item-img">'+
-                               '              <img src="https://www.bootdey.com/image/100x80/FFB6C1/000000" alt="Contemporary Dance">'+
-                               '             </div>'+
-                               '            <div class="timetable-item-time">' + almuerzo.nombre + '</div>' +
-                               '            <div class="timetable-item-name">' + almuerzo.descripcion + '</div>' +
-                               '             <a href="#" class="btn btn-primary btn-book">Ver mas</a>'+
-                               '        </div>' +
-                               '    </div>' +
-                               '</div>';
+                    '    <div class="timetable-item">' +
+                    '        <div class="timetable-item-main">' +
+                    '           <div class="timetable-item-img">'+
+                    '              <img src="https://www.bootdey.com/image/100x80/FFB6C1/000000" alt="Contemporary Dance">'+
+                    '           </div>'+
+                    '           <div class="timetable-item-time">' + almuerzo.nombre + '</div>' +
+                    '           <div class="timetable-item-name">' + almuerzo.descripcion + '</div>' +
+                    '           <div class="timetable-item-promedio">Promedio de calificación: ' + almuerzo.promedioCalificacion + '</div>' +
+                    '           <div class="d-flex justify-content-center mt-3">'+
+                    '              <button class="btn btn-primary btnAbrirModal" data-idAlmuerzo="'+ almuerzo.ID_almuerzo + '">Calificar</button>' +
+                    '           </div>'+
+                    '        </div>' +
+                    '    </div>' +
+                    '</div>';
 
                     $("#row").append(html);
                 }

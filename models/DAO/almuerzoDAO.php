@@ -8,11 +8,12 @@ class AlmuerzoDAO
     {
         $data_source = new DataSource();
         $data_table = $data_source->ejecutarConsulta(
-            "SELECT al.ID_almuerzo, al.nombre, al.descripcion FROM Almuerzo al 
-                                                      INNER JOIN Almuerzos_En_Menu am ON al.ID_almuerzo = am.ID_almuerzo
-                                                      INNER JOIN Menu me ON me.ID_menu = am.ID_menu
-                                                      INNER JOIN Dia_almuerzo d ON me.ID_dia = d.ID_dia
-                                                      WHERE d.nombre = :dia",
+            "SELECT al.ID_almuerzo, al.nombre, al.descripcion, ROUND(AVG(calificacion), 2) AS promedioCalificacion FROM Almuerzo al 
+            INNER JOIN Almuerzos_En_Menu am ON al.ID_almuerzo = am.ID_almuerzo 
+            INNER JOIN Menu me ON me.ID_menu = am.ID_menu 
+            INNER JOIN Dia_almuerzo d ON me.ID_dia = d.ID_dia 
+            LEFT JOIN Calificacion ca ON al.ID_almuerzo = ca.ID_almuerzo 
+            WHERE d.nombre = :dia",
             array(':dia' => $dia)
         );
         $almuerzos = array();
@@ -21,7 +22,8 @@ class AlmuerzoDAO
             $almuerzoObj = new Almuerzo(
                 $data_table[$indice]["ID_almuerzo"],
                 $data_table[$indice]["nombre"],
-                $data_table[$indice]["descripcion"]
+                $data_table[$indice]["descripcion"],
+                $data_table[$indice]["promedioCalificacion"]
             );
             array_push($almuerzos, $almuerzoObj);
         }
@@ -32,12 +34,14 @@ class AlmuerzoDAO
                 'ID_almuerzo'=> $almuerzo->getID_almuerzo(),
                 'nombre' => $almuerzo->getNombre(),
                 'descripcion' => $almuerzo->getDescripcion(),
+                'promedioCalificacion' => $almuerzo->getPromedioCalificacion(),
             );
 
             $almuerzosArray[] = $almuerzoArray;
         }
         return $almuerzosArray;
     }
+
 
     public function obtenerAlmuerzosUsuario($usuarioID, $dia)
     {

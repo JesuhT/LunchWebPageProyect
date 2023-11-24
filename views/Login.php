@@ -39,7 +39,7 @@
                 <p>Usar tu cuenta</p>
                 <input id="Email" type="email" name="email" placeholder="Correo electrónico" autocomplete="username">
                 <input id="Contraseña" type="password" name="pswd" placeholder="Contraseña" autocomplete="current-password">
-                <a href="#">¿Olvidaste tu contraseña?</a>
+                <a href="forgot-password.php">¿Olvidaste tu contraseña?</a>
                 <button value="submit">Ingresar</button>
             </form>
         </div>
