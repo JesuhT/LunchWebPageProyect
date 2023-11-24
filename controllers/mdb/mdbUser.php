@@ -62,3 +62,9 @@ function verificarExistencia($valor, $columna)
     $usuarioExistente = $dao->verificarExistencia($valor, $columna);
     return $usuarioExistente;
 }
+function esAdministrador($idUsuario) {
+    require_once(__DIR__."/../../models/DAO/userDAO.php");
+    $dao=new UsuarioDAO();
+    $usuario = $dao->esAdministrador($idUsuario);
+    return $usuario;
+}

@@ -104,42 +104,6 @@ body {
   font-size: var(--font-size-nav);
 }
 
-/* Donar button */
-.nav-list #back-donar {
-  padding: 0;
-  margin: 0;
-  width: fit-content;
-  height: fit-content;
-  transition: all ease 0.3s;
-}
-
-#donar-text {
-  color: var(--font-white);
-  margin: 0;
-  background-color: var(--color-content);
-  line-height: 40px;
-  padding: 10px 28px;
-  background-color: var(--color-content);
-  border: 2px solid var(--color-content);
-  border-top-left-radius: 17px;
-  border-bottom-right-radius: 17px;
-  border-bottom-left-radius: 3px;
-  border-top-right-radius: 3px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-size: var(--font-size-nav);
-  color: var(--pag-bm-color);
-  letter-spacing: 1px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all ease 0.3s;
-}
-
-#donar-text:hover,
-#back-donar:hover {
-  background-color: var(--pag-bm-color);
-  color: var(--color-content);
-  transform: translateY(-5px);
-}
 /* COLOR ACTIVO */
 .nav-list a:hover {
   border-bottom: 2px solid var(--main-color);
@@ -282,20 +246,41 @@ body {
   line-height: 2rem;
 }
 
-.verificar-identidad button {
-  background: var(--main-color);
+.verificar-identidad .Donar{
+  background:#007bff;
   color: var(--font-white);
   border-radius: 7px;
-  border: 2px solid var(--main-color);
   line-height: 2rem;
   padding: 0 10px;
   margin: 10px 0;
   transition: all ease-in 0.1s;
 }
 
-.verificar-identidad button:hover {
-  background: var(--color-nav);
-  color: var(--font-color);
+.verificar-identidad .Cancelar {
+  background: rgb(203, 10, 10);
+  color: var(--font-white);
+  border-radius: 7px;
+  line-height: 2rem;
+  padding: 0 10px;
+  margin: 10px;
+  transition: all ease-in 0.1s;
+}
+
+.verificar-identidad .BotonesDonar{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.verificar-identidad .Cancelar:hover {
+  background: rgb(161, 6, 6);
+  color: white;
+  cursor: pointer;
+}
+.verificar-identidad .Donar:hover {
+  background: rgb(12, 109, 188);
+  color: white;
+  cursor: pointer;
 }
 
 /*------ CARDS DONATION------ */

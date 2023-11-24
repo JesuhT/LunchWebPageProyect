@@ -2,7 +2,7 @@
 session_start();
 require_once(__DIR__ . "/../mdb/mdbUser.php");
 
-if (isset($_POST['eliminar_usuario'])) {
+
     $userID = $_SESSION['ID_USUARIO'];
 
     // Lógica para eliminar el usuario
@@ -18,10 +18,15 @@ if (isset($_POST['eliminar_usuario'])) {
     unset($_SESSION['ID_PROGRAMA']);
     unset($_SESSION['ROL']);
     unset($_SESSION['CONTRASENA']);
-    header("Location: ../../index.php");    
-} else {
-    // Redirige a alguna página por defecto si alguien intenta acceder directamente a este controlador sin enviar el formulario
-    header("Location: ../../index.php");
-}
+
+    $estado=true;
+    $msg =  "Cuenta eliminada, redireccionando...";
+    $resultado = [
+        'estado' => $estado,
+        'msg' => $msg
+    ];
+    
+    echo json_encode($resultado);
+
 ?>
 

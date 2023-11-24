@@ -244,5 +244,25 @@ class UsuarioDAO
             'NombrePrograma' => $fila["NombrePrograma"]
         ];
     }
+    function esAdministrador($idUsuario) {
+        $data_source = new DataSource();
+        $sql = "SELECT ID_rol FROM Usuario WHERE ID_user = :idUsuario";
+        $params = array(':idUsuario' => $idUsuario);
+        $resultado = $data_source->ejecutarConsulta($sql, $params);
+    
+        if ($resultado && count($resultado) > 0) {
+            $idRol = $resultado[0]['ID_rol'];
+
+            $rolAdministrador = 2;
+    
+            if ($idRol == $rolAdministrador) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
     
 }

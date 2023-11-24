@@ -216,9 +216,9 @@ if ($_SESSION["NOMBRE"] === null) {
         </div>
       </div>
     </form>
-    <form action="../controllers/action/deleteaccount.php" method="POST">
+    <form  action="" method="POST">
       <imput type="hidden" value="1" />
-      <input type="submit" name="eliminar_usuario" class="delete" value=" Eliminar Cuenta">
+      <input id="delete" type="submit" name="eliminar_usuario" class="delete" value=" Eliminar Cuenta">
     </form>
 
     <div id="overlay"></div>
@@ -283,6 +283,7 @@ if ($_SESSION["NOMBRE"] === null) {
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/profile.js"></script>
+  <script src="js/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

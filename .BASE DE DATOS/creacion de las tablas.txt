@@ -100,6 +100,12 @@ CREATE TABLE Estudiantes_En_Fila (
     hora_ingreso TIME NOT NULL
 );
 
+CREATE TABLE DonacionPendiente (
+  ID_donacionPendiente INT AUTO_INCREMENT PRIMARY KEY,
+  fecha date NOT NULL,
+  ID_donante INT NOT NULL
+);
+
 -- agregar restricciones de clave foránea
 ALTER TABLE Calificacion
 ADD CONSTRAINT Calificacion_fk0 FOREIGN KEY (ID_estudiante) REFERENCES Usuario(ID_user) ON DELETE CASCADE,
@@ -139,3 +145,6 @@ ADD CONSTRAINT Estudiantes_En_Fila_fk1 FOREIGN KEY (ID_fila) REFERENCES Fila_Vir
 ALTER TABLE Usuario
 ADD CONSTRAINT Usuario_fk0 FOREIGN KEY (ID_programa) REFERENCES Programa(ID_programa) ON DELETE CASCADE,
 ADD CONSTRAINT Usuario_fk1 FOREIGN KEY (ID_rol) REFERENCES Rol(ID_rol) ON DELETE CASCADE;
+
+ALTER TABLE DonacionPendiente
+ADD CONSTRAINT DonacionPendiente_fk0 FOREIGN KEY (ID_donante) REFERENCES Usuario (ID_user);

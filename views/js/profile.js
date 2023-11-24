@@ -25,3 +25,70 @@ $(document).ready(function () {
         }
     );
 });
+$(document).ready(function () {
+    $('form').submit(function (event) {
+      event.preventDefault();
+  
+      // Hacer la solicitud AJAX
+      $.ajax({
+        type: $(this).attr('method'),
+        url: $(this).attr('action'),
+        data: $(this).serialize(), // Serializa los datos del formulario
+        success: function (response) {
+          console.log(response);
+          var result = JSON.parse(response);
+  
+          // Muestra el mensaje de éxito
+          Swal.fire({
+            icon: result.estado ? 'success' : 'error',
+            title: result.msg,
+            showConfirmButton: false,
+            timer: 1500
+          }).then(function () {
+            if(result.msg == 'Las contraseñas no coinciden'){
+  
+            } else { 
+              location.reload();
+            }
+            
+          });
+        },
+        error: function (err) {
+          console.error('Error:', err);
+        }
+      });
+    });
+    $('#delete').click(function () {
+        Swal.fire({
+          title: '¿Estás seguro?',
+          text: 'Esta acción no se puede deshacer.',
+          icon: 'warning',
+          confirmButtonColor: '#3085d6',
+          showCancelButton: true,
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminarlo'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            $.ajax({
+              url: '/../../controllers/action/deleteaccount.php',
+              success: function (response) {
+                var result = JSON.parse(response);
+    
+                Swal.fire({
+                  icon: result.estado ? 'success' : 'error',
+                  title: result.msg,
+                  showConfirmButton: false,
+                  timer: 1500
+                }).then(function () {
+                  // Recarga la página después de cerrar SweetAlert
+                  location.reload();
+                });
+              },
+              error: function (err) {
+                console.error('Error:', err);
+              }
+            });
+          }
+        });
+      });
+  });

@@ -13,11 +13,44 @@ $nuevaContraseña = $_POST['nuevaContraseña'];
 $confirmarContraseña = $_POST['confirmarContraseña'];
 
 // Inicializa el mensaje de error
+$estado;
 $msg = '';
-$resultado=array();
 
+/* 
+    $userID = $_SESSION['ID_USUARIO'];
+    $usuarioExistenteEmail = verificarExistencia($email, $nemail);
+if ($usuarioExistenteEmail && $usuarioExistenteEmail['ID_user'] != $userID) {
+    $estado = false;
+    $msg = "Este email ya está siendo utilizado, ingrese un email distinto";
+    $resultado = [
+        'estado' => $estado,
+        'msg' => $msg
+    ];
+    
+        echo json_encode($resultado);
+        exit;
+    
+
+}
+
+// Verificar existencia de celular
+$usuarioExistenteCelular = verificarExistencia($telefono, $ntele);
+if ($usuarioExistenteCelular && $usuarioExistenteCelular['ID_user'] != $userID) {
+    $estado = false;
+    $msg = "Este celular ya está siendo utilizado, ingrese un celular distinto";
+    $resultado = [
+        'estado' => $estado,
+        'msg' => $msg
+    ];
+    
+        echo json_encode($resultado);
+        exit;
+    
+
+}
+ */
 // Comprueba si se proporcionó una nueva contraseña
-if (!empty($nuevaContraseña) && !empty($confirmarContraseña)) {
+if (!empty($nuevaContraseña) && !empty($confirmarContraseña) ) {
     // Comprueba la coincidencia con la confirmación
     if ($nuevaContraseña == $confirmarContraseña) {
         // Actualiza la contraseña solo si se proporciona y coincide con la confirmación
@@ -29,23 +62,15 @@ if (!empty($nuevaContraseña) && !empty($confirmarContraseña)) {
             $nuevaContraseña, // Hashea la nueva contraseña
             $telefono,
             $_SESSION["ID_PROGRAMA"],
-            $_SESSION["ROL"]
+            $_SESSION["ID_ROL"]
         );
     } else {
         // Muestra un mensaje de error si las contraseñas no coinciden
         $estado=false;
         $msg = 'Las contraseñas no coinciden';
-        $resultado = [
-            'estado' => $estado,
-            'msg' => $msg
-        ];
-        echo json_encode($resultado);
     }
-
-        
-} else if (!empty($nombre) || !empty($apellido) || !empty($email) || !empty($telefono)) {
+} else {
     // Si no se proporciona una nueva contraseña, mantiene la contraseña actual
-
     $usuario = new Usuario(
         $_SESSION["ID_USUARIO"],
         $nombre,
@@ -54,25 +79,14 @@ if (!empty($nuevaContraseña) && !empty($confirmarContraseña)) {
         $_SESSION["CONTRASENA"],
         $telefono,
         $_SESSION["ID_PROGRAMA"],
-        $_SESSION["ROL"]
+        $_SESSION["ID_ROL"]
     );
 }
 
 // Actualiza el usuario si no hay errores
 if (empty($msg)) {
     $resultado = modificarUsuario($usuario);
-    if (!$resultado) { // No puede iniciar sesión
-        $estado = false;
-        $msg = "Error de credenciales";
 
-		
-        $resultado = [
-            'estado' => $estado,
-            'msg' => $msg
-        ];
-        
-        echo json_encode($resultado);
-    }
     unset($_SESSION["NOMBRE"]);
     unset($_SESSION["APELLIDO"]);
     unset($_SESSION["CELULAR"]);
@@ -88,6 +102,18 @@ if (empty($msg)) {
     $_SESSION['CONTRASENA'] = $usuario->getContrasena();
 
     // Redirige según el resultado
+    $estado=true;
+    $msg =  "Los cambios han sido registrados correctamente";
+    $resultado = [
+        'estado' => $estado,
+        'msg' => $msg
+    ];
     
-}
+    echo json_encode($resultado);
+} 
+$resultado = [
+    'estado' => $estado,
+    'msg' => $msg
+];
+echo json_encode($resultado);
 ?>
