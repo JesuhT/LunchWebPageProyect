@@ -60,7 +60,7 @@
     </div>
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/log_in.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/cargarProgramas.js"></script>
 </body>
 

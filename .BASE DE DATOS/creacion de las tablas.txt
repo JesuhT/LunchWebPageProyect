@@ -148,3 +148,4 @@ ADD CONSTRAINT Usuario_fk1 FOREIGN KEY (ID_rol) REFERENCES Rol(ID_rol) ON DELETE
 
 ALTER TABLE DonacionPendiente
 ADD CONSTRAINT DonacionPendiente_fk0 FOREIGN KEY (ID_donante) REFERENCES Usuario (ID_user);
+

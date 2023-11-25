@@ -306,8 +306,8 @@ INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (
 INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (21, '2023-11-25', 31);
 INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (23, '2023-11-25', 6);
 INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (24, '2023-11-25', 10);
-INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (23, '2023-11-25', 23);
-INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (24, '2023-11-25', 30);
+INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (25, '2023-11-25', 23);
+INSERT INTO DonacionPendiente (ID_donacionPendiente, fecha, ID_donante) VALUES (26, '2023-11-25', 30);
 
 
 
