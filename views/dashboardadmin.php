@@ -1,7 +1,7 @@
 <?php
-session_start();
 
-if ($_SESSION["ID_USUARIO"] === null) {
+require_once(__DIR__ . "/../controllers/actionchart/data.php");
+if (!isset($_SESSION['ID_USUARIO'])) {
 	// Redirige a login.php después de 2 segundos
 	echo '<script>
         setTimeout(function() {
@@ -20,6 +20,16 @@ if ($_SESSION["ID_ROL"] === 1) {
 	</script>';
 	exit; // Asegura que no se procese más código PHP
 }
+if ($_SESSION["cantidadEstudiantes"] === null) {
+	// Redirige a login.php después de 2 segundos
+	echo '<script>
+		  setTimeout(function() {
+			  location.reload();
+		  }, 2000);
+	  </script>';
+	exit; // Asegura que no se procese más código PHP
+  }
+  
 ?>
 
 

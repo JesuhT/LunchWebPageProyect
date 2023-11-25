@@ -1,9 +1,16 @@
 <?php
 session_start();
 
-if ($_SESSION["NOMBRE"] === null) {
-  header("Location: login.php");
+if (!isset($_SESSION['ID_USUARIO'])) {
+	// Redirige a login.php después de 2 segundos
+	echo '<script>
+        setTimeout(function() {
+            window.location = "login.php";
+        }, 2000);
+    </script>';
+	exit; // Asegura que no se procese más código PHP
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
