@@ -53,6 +53,7 @@ insert into Dia_almuerzo (ID_dia, nombre) values (2, 'Martes');
 insert into Dia_almuerzo (ID_dia, nombre) values (3, 'Miercoles');
 insert into Dia_almuerzo (ID_dia, nombre) values (4, 'Jueves');
 insert into Dia_almuerzo (ID_dia, nombre) values (5, 'Viernes');
+insert into Dia_almuerzo (ID_dia, nombre) values (6, 'Sabado');
 
 
 insert into Menu (ID_menu, ID_dia) values (1,1);

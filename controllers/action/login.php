@@ -29,16 +29,20 @@ if (isset($_POST['email']) && isset($_POST['pswd'])) {
         
         $estado = true;
         $msg = "Bienvenido ".$_SESSION['NOMBRE'];
-       
-    } else { // No puede iniciar sesión
-        $estado = false;
-        $msg = "Error de credenciales";
-
-		}
         $resultado = [
             'estado' => $estado,
             'msg' => $msg
         ];
+       
+    } else { // No puede iniciar sesión
+        $estado = false;
+        $msg = "Error de credenciales";
+        $resultado = [
+            'estado' => $estado,
+            'msg' => $msg
+        ];
+		}
+    
         
         echo json_encode($resultado);
     }

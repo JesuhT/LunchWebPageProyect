@@ -1,6 +1,7 @@
 $(document).ready(function () {
-  ajaxVerUsuarios();
   data();
+  ajaxVerUsuarios();
+
 })
 
 function ajaxVerUsuarios() {
@@ -122,7 +123,7 @@ function insertarDatosUsuarioEnModal() {
   });
   $('.deleteuser').click(function () {
     var userID = $(this).data('id');
-
+    console.log(userID);
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción no se puede deshacer.',
@@ -136,8 +137,9 @@ function insertarDatosUsuarioEnModal() {
         $.ajax({
           url: '/../../controllers/actionadmin/eliminarUsuario.php?idUsuario=' + userID,
           success: function (response) {
+            console.log(response);
             var result = JSON.parse(response);
-
+            
             Swal.fire({
               icon: result.estado ? 'success' : 'error',
               title: result.msg,
