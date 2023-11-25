@@ -126,13 +126,13 @@ if ($_SESSION["ID_USUARIO"] === null) {
 
               <!-- Schedule Top Navigation -->
               <ul class="nav nav-tabs">
-                <li class="nav-link">Lunes</li>
-                <li class="nav-link">Martes</li>
-                <li class="nav-link">Miercoles</li>
-                <li class="nav-link">Jueves</li>
-                <li class="nav-link">Viernes</li>
-                <li class="nav-link">Sabado</li>
-                <li class="nav-link">Domingo</li>
+                <li class="nav-link dia">Lunes</li>
+                <li class="nav-link dia">Martes</li>
+                <li class="nav-link dia">Miercoles</li>
+                <li class="nav-link dia">Jueves</li>
+                <li class="nav-link dia">Viernes</li>
+                <li class="nav-link dia">Sabado</li>
+                <li class="nav-link dia">Domingo</li>
               </ul>
               <div class="tab-content">
                 <div class="tab-pane show active">

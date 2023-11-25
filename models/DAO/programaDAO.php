@@ -27,7 +27,8 @@ class ProgramaDAO
             return null;
         }
     }
-    public function verProgramas(){
+    public function verProgramas()
+    {
         $data_source = new DataSource();
         $data_table = $data_source->ejecutarConsulta("SELECT ID_programa, nombre FROM Programa", null);
 
@@ -36,7 +37,7 @@ class ProgramaDAO
         }
         $programas = array();
 
-        foreach($data_table as $fila){
+        foreach ($data_table as $fila) {
             $idPrograma = isset($fila["ID_programa"]) ? $fila["ID_programa"] : null;
             $nombrePrograma = isset($fila["nombre"]) ? $fila["nombre"] : null;
             $programa = array(
@@ -48,4 +49,21 @@ class ProgramaDAO
         return $programas;
     }
 
+    // En tu mdbUser.php
+    // En tu archivo mdbUser.php
+    function obtenerCantidadUsuariosPorPrograma()
+    {
+        // Realiza la consulta SQL necesaria para obtener la cantidad de usuarios por programa
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT programa.nombre AS Programa, COUNT(usuario.ID_user) AS CantidadUsuarios
+        FROM Usuario
+        JOIN Programa ON Usuario.ID_programa = Programa.ID_programa
+        GROUP BY Programa.ID_programa
+    ", NULL);
+
+        // Retorna los resultados
+        return $data_table;
+    }
+
+    
 }

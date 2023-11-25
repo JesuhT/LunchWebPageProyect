@@ -25,18 +25,18 @@ function quitarAlmuerzoDonante($idDonante) {
     return $resultado;
 }
 
-function restaurarAlmuerzoDonante($Dia, $idDonante) {
-    $dao=new DonacionesDAO();
-    $resultado = $dao->restaurarAlmuerzoDonante($Dia, $idDonante);
-    return $resultado;
-}
+// function restaurarAlmuerzoDonante($Dia, $idDonante) {
+//     $dao=new DonacionesDAO();
+//     $resultado = $dao->restaurarAlmuerzoDonante($Dia, $idDonante);
+//     return $resultado;
+// }
 
 
-function obtenerFechaDonacion($idDonacion){
-    $dao=new DonacionesDAO();
-    $fecha = $dao->obtenerFechaDonacion($idDonacion);
-    return $fecha;
-}
+// function obtenerFechaDonacion($idDonacion){
+//     $dao=new DonacionesDAO();
+//     $fecha = $dao->obtenerFechaDonacion($idDonacion);
+//     return $fecha;
+// }
 
 function haRecibidoDonacion($idUsuario) {
     $dao=new DonacionesDAO();
@@ -44,17 +44,17 @@ function haRecibidoDonacion($idUsuario) {
     return $recibido;
 }
 
-function actualizarEstadoDonacion($idDonacion){
-    $dao=new DonacionesDAO();
-    $actualizado = $dao->actualizarEstadoDonacion($idDonacion);
-    return $actualizado;
-}
+// function actualizarEstadoDonacion($idDonacion){
+//     $dao=new DonacionesDAO();
+//     $actualizado = $dao->actualizarEstadoDonacion($idDonacion);
+//     return $actualizado;
+// }
 
-function DonacionFueAceptada($idDonacion){
-    $dao=new DonacionesDAO();
-    $aceptada = $dao->DonacionFueAceptada($idDonacion);
-    return $aceptada;
-}
+// function DonacionFueAceptada($idDonacion){
+//     $dao=new DonacionesDAO();
+//     $aceptada = $dao->DonacionFueAceptada($idDonacion);
+//     return $aceptada;
+// }
 
 function comprobarPswdDonar($password, $idUsuario){
     $dao=new DonacionesDAO();
@@ -78,4 +78,9 @@ function cancelarDonación($idUsuario){
     $dao=new DonacionesDAO();
     $resultado = $dao->cancelarDonación($idUsuario);
     return $resultado;
+}
+function obtenerCantidadDonacionesPorMes(){
+    $dao=new DonacionesDAO();
+    $programas = $dao->obtenerCantidadDonacionesPorMes();
+    return $programas;
 }

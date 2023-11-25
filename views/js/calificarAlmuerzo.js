@@ -1,4 +1,3 @@
-
 let estrellaSeleccionada = false;
 let calificacion = 0;
 
@@ -65,11 +64,11 @@ function enviarCalificacion(idAlmuerzo, calificacion) {
         success: function(response) {
             var responseData = JSON.parse(response);
             if (responseData.status === "success") {
-              swal("Donación exitosa", responseData.message, "success").then(function() {
+              swal("Calificación exitosa", responseData.message, "success").then(function() {
                     location.reload();
                 });
             } else {
-              swal("Error al cancelar", responseData.message, "error");
+              swal("Error al calificar", responseData.message, "error");
             }
         },
         error: function(err) {
@@ -77,5 +76,3 @@ function enviarCalificacion(idAlmuerzo, calificacion) {
         }
     });
 }
-
-

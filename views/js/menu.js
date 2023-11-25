@@ -35,10 +35,10 @@ jQuery(function($) {
 
 
 
-var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+var diasSemana = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
 var hoy = new Date().getDay(); // Retorna un número de 0 (Domingo) a 6 (Sábado)
 var nombreDiaActual = diasSemana[hoy];
-
+console.log(nombreDiaActual);
 
 $(document).ready(function() {
     // Función para hacer la solicitud AJAX
@@ -78,7 +78,7 @@ $(document).ready(function() {
             }
         });
     }
-    $(".nav-link").each(function() {
+    $(".dia").each(function() {
         if ($(this).text() === nombreDiaActual) {
             $(this).addClass("active");
             cargarAlmuerzos(nombreDiaActual);
@@ -86,8 +86,8 @@ $(document).ready(function() {
     });
     
     // Al hacer clic en un enlace
-    $(".nav-link").on("click", function() {
-        $(".nav-link").removeClass("active");
+    $(".dia").on("click", function() {
+        $(".dia").removeClass("active");
         $(this).addClass("active");
 
         var dia = $(this).text().trim();

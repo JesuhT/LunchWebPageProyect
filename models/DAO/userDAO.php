@@ -264,5 +264,44 @@ class UsuarioDAO
             return false;
         }
     }
+    public function agregarToken($token)
+    {
+        $data_source = new DataSource();
+        $sql = "UPDATE Token
+        SET ID_user = :ID_user,
+            reset_token_hash = :reset_token_hash ,
+            reset_token_expires_at = :reset_token_expires_at
+        WHERE ID_user = :ID_user";
+        $resultado = $data_source->ejecutarActualizacion(
+            $sql,
+            array(
+
+                ':ID_user' => $token->getID_User(),
+                ':reset_token_hash' => $token->getToken(),
+                ':reset_token_expires_at' => $token->getResetDate(),
+            )
+        );
+        return $resultado;
+    }
+    public function obtenerCantidadEstudiantes()
+    {
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT COUNT(*) as cantidad FROM Usuario WHERE ID_rol = 1");
+        return $data_table[0]['cantidad'];
+    }
+
+    public function obtenerCantidadCalificaciones()
+    {
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT COUNT(*) as cantidad FROM Calificacion");
+        return $data_table[0]['cantidad'];
+    }
+
+    public function obtenerCantidadDonaciones()
+    {
+        $data_source = new DataSource();
+        $data_table = $data_source->ejecutarConsulta("SELECT COUNT(*) as cantidad FROM DonacionPendiente");
+        return $data_table[0]['cantidad'];
+    }
     
 }

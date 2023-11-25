@@ -68,3 +68,31 @@ function esAdministrador($idUsuario) {
     $usuario = $dao->esAdministrador($idUsuario);
     return $usuario;
 }
+function agregarToken( $token) {
+    require_once(__DIR__."/../../models/DAO/userDAO.php");
+    $dao=new UsuarioDAO();
+    $usuario = $dao->agregarToken($token);
+    return $usuario;
+}
+
+function obtenerCantidadEstudiantes()
+{
+    require_once(__DIR__ . "/../../models/DAO/userDAO.php");
+    $dao = new UsuarioDAO();
+    $usuarios = $dao->obtenerCantidadEstudiantes();
+    return $usuarios;
+}
+function obtenerCantidadCalificaciones()
+{
+    require_once(__DIR__ . "/../../models/DAO/userDAO.php");
+    $dao = new UsuarioDAO();
+    $usuarios = $dao->obtenerCantidadCalificaciones();
+    return $usuarios;
+}
+function obtenerCantidadDonaciones()
+{
+    require_once(__DIR__ . "/../../models/DAO/userDAO.php");
+    $dao = new UsuarioDAO();
+    $usuarios = $dao->obtenerCantidadDonaciones();
+    return $usuarios;
+}

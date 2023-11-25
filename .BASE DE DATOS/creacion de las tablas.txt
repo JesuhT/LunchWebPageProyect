@@ -149,3 +149,18 @@ ADD CONSTRAINT Usuario_fk1 FOREIGN KEY (ID_rol) REFERENCES Rol(ID_rol) ON DELETE
 ALTER TABLE DonacionPendiente
 ADD CONSTRAINT DonacionPendiente_fk0 FOREIGN KEY (ID_donante) REFERENCES Usuario (ID_user);
 
+
+CREATE TABLE `token` (
+  `ID_user` int(11) NOT NULL,
+  `reset_token_hash` varchar(64) DEFAULT NULL,
+  `reset_token_expires_at` datetime DEFAULT NULL
+) ;
+
+ALTER TABLE `token`
+  ADD PRIMARY KEY (`ID_user`),
+  ADD UNIQUE KEY `reset_token_hash` (`reset_token_hash`);
+
+
+ALTER TABLE `token`
+  ADD CONSTRAINT `Token_fk0` FOREIGN KEY (`ID_user`) REFERENCES `usuario` (`ID_user`);
+COMMIT;

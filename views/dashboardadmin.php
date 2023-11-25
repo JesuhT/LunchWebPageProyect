@@ -80,12 +80,12 @@ if ($_SESSION["ID_ROL"] === 1) {
 							<i class="uil uil-user"></i>
 							<span class="link-name">Usuarios</span>
 						</a></li>
-					<!-- <li><a href="#" class="Menu">
+					<li><a href="#" class="charts">
 							<i class="uil uil-comments"></i>
-							<span class="link-name">Menu</span>
-						</a></li> -->
+							<span class="link-name">Graficas</span>
+						</a></li>
 				</ul>
-				
+
 				<ul class="logout-mode">
 					<li><a href="/../controllers/action/logout.php">
 							<i class="uil uil-signout"></i>
@@ -142,20 +142,19 @@ if ($_SESSION["ID_ROL"] === 1) {
 
 					<div class="boxes">
 						<div class="box box1">
-							<i class="uil uil-user"></i>
-							<span class="text">Total Usuarios</span>
-							<span class="number">35</span>
+							<i class="uil uil-thumbs-up"></i>
+							<span class="text">Total Estudiantes</span>
+							<span class="number"><?php echo $_SESSION["cantidadEstudiantes"]; ?></span>
 						</div>
 						<div class="box box2">
-							<i class="uil uil-gift"></i>
-							<span class="text">Donaciones</span>
-							<span class="number">12</span>
-						</div>
-						<div class="box box3">
-
 							<i class="uil uil-comments"></i>
 							<span class="text">Total Calificaciones</span>
-							<span class="number">20</span>
+							<span class="number"><?php echo $_SESSION["cantidadCalificaciones"]; ?></span>
+						</div>
+						<div class="box box3">
+							<i class="uil uil-share"></i>
+							<span class="text">Total Donaciones</span>
+							<span class="number"><?php echo $_SESSION["cantidadDonaciones"]; ?></span>
 						</div>
 					</div>
 				</section>
@@ -316,7 +315,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 					<!-- end modal -->
 				</section>
 				<!-- end USER -->
-				<section id="Almuerzos"  class="hide">
+				<section id="Almuerzos" class="hide">
 					<div class="activity">
 						<div class="title">
 							<i class="uil uil-clock-three"></i>
@@ -464,7 +463,7 @@ if ($_SESSION["ID_ROL"] === 1) {
 											<div style="padding:7px 0;" class="justify-content-center row">
 												<div class="col-md-8"><input placeholder="IDalmuerzo" type="text" class="form-control" name="ID_almuerzo">
 												</div>
-											</div>											
+											</div>
 											<div style="padding:7px 0;" class="justify-content-center row">
 												<div class="rol col-md-8">
 													<select class="diaSelect form-control" name="dia">
@@ -529,8 +528,23 @@ if ($_SESSION["ID_ROL"] === 1) {
 					</div>
 					<!-- end modal -->
 				</section>
-				
+
 			</div>
+			<section id="charts" class="hide">
+				<div class="column">
+					<div class="box-c">
+						<canvas id="graficoUsuariosPorPrograma" width="400" height="400"></canvas>
+
+					</div>
+				</div>
+				<div class="column">
+					<div class="round">
+						<!-- En tu archivo HTML -->
+						<canvas id="donacionesPorMesChart" width="400" height="200"></canvas>
+
+					</div>
+				</div>
+			</section>
 		</section>
 
 
@@ -539,52 +553,61 @@ if ($_SESSION["ID_ROL"] === 1) {
 	<script src="js/adminfront.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-		$(document).ready(function () {
-    // Oculta todas las secciones excepto la primera al cargar la página
-    $(".hide").hide();
-    $("#Usuarios").show();
-    $("#prin").show();
-	$("#over").show();
+		$(document).ready(function() {
+			// Oculta todas las secciones excepto la primera al cargar la página
+			$(".hide").hide();
+			$("#Usuarios").show();
+			$("#prin").show();
+			$("#over").show();
 
-    // Maneja los clics en los enlaces de la lista
-    $(".Menu").click(function (e) {
-		
-        $(".hide").hide();
-        $("#Menu").show();
-        $("#prin").show();
+			// Maneja los clics en los enlaces de la lista
+			$(".Menu").click(function(e) {
 
-    });
-	$(".En-Menu").click(function (e) {
-		
-        $(".hide").hide();
-        $("#En-Menu").show();
-        $("#prin").show();
+				$(".hide").hide();
+				$("#Menu").show();
+				$("#prin").show();
 
-    });
-	$(".Usuarios").click(function (e) {
-		
-        $(".hide").hide();
-        $("#Usuarios").show();
-        $("#prin").show();
+			});
+			$(".En-Menu").click(function(e) {
 
-    });
-	$(".Almuerzos").click(function (e) {
-		
-        $(".hide").hide();
-        $("#Almuerzos").show();
-        $("#prin").show();
+				$(".hide").hide();
+				$("#En-Menu").show();
+				$("#prin").show();
 
-    });
-});
+			});
+			$(".Usuarios").click(function(e) {
+
+				$(".hide").hide();
+				$("#Usuarios").show();
+				$("#prin").show();
+
+			});
+			$(".Almuerzos").click(function(e) {
+
+				$(".hide").hide();
+				$("#Almuerzos").show();
+				$("#prin").show();
+
+			});
+			$(".charts").click(function(e) {
+
+				$(".hide").hide();
+				$("#charts").show();
+				$("#prin").show();
+
+			});
+		});
 	</script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="js/sweetalert2.all.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<script src="js/administrar_usuario.js"></script>
 	<script src="js/administrar_almuerzos.js"></script>
 	<script src="js/administrar_menu.js"></script>
 	<script src="js/cargarProgramas.js"></script>
 	<script src="js/cargarDias.js"></script>
+	<script src="js/admincharts.js"></script>
 </body>
 
 </html>

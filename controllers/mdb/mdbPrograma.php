@@ -11,3 +11,8 @@ function buscarProgramaPorId($id){
     $programas = $dao->buscarProgramaPorId($id);
     return $programas;
 }
+function obtenerCantidadUsuariosPorPrograma(){
+    $dao=new ProgramaDAO();
+    $programas = $dao->obtenerCantidadUsuariosPorPrograma();
+    return $programas;
+}

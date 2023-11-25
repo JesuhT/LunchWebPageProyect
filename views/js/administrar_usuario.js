@@ -1,5 +1,6 @@
 $(document).ready(function () {
   ajaxVerUsuarios();
+  data();
 })
 
 function ajaxVerUsuarios() {
@@ -14,6 +15,18 @@ function ajaxVerUsuarios() {
     }
   });
 }
+function data() {
+  $.ajax({
+    url: "/../../controllers/actionchart/data.php",
+    success: function (result) {
+      console.log("resultado");
+    },
+    error: function (xhr) {
+      alert("Ocurrió un error: " + xhr.status + " " + xhr.statusText);
+    }
+  });
+}
+
 
 $(document).ready(function () {
   $('form').submit(function (event) {

@@ -81,18 +81,18 @@ class DonacionesDAO{
         return $resultado; 
     }
 
-    function devolverDiaAlDonante($donacionesConFechaDiferente,$idDia) {
-        $data_source = new DataSource();
-        foreach ($donacionesConFechaDiferente as $donacion) {
-            $idDonante = $donacion['ID_donante']; 
-            $resultado = restaurarAlmuerzoDonante($idDonante, $idDia); // Utiliza tu función existente
-            if ($resultado) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }
+    // function devolverDiaAlDonante($donacionesConFechaDiferente,$idDia) {
+    //     $data_source = new DataSource();
+    //     foreach ($donacionesConFechaDiferente as $donacion) {
+    //         $idDonante = $donacion['ID_donante']; 
+    //         $resultado = restaurarAlmuerzoDonante($idDonante, $idDia); // Utiliza tu función existente
+    //         if ($resultado) {
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     }
+    // }
 
     public function restaurarAlmuerzoDonante($idDonante, $idDia) {
         $data_source = new DataSource();
@@ -145,5 +145,19 @@ class DonacionesDAO{
     
         return $resultado;
     }
+    // En tu archivo mdbDonacion.php
+function obtenerCantidadDonacionesPorMes()
+{
+    // Realiza la consulta SQL necesaria para obtener la cantidad de donaciones por mes
+    $data_source = new DataSource();
+    $data_table = $data_source->ejecutarConsulta("SELECT MONTH(fecha) AS Mes, COUNT(ID_donacionPendiente) AS CantidadDonaciones
+        FROM DonacionPendiente
+        GROUP BY MONTH(fecha)
+    ", NULL);
+
+    // Retorna los resultados
+    return $data_table;
+}
+
     
 }
