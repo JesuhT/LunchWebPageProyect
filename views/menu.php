@@ -2,13 +2,13 @@
 session_start();
 
 if ($_SESSION["ID_USUARIO"] === null) {
-    // Redirige a login.php después de 2 segundos
-    echo '<script>
+  // Redirige a login.php después de 2 segundos
+  echo '<script>
         setTimeout(function() {
             window.location = "login.php";
         }, 2000);
     </script>';
-    exit; // Asegura que no se procese más código PHP
+  exit; // Asegura que no se procese más código PHP
 }
 
 
@@ -36,43 +36,64 @@ if ($_SESSION["ID_USUARIO"] === null) {
 <body id="page-top">
   <!-- Navigation-->
   <header class="header-area">
-    <nav class="navbar navbar-expand-md navbar-dark">
-      <div class="container ">
+    <nav class="navigation-s">
+      <div class="navigation-d">
         <div class="logo-area">
-          <img class="" src="assets\img\principal.svg" alt="" srcset="">
+          <!--icono top-->
+          <img class="" src="/assets/img/principal.svg" alt="" srcset="">
           <a href="#" class="navbar-brand logo">My<span>Luch</span></a>
-
         </div>
-        
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
-          <span class="menu-icon-bar"></span>
-          <span class="menu-icon-bar"></span>
-          <span class="menu-icon-bar"></span>
-        </button>
-
-        <div id="main-nav" class="collapse navbar-collapse">
-          <ul class="navbar-nav ml-auto">
-            <li><a href="#" class="nav-item nav-link active" id="active">Inicio</a></li>
-            <li class="dropdown">
-              <a href="#content-servicios" class="nav-item nav-link" data-toggle="dropdown">Servicios</a>
+        <div class="mobile-nav">
+          <i class="fas fa-bars" style="color: white;"></i>
+        </div>
+        <div class="nav">
+          <ul class="nav-list">
+            <li class="items"><a href="/../index.php" id="">Home</a></li>
+            <li class="items dropdown">
+              <a href="#content-servicios" class="nav-link" data-toggle="dropdown" style="margin:0px;padding:0px;">Servicios</a>
               <div class="dropdown-menu">
-                <a href="views/menu.php" class="dropdown-item">Menu</a>
-                <a href="views/fila-virtual.php" class="dropdown-item">Fila virtual</a>
-                <a href="views/donaciones.php" class="dropdown-item">Donaciones</a>
-                <a href="views/calificaciones.php" class="dropdown-item">Calificaciones</a>
+                <a href="menu.php" class="dropdown-item">Menu</a>
+                <a href="fila-virtual.php" class="dropdown-item">Fila virtual</a>
+                <a href="donaciones.php" class="dropdown-item">Donaciones</a>
+                <a href="#"  class="dropdown-item btnAbrirModal">Calificaciones</a>
               </div>
             </li>
-            <li><a href="#about" class="nav-item nav-link">Contact</a></li>
-            <li class="items" id="no-line"><a href="profile.php">
-                <?php echo $_SESSION["NOMBRE"]; ?>
-              </a></li>
-            <li class="items nav-item nav-link" id="back-donar"><a href="views/donaciones.php" id="donar-text">Donar</a></li>
+            <li class="items"><a href="#">Contact us</a></li>
+            <li class="items" id="back-donar"><a href="donaciones.php" id="donar-text">Donar</a></li>
+            <li class="items nav-link dropdown" style="margin:0px;padding:0px;">
+              <a href="profile.php" class="nav-link" data-toggle="dropdown" >
+                <div class="img-box">
+                  <div class="info-pfp">
+                    <h5 class="texto text-pfp">
+                      <?php echo $_SESSION["NOMBRE"] . " ";
+                      echo $_SESSION["APELLIDO"];
+                      ?>
+                    </h5>
+                    <p class="texto rol-pfp">
+                      <?php echo $_SESSION['NOMBRE_ROL'] . " "; ?>
+                    </p>
+                  </div>
+                  <div class="img-box-in">
+                    <img src="/assets/img/people/pic-2.jpg" alt="">
+                  </div>
+
+                </div>
+              </a>
+              <div class="dropdown-menu">
+                <a href="profile.php" class="dropdown-item">Editar perfil</a>
+                <a href="dashboardadmin.php" class="dropdown-item">Dashboard</a>
+                <a href="/../controllers/action/logout.php" class="dropdown-item">Cerrar sesión</a>
+              </div>
+
+            </li>
+            
 
           </ul>
         </div>
       </div>
     </nav>
   </header>
+
   <section class="img-side">
     <div class="back-static">
     </div>
@@ -93,7 +114,7 @@ if ($_SESSION["ID_USUARIO"] === null) {
         <path id="vector-s" d="M0.947609 110.983C90.8994 39.2656 364.445 -70.3429 739.011 64.9628C1113.58 200.268 1640.11 166.708 1856.55 133.015" stroke="#EA6A12" stroke-opacity="0.3" />
       </svg>
     </div>
-    
+
 
     <div class="today-menu">
       <div class="idance">
@@ -116,7 +137,7 @@ if ($_SESSION["ID_USUARIO"] === null) {
               <div class="tab-content">
                 <div class="tab-pane show active">
                   <div class="row" id="row">
-                   
+
 
                   </div>
                 </div>
@@ -147,47 +168,47 @@ if ($_SESSION["ID_USUARIO"] === null) {
   <!-- Botón para abrir el modal -->
 
 
-<!-- Modal para calificar -->
-<div class="modal fade" id="modalCalificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal para calificar -->
+  <div class="modal fade" id="modalCalificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Calificar almuerzo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Contenido de calificación -->
-                <div class="d-flex justify-content-center">
-                    <div  class="card border-0" style="width: 18rem;">
-                    <div class="card-body text-center">
-                            <h5 class="card-title">Califica este almuerzo</h5>
-                            <span class="fa fa-star" id="1" style="cursor: pointer"></span>
-                            <span class="fa fa-star" id="2" style="cursor: pointer"></span>
-                            <span class="fa fa-star" id="3" style="cursor: pointer"></span>
-                            <span class="fa fa-star" id="4" style="cursor: pointer"></span>
-                            <span class="fa fa-star" id="5" style="cursor: pointer"></span>
-                        </div>
-                    </div>
-                </div>  
-                <!-- Comentarios y Opiniones --> 
-                <div class="mb-3">
-                    <textarea class="form-control" id="descripcion" rows="3" placeholder="Agrega una descripción"></textarea>
-                </div>
-                <!-- Botón para enviar calificación -->
-                <div class="d-flex justify-content-center mt-3">
-                    <button id="btnEnviarCalificacion" class="btn btn-primary">Enviar calificación</button>
-                </div>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Calificar almuerzo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <!-- Contenido de calificación -->
+          <div class="d-flex justify-content-center">
+            <div class="card border-0" style="width: 18rem;">
+              <div class="card-body text-center">
+                <h5 class="card-title">Califica este almuerzo</h5>
+                <span class="fa fa-star" id="1" style="cursor: pointer"></span>
+                <span class="fa fa-star" id="2" style="cursor: pointer"></span>
+                <span class="fa fa-star" id="3" style="cursor: pointer"></span>
+                <span class="fa fa-star" id="4" style="cursor: pointer"></span>
+                <span class="fa fa-star" id="5" style="cursor: pointer"></span>
+              </div>
+            </div>
+          </div>
+          <!-- Comentarios y Opiniones -->
+          <div class="mb-3">
+            <textarea class="form-control" id="descripcion" rows="3" placeholder="Agrega una descripción"></textarea>
+          </div>
+          <!-- Botón para enviar calificación -->
+          <div class="d-flex justify-content-center mt-3">
+            <button id="btnEnviarCalificacion" class="btn btn-primary">Enviar calificación</button>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1RTS0P1CD"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/calificarAlmuerzo.js"></script>

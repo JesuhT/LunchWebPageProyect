@@ -47,6 +47,13 @@ if (isset($_SESSION['ID_USUARIO'])) {
 
         echo json_encode(array('status' => 'error', 'message' => $errorMessage));
     }
+
+    // $donacionesConFechaDiferente = obtenerDonacionesConFechaDiferente(); 
+    // if (!empty($donacionesConFechaDiferente)) {
+    //     devolverDiaAlDonante($donacionesConFechaDiferente);
+    // }
+
+    
 } else {
     header("Location: ../../views/login.php");
 }

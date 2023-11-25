@@ -108,12 +108,7 @@ if (empty($msg)) {
         'estado' => $estado,
         'msg' => $msg
     ];
-    
-    echo json_encode($resultado);
 } 
-$resultado = [
-    'estado' => $estado,
-    'msg' => $msg
-];
+
 echo json_encode($resultado);
 ?>

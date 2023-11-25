@@ -12,6 +12,7 @@ if($_SESSION["ID_USUARIO"] === null){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <title>Fila virtual</title>
   <!-- Google fonts-->
   <link rel="stylesheet" href="css/Fila.css">
@@ -23,50 +24,52 @@ if($_SESSION["ID_USUARIO"] === null){
       <div class="navigation-d">
         <div class="logo-area">
           <!--icono top-->
-          <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <style>
-                .cls-1 {
-                  fill: #e54033;
-                }
-
-                .cls-2 {
-                  fill: #fff;
-                }
-
-                .cls-3 {
-                  fill: #c9c9c9;
-                }
-              </style>
-            </defs>
-            <g data-name="Fork Knife Icon-2" id="Fork_Knife_Icon-2">
-              <circle class="cls-1" cx="256" cy="256" r="256" />
-              <g id="Fork-2">
-                <path class="cls-2"
-                  d="M245.6,84.61V185.52a50.78,50.78,0,0,1-38,49.16l10.17,180.93a23,23,0,0,1-45.87,3.46,22.2,22.2,0,0,1,0-3.46L182,234.68a50.78,50.78,0,0,1-38-49.16V84.61a10.38,10.38,0,0,1,20.75,0v72.05a9.86,9.86,0,0,0,19.72,0v-72A10.36,10.36,0,1,1,205.18,84c0,.21,0,.43,0,.64v72.05a9.85,9.85,0,0,0,19.69.5V84.61a10.38,10.38,0,0,1,20.75,0Z" />
-              </g>
-              <g id="Knife-2">
-                <path class="cls-2"
-                  d="M353.68,71.33V283.17H326.09a1.09,1.09,0,0,1,.06-.44c1.91-14.17-10.88-27.33-28.33-29a42,42,0,0,0-10.14.27,5.56,5.56,0,0,1-6.63-4.23,5.3,5.3,0,0,1-.13-1.38c.24-32.74,6.17-76.64,29.83-121.69a261.28,261.28,0,0,1,39.81-56.19C351.56,69.39,353.68,70,353.68,71.33Z" />
-                <path class="cls-3"
-                  d="M355.76,283.17a3.43,3.43,0,0,1,3.43,3.42V418.87c0,12.64-9.55,23.74-22.16,24.51A23.66,23.66,0,0,1,312,421.22c0-.49,0-1,0-1.47V286.59a3.43,3.43,0,0,1,3.43-3.42Z" />
-              </g>
-            </g>
-          </svg>
-          <!--fin etiqueta icono-->
-          <a href="#" class="logo">My<span>Luch</span></a>
+          <img class="" src="/assets/img/principal.svg" alt="" srcset="">
+          <a href="#" class="navbar-brand logo">My<span>Luch</span></a>
         </div>
         <div class="mobile-nav">
           <i class="fas fa-bars" style="color: white;"></i>
         </div>
         <div class="nav">
           <ul class="nav-list">
-            <li class="items"><a href="#" id="active">Home</a></li>
-            <li class="items"><a href="/../index.php#content-servicios">Servicios</a></li>
+            <li class="items"><a href="/../index.php" id="">Home</a></li>
+            <li class="items dropdown">
+              <a href="#content-servicios" class="nav-link" data-toggle="dropdown" style="margin:0px;padding:0px;">Servicios</a>
+              <div class="dropdown-menu">
+                <a href="menu.php" class="dropdown-item">Menu</a>
+                <a href="fila-virtual.php" class="dropdown-item">Fila virtual</a>
+                <a href="donaciones.php" class="dropdown-item">Donaciones</a>
+                <a href="#"  class="dropdown-item btnAbrirModal">Calificaciones</a>
+              </div>
+            </li>
             <li class="items"><a href="#">Contact us</a></li>
-            <li class="items" id="no-line"><a href="profile.php"><?php echo $_SESSION["NOMBRE"];?></a></li>
-            <li class="items" id="back-donar"><a href="#" id="donar-text">Donar</a></li>
+            <li class="items" id="back-donar"><a href="donaciones.php" id="donar-text">Donar</a></li>
+            <li class="items nav-link dropdown" style="margin:0px;padding:0px;">
+              <a href="profile.php" class="nav-link" data-toggle="dropdown" >
+                <div class="img-box">
+                  <div class="info-pfp">
+                    <h5 class="texto text-pfp">
+                      <?php echo $_SESSION["NOMBRE"] . " ";
+                      echo $_SESSION["APELLIDO"];
+                      ?>
+                    </h5>
+                    <p class="texto rol-pfp">
+                      <?php echo $_SESSION['NOMBRE_ROL'] . " "; ?>
+                    </p>
+                  </div>
+                  <div class="img-box-in">
+                    <img src="/assets/img/people/pic-2.jpg" alt="">
+                  </div>
 
+                </div>
+              </a>
+              <div class="dropdown-menu">
+                <a href="profile.php" class="dropdown-item">Editar perfil</a>
+                <a href="dashboardadmin.php" class="dropdown-item">Dashboard</a>
+                <a href="/../controllers/action/logout.php" class="dropdown-item">Cerrar sesión</a>
+              </div>
+
+            </li>
           </ul>
         </div>
       </div>
@@ -82,39 +85,11 @@ if($_SESSION["ID_USUARIO"] === null){
   <div class="Container">
     <h1 class="Título">Fila Virtual</h1>
     <h3>Ticket de turno</h3>
-      <div class="Container_Turno">
-        <div class="Su_Turno">
-          <div class="Turno">
-            <div class="Turno_text"><p>Su turno</p></div>
-            <h1>5</h1>
-          </div>
-          <div class="Tiempo_Espera">
-            <div class="Tiempo_Text"><p>Tiempo estimado de espera</p></div>
-            <p class="Tiempo_number">5 minutos</p>
-          </div>
-          <div class="Seguimiento_Turnos">
-            <div class="Turno_Actual"><p>Turno en atención</p></div>
-            <p class="Turno_number">3</p>
-          </div>
-          <div class="Fecha_Fila">
-            <div class="fecha_text"><p>Fecha</p></div>
-            <p class="fecha_number">14/09/2023</p>
-          </div>
-          <div class="Cantidad_personas">
-            <div class="Personas_text"><p>Cantidad de personas en la fila</p></div>
-            <p class="Personas_number">5</p>
-          </div>
-        </div>
+      
       </div>
       <aside>
         <p>...</p>
       </aside>
-      <div>
-        <button class="Ingresar_Fila">Ingresar a la fila</button>
-      </div>
-      <div class="Cancelar">
-        <button>Cancelar turno</button>
-      </div>
   </div>
   <div>
     <div class="svg-section circle">
@@ -129,5 +104,49 @@ if($_SESSION["ID_USUARIO"] === null){
       </svg>
     </div>
   </div>
+
+  <div class="card bg-secondary bg-opacity-50 shadow-lg mb-3 h-100">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card mb-3 h-100">
+        <div class="row g-0">
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <div class="Turno text-center">
+              <div class="Turno_text"><p>Su turno</p></div>
+              <h1>9</h1>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="Fecha">
+                <div class="fecha_text"><p>Fecha</p></div>
+                <p class="fecha_number">14/09/2023</p>
+              </div>
+              <div class="Botones_Fila">
+                <!-- Botón para cancelar turno -->
+                <div class="Cancelar">
+                  <button class="Cancelar_turno">Cancelar turno</button>
+                </div>
+                <!-- Botón para ingresar a la fila -->
+                <div>
+                  <button class="Ingresar_Fila">Ingresar a la fila</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="js/fila_virtual.js"></script>
+<script>
+  disminuirCada5Segundos()
+</script>
 </body>
 </html>

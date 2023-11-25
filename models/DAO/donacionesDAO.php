@@ -81,8 +81,20 @@ class DonacionesDAO{
         return $resultado; 
     }
 
-    ///TODAVÍA NO->
-    public function restaurarAlmuerzoDonante($idDia, $idDonante) {
+    function devolverDiaAlDonante($donacionesConFechaDiferente,$idDia) {
+        $data_source = new DataSource();
+        foreach ($donacionesConFechaDiferente as $donacion) {
+            $idDonante = $donacion['ID_donante']; 
+            $resultado = restaurarAlmuerzoDonante($idDonante, $idDia); // Utiliza tu función existente
+            if ($resultado) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function restaurarAlmuerzoDonante($idDonante, $idDia) {
         $data_source = new DataSource();
         $sql = "INSERT INTO Dias_Almuerzos_Estudiante (ID_dia, ID_estudiante) VALUES (:idDia, :idEstudiante)";
         $params = array(':idDia' => $idDia, ':idEstudiante' => $idDonante);

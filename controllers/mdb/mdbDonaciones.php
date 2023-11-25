@@ -25,10 +25,35 @@ function quitarAlmuerzoDonante($idDonante) {
     return $resultado;
 }
 
+function restaurarAlmuerzoDonante($Dia, $idDonante) {
+    $dao=new DonacionesDAO();
+    $resultado = $dao->restaurarAlmuerzoDonante($Dia, $idDonante);
+    return $resultado;
+}
+
+
+function obtenerFechaDonacion($idDonacion){
+    $dao=new DonacionesDAO();
+    $fecha = $dao->obtenerFechaDonacion($idDonacion);
+    return $fecha;
+}
+
 function haRecibidoDonacion($idUsuario) {
     $dao=new DonacionesDAO();
     $recibido = $dao->haRecibidoDonacion($idUsuario);
     return $recibido;
+}
+
+function actualizarEstadoDonacion($idDonacion){
+    $dao=new DonacionesDAO();
+    $actualizado = $dao->actualizarEstadoDonacion($idDonacion);
+    return $actualizado;
+}
+
+function DonacionFueAceptada($idDonacion){
+    $dao=new DonacionesDAO();
+    $aceptada = $dao->DonacionFueAceptada($idDonacion);
+    return $aceptada;
 }
 
 function comprobarPswdDonar($password, $idUsuario){

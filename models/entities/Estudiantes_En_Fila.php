@@ -6,11 +6,11 @@ class Estudiantes_En_Fila{
     private $turno;
     private $hora_ingreso;
 
-    public function __construct($ID_estudiante, $ID_fila, $turno){
+    public function __construct($ID_estudiante, $ID_fila, $turno,$hora){
         $this->ID_estudiante = $ID_estudiante;
         $this->ID_fila= $ID_fila;
         $this->turno = $turno;
-        $this->hora_ingreso = date('H:i:s');
+        $this->hora_ingreso = $hora;
     }
 
     public function getID_estudiante() {
